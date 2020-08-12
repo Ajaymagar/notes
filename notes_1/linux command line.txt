@@ -1,0 +1,30 @@
+linux  command line 
+For installing package 
+sudo apt-get install package-name for debian system
+
+
+pwd - to know the cureent dictinory
+ls - list 
+cd - change dict
+echo - linux version
+sudo - super admin
+grep - serach string or word in text file 
+mkdir - making directory or folder
+rmdir - removing directory
+chomod - changing access permission of file  - 777 
+cat - show the content of text file in command line 
+sort - sorting the alphabetical order
+nano - for making files - terminal base editor 
+touch - is use for craeting multiple files at a time
+MAN = referenec mannual for command 
+su = Switch user - adduser
+curl - curl is basically use use request.
+
+
+rm - remove
+
+ service apache2  start - to create a local host
+  netstat -antp | grep apache - to know the which port is working for local host
+  service apache2  stop - to stop the local host
+
+ssh - secure shell 

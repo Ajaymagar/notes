@@ -1,0 +1,6 @@
+django notes 
+
+to start a project first make a folder then open cmd 
+1. django-admin startproject projectname
+2. for adding app command is python manage.py startapp appname after adding app also add in installedapp which is in setting.py
+3. for migration python manage.py migrate 

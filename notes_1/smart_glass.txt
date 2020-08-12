@@ -1,0 +1,65 @@
+
+
+
+1] first function smart reader 
+
+we have three three function in project 
+text recognition we are using opencv library for capturing the image apply grayscale filter on image and save the image in same folder
+
+second library is pytesseract which is use for processing the image it convert the detected text into string
+read some info from google you can better understand
+
+third lib is gtts which is google text to speech 
+this library want input as a string and save the audio in mp3 file google it.
+
+fourth lib is pygame which is for game development but we use it for run the audio file
+
+2] second function know the person  == face recognition
+
+in this function we are usinf same opencv lib for img processing it click the photo
+apply the filter graysacle for increasing the efficiency and for face recognition we are using haar cascade machine learning
+algorithm proposed by Paul Viola and Michael Jones in their paper “Rapid Object Detection using a Boosted Cascade of Simple Features” in 2001.
+haar cascade is use for detecting the object for which it has been trained
+our programm detect the faces in img and give the count for recognition i will tell you.
+above process is same by using string gtts module convert the text into audio 
+
+
+
+3] third function voice based smart assitance 
+
+in smart assistance for audio input we are using speech_recogntion module which convert the audio into string 
+
+second module gtts google text to speech which convert the string into audio 
+
+our smart assistance is able to send mail to anyone by only voice command  we are using smtplib protocol of application layers to do that not gmail interface
+
+by using the browser automation we can play video of you tube by voice command
+
+by voice command we fetch the data from  wikipedia  using wikipedia module.
+ 
+our smart assistance tell current  time using time module 
+
+
+end
+
+modules ka intro padhle net par clear ho jayega 
+ye sirf code ka explanation he hardware me kuch nahi he jadya
+
+raspi and pycam and microphone use hoga likh de.
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

