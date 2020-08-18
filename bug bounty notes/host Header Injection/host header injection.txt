@@ -1,0 +1,36 @@
+
+host header injection attack 
+
+1st methods 
+capture the requests and change the host 
+
+request 
+GET HTTP 1.1
+host : target.com  -- change the  host attacker.com
+x-forwarded-for:attacker.com
+x-forwarded-host:attacker.com
+
+response 
+GET HTTP 1.1 302 redirect
+host:attacker.com
+
+2nd method 
+add 2host if you get the 200ok then remove the first header ( add same host 2 time) 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

