@@ -42,12 +42,41 @@ def func(x):
 print(list(map(func,list_1)))
 '''
 
+'''
 # lambda function 
 
 a = [1,2,3,4,5,6,7,8,9]
 
 ajay = list(map(lambda x:x+5 ,a))
 print(ajay)
+'''
+
+'''
+# collection module 
+
+import collections
+from collections import Counter
+from collections import namedtuple
+
+point = namedtuple('point','x y z')
+
+newP = point(3,4,5)
+print(newP)
+'''
+
+# deque module
+
+import collections
+from collections import deque
+
+d = deque('hello')
+d.append('4')
+d.append(5)
+
+print(d)
+
+
+
 
 
 

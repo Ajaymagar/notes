@@ -1,0 +1,53 @@
+
+
+
+echo $PATH    -- this command is use to show the path
+
+which sublist3r  -- which command is use to find the location of programms 
+
+grep -- search for patterns in files or stdin
+sed -- edit the input stream
+awk -- general purpose text processing language 
+cat -- concatenates files 
+find - list files recursively and apply filters
+sort -- sort the lines from std input 
+uniq -- remove duplicate lines from standard stdin
+xargs -- run a command using each line from stdin as aurgument 
+tee - copy stdin to a file to the screnn 
+ 
+------------------- Varibales ---------------
+system Define Variables are in captial
+echo $BASh
+echo $PWD
+
+User Defined Variables 
+name=Ajay
+
+echo the name is $name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+awk is use for extracting data
+
+awk '/data/{print $:int:}' testfile.txt
+f 
+

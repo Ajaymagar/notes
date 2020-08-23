@@ -11,7 +11,7 @@ sudo - super admin
 grep - serach string or word in text file 
 mkdir - making directory or folder
 rmdir - removing directory
-chomod - changing access permission of file  - 777 
+chmod - changing access permission of file  - 777 
 cat - show the content of text file in command line 
 sort - sorting the alphabetical order
 nano - for making files - terminal base editor 
