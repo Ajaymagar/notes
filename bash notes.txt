@@ -64,11 +64,13 @@ if [condition]
 then	
 	statement
 fi
+
+
 -eq  == is equal to 
 -ne == not equal to 
 -gt == is greater Than
 -ge == is greater than equal to
-
+-lt == less than 
 
 == code ==
 count=10 
@@ -92,6 +94,13 @@ fi
 
 
 -----------------------
+AWK Scripting 
+awk syntax 
+
+awk options 'pattern/condition {action}' filename 
+command | awk options 'pattern/condition {action}'   
+
+
 
 
 
