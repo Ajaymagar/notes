@@ -1,0 +1,4 @@
+sqlite3  is inbuilt lib in python
+
+sqlite3.connect()  # coneect with database or create a database 
+ 
