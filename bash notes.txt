@@ -100,6 +100,22 @@ awk syntax
 awk options 'pattern/condition {action}' filename 
 command | awk options 'pattern/condition {action}'   
 
+awk 'BEGIN {start_action} pattern/condition {action to perform on each line } END {stop_action}' filename  #save this in awk_script.awk  
+ 
+awk -f awk_script.awk filename  #this line is use to run the awk script 
+
+$0: entire record
+$1: first field
+$2: second field
+
+NR: number of count in current records
+NF: number of filed in current records
+
+RS: define a record(row), default "\n"
+FS: define a field(column), default "white space"
+
+ORS: output record separator
+OFS: output field separator
 
 
 
