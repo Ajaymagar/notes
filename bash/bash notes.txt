@@ -1,0 +1,209 @@
+
+
+
+echo $PATH    -- this command is use to show the path
+
+which sublist3r  -- which command is use to find the location of programms 
+
+grep -- search for patterns in files or stdin
+sed -- edit the input stream
+awk -- general purpose text processing language 
+cat -- concatenates files 
+find - list files recursively and apply filters
+sort -- sort the lines from std input 
+uniq -- remove duplicate lines from standard stdin
+xargs -- run a command using each line from stdin as aurgument 
+tee - copy stdin to a file to the screnn 
+ 
+------------------- Varibales ---------------
+system Define Variables are in captial
+echo $BASh
+echo $PWD
+
+User Defined Variables 
+name=Ajay
+
+echo the name is $name
+
+----------Read User Input -------------------------
+echo "hello tell me your name:"
+read name 
+echo "my name is $Name "
+
+==== Multiple Read parameter ===
+echo "all Names"
+read name1 name2 name3
+echo "names: $name1 , $name2 , $name3"
+
+===== read command with Flags =====
+read -p "Username": username  # -p flag put the everything on same line
+read -sp "Pawssword:" pasword    # -s flasg hide the password 
+
+==== Create Array using read command =======
+
+read -a "names: " names
+echo "names are: ${names[0]} , ${names[1]} " 
+
+
+
+
+----------------------- argument ---------------------
+
+echo $1 $2 $3  "random string"
+
+args=("$@")      #args is a variable and all the values are save in $@ 
+
+echo ${args[0]} ${args[1]} ${args[2]}
+
+echo $@      #This is the another way to print the Value
+
+
+------------------------- if else -----------------
+skelten of If statement 
+if [condition] 
+then	
+	statement
+fi
+
+
+-eq  == is equal to 
+-ne == not equal to 
+-gt == is greater Than
+-ge == is greater than equal to
+-lt == less than 
+
+== code ==
+count=10 
+if [$count eq 10 ]
+then 
+	echo "condition is True"
+fi
+
+== code == 
+word=a
+
+if [[word = 'b']]
+then
+	echo "consdition is true"
+elif [[ word = 'c' ]]
+ then 
+ 	echo "statement"
+else
+	echo "condition is False"	
+fi
+
+
+-----------------------
+AWK Scripting 
+awk syntax 
+
+awk options 'pattern/condition {action}' filename 
+command | awk options 'pattern/condition {action}'   
+
+awk 'BEGIN {start_action} pattern/condition {action to perform on each line } END {stop_action}' filename  #save this in awk_script.awk  
+ 
+awk -f awk_script.awk filename  #this line is use to run the awk script 
+
+$0: entire record
+$1: first field
+$2: second field
+
+NR: number of count in current records
+NF: number of filed in current records
+
+RS: define a record(row), default "\n"
+FS: define a field(column), default "white space"
+
+ORS: output record separator
+OFS: output field separator
+
+---------- raw data  ---------------
+date  price volume close add mul
+ 1		2		3    4    5   6 
+ 2 		3		4	 5    6   7
+ 3		4       5    6    7   8
+
+awk script 
+BEGIN{
+	FS=' ';
+	OFS='\t\t';
+	print "date\t\t\price\tclose"         # BEGIN is builtin keyword  #fs filed seperater means its seperate 
+};												the Word by space 											
+NR > 1{											NR > 1 means skip the 1 first line 							
+	print $1 , $2 , $4
+};
+
+OUTPUT
+date price close 
+1      2      4
+2	   3      5 
+3	   4      6 		
+
+
+
+
+							
+
+
+---------------------- Grep command ----------------------
+check grep man page for more flags  
+grep  commaand is use for searching the word  in file 
+
+how to use the grep command 
+
+grep -w "wordYouWant" filename  # -w flag is use to search the  word -i flag is use for case insensitive    
+
+
+
+
+-------------------- sed Command -------------------------------
+
+sed 's/regex/replace/g' filename  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+awk is use for extracting data
+
+awk '/data/{print $:int:}' testfile.txt
+f 
+
