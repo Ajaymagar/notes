@@ -1,0 +1,444 @@
+
+javascript notes
+
+day 1
+console.log('hello world')
+ it is a print function in javascript 
+
+how to declare a variable 
+let name = 'ajay';
+const name = 'ajay'; connst name doesnt change afterword
+var = 'ajay'
+ 
+let score = 103;
+
+# if else condition in javascript
+
+if (condition) {
+
+    console.log('statement')
+
+} else {
+
+    console.log('if 'if' condition is false else will run)
+}
+
+
+--------------------------------    end      -------------------------------------------------
+
+
+day 2 
+logical operater
+ && AND operater every condition need to be true
+
+|| OR operater one condition need to be true
+
+
+--------------------------------    end      -------------------------------------------------
+
+
+
+day 3 
+palying with array 
+in javascript we can acces value same like python from index 
+array[index_no]
+array.shift() #this function remove the 0 index from list
+array.pop() #remove the last no from list
+array.push() #add the value at the end of list
+array.splice(2,1,'something') # splice function first parameter chose the index second parameter del and third parameter add the value in chosen index
+
+
+
+
+
+and for dot format method `` this qeuote was use prezent in below escape $ sign need to use before {}
+
+
+
+--------------------------------    end      -------------------------------------------------
+
+
+day 4 
+
+function in javascript 
+lay sayhello = function ()  {
+
+
+    console.log('hey hello ')
+}
+
+and 
+
+let add = function (a,b) {
+
+    let added = a +b
+    return added
+}
+
+let result = add(5,4)
+console.log(result)
+
+
+--------------------------------    end      -------------------------------------------------
+
+
+
+day 5 
+#for loop
+use for loop when  you know the iteration 
+for (first decalre the variable that is "let i =0"; put a condition "i>=5" ; increment the variable "i += 1") {
+
+    code block
+}
+example of for loop
+
+
+for (let i=0; i <=5 ; i+=1) {
+
+    console.log('its print 5 times')
+}
+
+
+# new method to iterate over the array 
+array.forEach(function(value , index , array){
+
+    statement  # in function we have to pass three args value it return the value from array. '\n'
+                                                second index it return the index no and third is array name
+}):
+
+#example of forEach method
+
+array = ['ajay','pari','trisha','tannu']
+
+array.forEach(function(value,i){
+
+    console.log(value + ' ' + i);
+
+})
+
+#output 
+ajay 0
+pari 1
+trisha 2
+tannu  3
+
+
+--------------------------------    end      -------------------------------------------------
+
+
+day 6 
+
+object in javascript its same like python dictionary key - value pair 
+we can add function also in javascript
+let MyObj = {
+
+    video_title:'the javascript course'
+    video_length: 15
+    video_content:true  
+}
+
+you can add property in obj from outside
+MyObj.video_size: 45 #this will add to the MyObj
+delete MyObj.video_length;  # this  line delete the video_length property
+MyObj.video_size = 15; #this line is used to change the value of property 
+
+
+console.log(MyObj)
+console.log(`new video is ${MyObj.video_title} and length is ${MyObj.video_length}`)
+
+--------------------------------    end      -------------------------------------------------
+
+
+day 7 
+
+this keyword in javascript 
+
+this keyword is use to acces the object withthin object if we create function in object
+
+
+
+# random library in javascript 
+Math library is use in javascript to play with int
+Math.floor() is use to round off
+Math.ceil() is also use to round off
+Math.random is use to generate the random value
+
+--------------------------------    end      -------------------------------------------------
+
+
+day 8 
+# arrow function
+
+let sayhello = (name) => {
+    return `hello ${} how are you`
+}
+console.log(sayhello('ajay'))
+
+--------------------------------    end      -------------------------------------------------
+
+
+day 9 
+# switch case
+
+# switch case in javascript is use as if else they are more efficient and they accept the bool string and num
+
+example of switch case
+
+var name = 'ajay'
+
+switch (key=name){
+
+    case 'ajay':
+        console.log('your statement')
+        break
+    case 'pari':
+        console.log('this statement is not gonna run')
+        break
+
+    default:
+        console.log('else condition will print')
+        break
+
+}
+ 
+--------------------------------    end      -------------------------------------------------
+
+
+day 10 
+
+# while loop 
+
+var x = 1 
+ while(condition) {
+
+     statement 
+
+ }
+
+# example 
+
+var x = 
+
+while(x<=10) {
+    console.log('put the statement here')
+}
+
+
+
+#do while loops
+
+# in do while loops first iter will be excute if condition fail after
+
+#example 
+
+var a = 5
+
+do{
+    console.log('statement')
+    a += 1  #you have to increment the value of a
+}while(condition){
+
+}
+
+--------------------------------    end      -------------------------------------------------
+
+
+
+day  11 
+
+DOCUMENT OBJECT MODEL 
+DOM   manipulation   # in DOM manipulation we can acces html elements by id class and we can manipulate them
+
+document.getelementById('id_value of html tag').textContent='value to be changed'
+
+<p id='ajay'> hello world </p>
+
+--------------------------------    end      -------------------------------------------------
+
+day 12 
+
+mouse event 
+# onmouseover(function_name) and onmouseout(function_name) 
+we need to pass this event in html tag and in event we need to pass function name which is available in javascript
+
+
+--------------------------------    end      -------------------------------------------------
+
+day 13 
+#classes and object
+in javascript classses and object are pretty same as python
+in python we use .self here we use .this method
+
+
+
+class user{
+    construter(firstname.lastname,score){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.score = score;
+
+    }
+}
+
+normal class is above there 
+inheritance 
+
+class subuser extends user {
+    construter(firstname,lastname,score,age){
+        super(firstname,lastname,score);
+        this.age = age
+    }
+}
+
+
+let subuser_1 = subuser('ajay','magar','45','21') #inheritance class
+console.log(subuser_1)
+
+
+let ajay = new user('ajay','magar',45 ) # for normal class
+console.log(ajay)
+
+
+--------------------------------    end      -------------------------------------------------
+
+day 14
+
+#regex in javascript 
+
+var regx = /[put the value you want] normal_string /
+
+var regx = /[0-9]abc/
+to check the op use if condition
+if(regx.test(ip_value)){
+    
+}
+
+
+--------------------------------    end      -------------------------------------------------
+day 15 
+# setTimeout(function,time_in_milisecond) 
+# clearTimeout(store the value of setTimeout in variable and the variable here)
+
+this function are very imp in javascript they are timers 
+
+function ajay() {
+    document.write('ajay')
+}
+
+s = setTimeout(ajay,1000) this function is print after 1 second
+
+clearTimeout(s)
+
+
+--------------------------------    end      -------------------------------------------------
+
+day 16 
+async and sync programming in javascript 
+
+async and sync code contain callback , promises 
+ sync code
+
+console.log('start')
+
+sayhello = () =>{
+    console.log('hey hello')
+}
+
+console.log('middle')
+sayhello()
+console.log('end')
+#op is 
+start
+middle
+hey hello 
+end
+
+# async code
+
+console.log('start')
+
+setTimeout(()=>{
+    console.log('hey hello')  #this fun is run at the end beacause it has delayed of 2second
+},2000)
+
+console.log('middle')
+console.log('end')
+#op is 
+start 
+middle
+end
+hey hello
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+day 17
+
+promise in javascript 
+
+let ajay = new promise(function(resolve,reject){
+    let a = 1 + 1
+    if (a==2){
+        resolve('message any thing')
+    }else{
+        reject('reject message here')
+    }
+
+})
+
+ajay.then((message) =>{
+    console.log('the message is for than ',message)
+})
+ajay.catch((message) =>{
+    console.log('the message is for catch',message)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

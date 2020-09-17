@@ -1,0 +1,102 @@
+
+
+Flask is a pytho web FrameWork 
+is based on Wsgi web server gateway Interface which is use for concurrency 
+
+
+BluePrints is for  file system 
+import BluePrint 
+
+har function ka alag alag file banne like profile vale alag signup , login 
+for example auth file 
+import BluePrints 
+auth  = Blueprint('auth', __name__)   #__name__ main file se aya  
+@auth.route()                                   # idhar @auth use karna hota he 
+def function_name():
+	return renderTemplate()                    
+### Main File Code #### 
+def create_app():               # for this type of impletation this function is imp check spell
+	app = Flask(__name__)
+	from .auth.py  import auth as auth_bluePrints() 
+	app.register_blueprints(auth_blueprints) 
+
+
+
+
+-------------------- base file for easy frontend  ------------------------
+
+{% python code %}  {{   variables  }}
+
+Template folder me base.html file bannen ka then as per need {% block head %} {% block title %}
+
+uske  {% endblock %} se close kareneka
+
+then for remaining body {% block content %} {% end block %} ye line base html me dalneka
+ or fir baki sab file me main body ka code isme likhneka  templating me nav or vo sab ayega
+ 
+
+
+
+
+----------------- Login System ---------------------------------
+from werkzeug.security import generate_password_hash , check_password_hash     #use for encyption easy method	
+for Login system and SignUP 
+html file me <form> elements se form banneka name attritube se data fetch hota he Imp term
+
+where to data fetch jaha par route or function define hota he vaha par apneko data milta he 
+for example @app.route('/login')    #from flask import request
+			def login():
+				email = requests.form.get('email')        # 'email' ye html me name attritube me define hota he 
+				password = requests.form.get('password')		# same pawword ke liye 
+
+badme isko database se match karneka
+
+to check user is already registered or not 
+user = user.query.filter_by(email=email).first()
+
+then user ko add karne ke liye 
+newUser = User(email=email,name=name,password=generate_password_hash(password,method('sha256')))   #User ye class he
+																									jo .model me define kiya he or andar uske paramater 
+
+
+--------------------  flask Login module session created ----------------------------
+
+data fetching on prevoius note 
+
+when data fetched from forms of html 
+
+
+
+
+
+-------------------------- database SQLALCHEMY --------------------------
+from flask_sqlalchemy import SQLALchemy
+db = SQLALchemy()
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite///db.sqlite'
+db.init_app(app)
+
+
+Make a new model.py file for database work 
+#import db from main file 
+from . import db 
+make class
+class User(db.Model):  #by deafault class name converted into table name  you can change this by __tablename__ = 'any' 	
+	name = db.Column(db.Interger , primary_key=True)
+	Email = db.Column(db.String(100) , unique=True)
+	password = db.Column(db.String(100))
+
+to create .db file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
