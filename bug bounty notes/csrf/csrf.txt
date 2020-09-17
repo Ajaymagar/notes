@@ -22,4 +22,22 @@ xhr.send()
 </script>
 
 
+To steal the csrf token make script which first extract the token and append to the url USE DOM #IMP
+
+
+# TIPs to bypass the csrf token 
+CSRF tokens are injected into forms and sensitive
+URLs but are rarely checked and validated on the server side.
+If currently logged in as user A then use the CSRF token of any other user B
+and check if the request of A is allowed via B's token. Then use this logic to
+bypass the CSRF protection.
+• Don't delete the anti-CSRF token parameter but put a blank inside its value
+and see if it works.
+• Put a random string with a similar length to that of the anti-CSRF token.
+Check to see if that works.
+• Check if the CSRF token is common to all users. If so, then use the token to
+construct an exploit.
+
+
+
 
