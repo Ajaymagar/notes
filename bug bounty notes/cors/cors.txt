@@ -1,0 +1,23 @@
+
+https://medium.com/entersoftsecurity/every-bug-bounty-hunter-should-know-the-evil-smile-of-the-jsonp-over-the-browsers-same-origin-438af3a0ac3b
+
+Cors Misconfigured 
+
+in cors attacker requests the server victim data if server trust the attacker its cors
+
+processs
+
+burp method
+in requests add the origin header
+
+origin : attacker.com
+
+response 
+access-control-allow-origin:  attacker.com  ,true , null 
+Access-control-allow-credentials:true
+
+if you get this response  its Cors
+
+using Curl Methods
+
+

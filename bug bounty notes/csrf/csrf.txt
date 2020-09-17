@@ -1,0 +1,25 @@
+
+
+
+csrf cross site requests forgery
+
+
+in csrf you have to manuplate the requests 
+
+select the endpoint and make your own requests like 
+
+http://127.0.0.1?parameter=value&change_password=value&new_password=value
+
+
+payload
+<script>
+
+xhr = XMLHttpRequest;
+xhr.open('GET' , 'url')
+xhr.send()
+
+
+</script>
+
+
+
