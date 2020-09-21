@@ -59,6 +59,38 @@ newUser = User(email=email,name=name,password=generate_password_hash(password,me
 																									jo .model me define kiya he or andar uske paramater 
 
 
+-------------------------- Flask Forms ------------------
+from flask_wtf import FlaskForm
+from wtforms import StringField , PasswordField , SubmitField
+
+make class of signup and login 
+#for example 
+
+class SignupForm(FlaskForm):
+	username = StringField('username')
+	password = StringField('password') 
+
+@app.route('/signup')
+def signup():
+	form = SignupForm()
+	if form.validate_on_submit():
+		username = form.username.data
+		password = form.password.data
+		
+	return render_template('signup.html' , form=form)
+	
+
+
+
+
+
+
+
+
+
+
+
+
 --------------------  flask Login module session created ----------------------------
 
 data fetching on prevoius note 

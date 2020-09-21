@@ -15,6 +15,12 @@ uniq -- remove duplicate lines from standard stdin
 xargs -- run a command using each line from stdin as aurgument 
 tee - copy stdin to a file to the screnn 
  
+
+# Redirection
+Overwrite  >     this delete the first  text and add the new
+Append >>         this syymbol is use for appending the text 
+
+
 ------------------- Varibales ---------------
 system Define Variables are in captial
 echo $BASh
@@ -157,15 +163,34 @@ grep -w "wordYouWant" filename  # -w flag is use to search the  word -i flag is 
 
 
 -------------------- sed Command -------------------------------
+sed work line by line
+Sed command is used for editing the file stream and it does a lot funtion like find and relace ,insertion ,deletion
+it scans the file line by line and excute command on each line 
+
+sed tools is use to replace one string fron another 
+
+sed 's/java/python/2' file.txt      # har line me 2 occurance  pe java python se replace hoga
+
+sed '2 s/java/python/g' rk.txt      # here 2 means the 2nd line
+
+sed '1,2 s/java/python/g' rk.txt    # range of line to change the string
+
+$sed '2,$ s/java/python/g' rk.txt 	#range from second line to last line
 
 sed 's/regex/replace/g' filename  
  
+sed 's/\s/p' file   \s is for space
+
+This* ==>  thi this thiss thisss            *s "s" zero time or many time 
+  
+this\s ==>  this thiss thisss             one time or many time 
 
 
 
 
+---------------------- sort command   --------------------------------
 
-
+sort -u  # remove the duplicate line from list
 
 
 

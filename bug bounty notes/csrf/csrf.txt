@@ -39,5 +39,8 @@ Check to see if that works.
 construct an exploit.
 
 
-
+Tools 
+somdev -- BOlt 
+in burpsuit there are extrension --csrfscanner 
+check rohit gautham mindmap for extra tools
 
