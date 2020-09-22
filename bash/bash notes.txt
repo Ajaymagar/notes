@@ -157,12 +157,21 @@ grep  commaand is use for searching the word  in file
 
 how to use the grep command 
 
-grep -w "wordYouWant" filename  # -w flag is use to search the  word -i flag is use for case insensitive    
+grep -w "wordYouWant" filename  # -w flag is use to search the  word -i flag is use for case insensitive  
+	-v print lines that Dont match the pattern  -l list the name of the file that match the pattern instead pf matching the lines   
+
+grep [ options … ] pattern-spec [ files … ]
+
 
 
 
 
 -------------------- sed Command -------------------------------
+
+https://medium.com/faun/https-medium-com-me-sanjeev3d-sed-awk-f25c77ae4d4f
+https://www.grymoire.com/Unix/Sed.html
+
+
 sed work line by line
 Sed command is used for editing the file stream and it does a lot funtion like find and relace ,insertion ,deletion
 it scans the file line by line and excute command on each line 
@@ -175,7 +184,13 @@ sed '2 s/java/python/g' rk.txt      # here 2 means the 2nd line
 
 sed '1,2 s/java/python/g' rk.txt    # range of line to change the string
 
-$sed '2,$ s/java/python/g' rk.txt 	#range from second line to last line
+sed '2,$ s/java/python/g' rk.txt 	#range from second line to last line
+
+sed '2d' rk.txt             # 2nd line will be deleted   d means delete
+
+sed  '/programming/ d' rk.txt  #delet line which match pattern
+ 
+sed -n '2,3p' rk.txt           # print 2 and 3 line p means print
 
 sed 's/regex/replace/g' filename  
  
@@ -185,7 +200,20 @@ This* ==>  thi this thiss thisss            *s "s" zero time or many time
   
 this\s ==>  this thiss thisss             one time or many time 
 
+sed -i '.original' 's/java/python/g' rk.txt    # this will create a backfile 
 
+sed -e  's/ajay/magar/g' 's/magar/ajay/g' file.txt   # use for multiple commands
+
+sed -f ajay.sed  # write multiple commands and save .sed file
+
+sed G file.txt #insert a blank line after each line
+
+sed pattern Flags 
+
+sed  /g -Global
+sed /I Ignore case 
+sed /p print 
+sed /w  filename	
 
 
 ---------------------- sort command   --------------------------------
