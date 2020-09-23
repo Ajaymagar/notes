@@ -1,0 +1,37 @@
+
+css Notes
+
+font-family: google font   check font in google font
+
+color : black       it change the font color of elements  
+background: black    it change the background color of elements
+text-align:center       it push the text into center            
+
+padding: top bottom right left
+margin : top botton right left
+
+border : 10px solid color   border to the elements 
+border-radius : 10px    its converts the  box radius into circular
+
+line-height:1;       add space between line
+
+backgound-image : url(path)  add image to the background
+background-position : bottom;
+background-reapt : no repeat          # image does not repeat
+background-size:cover                # it cover the full image
+
+box-shadow : 5px 5px 2px grey
+
+opacity : 0.8       # traansperant 
+
+position : realtive  #put this in parent div
+
+position : absoulate  # put this in child div
+
+position : fixed       for go to the bottom page go to the upper page like this
+
+transform : translate()   # to move elements
+
+transtion : background 3s ease     #use in animation
+
+

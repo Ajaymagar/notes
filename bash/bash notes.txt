@@ -205,6 +205,16 @@ sed -i '.original' 's/java/python/g' rk.txt    # this will create a backfile
 sed -e  's/ajay/magar/g' 's/magar/ajay/g' file.txt   # use for multiple commands
 
 sed -f ajay.sed  # write multiple commands and save .sed file
+ 
+echo "put a beer"  | sed -n  '/^put/p'          # ^ carrot mean search the word isn starting
+
+echo "put the pot" | sed -n '/pot$/p'           # $ mean check if  the word is prezent in the end  
+
+sed -n -i '/^$/d' file.txt     # delete the empty lines 
+ 
+sed -n '/\^/p'	file.txt            # IMP  \ this line destroy the special character feature
+  
+echo  'put' |  sed -n '/p[toy]t/p' file.txt         # regular rexpression
 
 sed G file.txt #insert a blank line after each line
 
@@ -214,6 +224,14 @@ sed  /g -Global
 sed /I Ignore case 
 sed /p print 
 sed /w  filename	
+
+
+
+
+
+
+
+
 
 
 ---------------------- sort command   --------------------------------
