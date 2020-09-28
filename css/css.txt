@@ -1,7 +1,38 @@
 
 css Notes
-
+------------------------------       Font section     -------------------------------------
+font section
 font-family: google font   check font in google font
+how to store font in css file 
+@font-face{
+
+    font-family: "Raleway-regular";
+    src:url(./fonts/Raleway-Regular.ttf)
+}
+make font folder and store the font in that folder download font from google font
+
+---------------------------------------------------end -------------------------------------
+
+--------------------------------------- Color ---------------------------------------
+how to store color in variables 
+
+:root{
+
+    --primary: #EEBF00;
+    --primary: #EEBF00;
+    --secondary: #232B38;
+    --ternary: #6C6C6C;
+    --danger: #FE4545;
+    --pure: #FEFEFE;
+    --light: #F0F0F0;
+    --heaven:#FFFFFF;
+    --footer: #2D333F;  
+ 
+}
+ 
+
+
+
 
 color : black       it change the font color of elements  
 background: black    it change the background color of elements
@@ -33,5 +64,9 @@ position : fixed       for go to the bottom page go to the upper page like this
 transform : translate()   # to move elements
 
 transtion : background 3s ease     #use in animation
+
+text-transform:uppercase;
+
+
 
 
