@@ -13,6 +13,8 @@ make font folder and store the font in that folder download font from google fon
 
 ---------------------------------------------------end -------------------------------------
 
+
+
 --------------------------------------- Color ---------------------------------------
 how to store color in variables 
 
@@ -29,7 +31,7 @@ how to store color in variables
     --footer: #2D333F;  
  
 }
- 
+   
 
 
 

