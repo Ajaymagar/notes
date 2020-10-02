@@ -157,8 +157,19 @@ grep  commaand is use for searching the word  in file
 
 how to use the grep command 
 
-grep -w "wordYouWant" filename  # -w flag is use to search the  word -i flag is use for case insensitive  
-	-v print lines that Dont match the pattern  -l list the name of the file that match the pattern instead pf matching the lines   
+grep -w "wordYouWant" filename  # -w flag is use to search the exact word -i flag is use for case insensitive  
+	-v print lines that Dont match the pattern/word  -l list the name of the file that match the pattern instead pf matching the lines  -o to display the only matched pattern  -c is use to display the no of line which have pattern/word
+	
+grep -A 1 "above" test.txt    after finding above pattern/word print next line also
+
+grep -B 1 "serach_word" file.txt  after finding serach word print previous line
+ 	
+	
+	
+	  
+
+you can give multiple files as input 
+
 
 grep [ options … ] pattern-spec [ files … ]
 

