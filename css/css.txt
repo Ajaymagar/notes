@@ -35,3 +35,19 @@ transform : translate()   # to move elements
 transtion : background 3s ease     #use in animation
 
 
+_______ Flex __________________
+
+flex use karne ke liye main div jo rahtha he usme display:flex likho 
+
+
+fir uske child div me flex:1 ,2, 3 aise ayega isse uska size chota bada hoga 
+
+flex grow or flex shrink size chota bada karne ke liye hi use karte he
+
+
+
+
+
+
+
+
