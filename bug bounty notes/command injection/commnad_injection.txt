@@ -1,0 +1,18 @@
+
+os command injection 
+
+https://www.hackingarticles.in/commix-command-injection-exploiter-beginners-guide/
+
+tools 
+
+commix inbuilt tool 
+
+
+os command injection is posiible here are many situations when the developers try to include some functionalities into their web application by making the use of the operating system commands. 
+
+
+
+
+Metacharaters 
+
+

@@ -231,6 +231,24 @@ btn for button btn-primary  aise clasess color ke liye
 
 
 
+--------------------- list group classes in bootstrap -----------------
+
+
+ye classes se apan ek table type banna sakthe he 
+
+<ul class="list-group">
+<li class=" list-group-item  list-group-item-primary"> list-item-1  </li>
+ <a href="" class="list-group-item list-group-item-action"> list Item  0 </a>
+</ul>  
+
+
+
+----------------------- form classes ------------------- 
+
+
+
+
+
 
 
 -----------------------------------navbar  components
