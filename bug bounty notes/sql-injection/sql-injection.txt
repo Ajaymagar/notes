@@ -1,0 +1,21 @@
+
+
+sql injection 
+
+tools 
+sql map 
+
+
+first find a place where database are used like in our login page we used database for checking
+username and password 
+
+in input field put sql symbols  
+' " order_by and like this see any error is coming or not  
+
+some usefule sql command for injection 
+
+--  start of the comments 
+OR Either of the input should be true
+AND  both of the input  should be true 
+1=1  A statement is always true
+

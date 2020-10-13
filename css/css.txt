@@ -84,7 +84,12 @@ flex grow or flex shrink size chota bada karne ke liye hi use karte he
 
 
 
+---------------------------------------------css Unit -----------------------------------------  
 
+px is fixed unit  
+
+em and rem  em is depend on int parent div 
+ rem is not depended on parent div its used root measurement and browsers width and height
 
 
 

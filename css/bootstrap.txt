@@ -1,0 +1,241 @@
+
+
+Bootstrap 
+
+--------------------class container and container-fluid -------------------------
+
+conatiner class add margin of right left 16px and put the content in the middle of page 
+
+container-fluid class take the full width of page 
+
+--------------------------------------------- end ------------------------------------
+
+
+website layout is made by 3 main class container row col 
+
+
+row is main classs we can made as many as we want 
+
+there are  12 col in page  
+
+<div class="row">
+
+<div class="col-lg-8 col-md-4">                #  jab large screen hoge tab 9 col lega or jab md screen hoga tab 4 col lega 
+ 
+	<p> lorem  </p>         col-md  iska matlab ye property medium large or extra large pe chalegi uske niche chnage
+ 
+</div>
+
+<div class="col-lg-4 col-md-8">                   # lab large screen lega tab 4 col hoag or jab md screen hoga tab 8 col hoga
+
+
+<ul>
+
+li classses 
+
+</ul>
+
+</div>
+
+</div>
+  
+
+OFFSET class ------- col class ka helper class he  
+
+
+                <div class="row">
+                    <div class="col-md-5  offset-md-3  pink">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, reprehenderit!
+                    </div>
+
+offset class content ko push karti he age for example offset-3 likha to 3 ka gap ayega bich me or content 3 col age chala jayega 
+
+offset-md-3  offset-lg-4     is type class se responsive ness badgea
+
+
+
+---------------------------- reording classes  ---------------------------------------
+
+.order-first .order-last this classes are use to reoder the col in web page 
+
+
+.order-3    .order-4     isee apan content ka order change kar sakthe he 
+
+
+order-md-1  order-md-2          for responsive website
+
+
+
+------------------------- margin padding in bootstrap -----------------------------
+
+
+.m-auto  .ml-auto  .mr-auto
+ 
+
+  size  0-5
+ margin  ==         .m-
+ 
+ margin-right   ==    .mr-
+ 
+ margin-left  ===    .ml-
+ 
+ margin-top        ==  .mt-
+
+ margin-bottom     ==     .mb-*
+
+
+for responsive use breakpoints   
+
+for margin   m-xl-n  m-lg-n    like this
+
+margin left  ml-lg-n   ml-md-n
+
+
+
+------------------------------ padding in bootstrap ---------------------------
+
+padding == .p-
+
+padding-left = .pl-
+
+padding-right = .pr-
+
+padding-top == .pt-
+
+padding.bottom == .pb-
+
+
+
+same as margin all the preocess  for responsive use lg md sm
+
+
+------------------------------- Alignment in bootstrap --------------------------
+
+horizontal alignment me justify-content center - space-between space-around ye sab atta he 
+
+
+Vertical alignment
+
+align-items-start                      # align items ka matalb content kaha pe ayega for example ek row he 100vh ka matlab
+align-itmems-end						pura screen fir apan ne align-items-center diya to content center pe ayega
+align-items-center               				
+
+
+align-content 
+
+align-content                      #align-content verticallya content ko control karne me nam atta he for example ek row me 									bhaur sare col he to 2 3 row ban jayegi fir usko manipulate kar sakthe 
+
+align-content-center 
+align-content-between 
+align-content-space
+
+
+
+align-self-*             # ek particular div ko target karne ke liye ye class use karne ka  
+
+align-self-center -start - end 
+
+
+
+
+
+----------------- Flex direction ---------------
+
+flex.row           #this is deafault 
+
+flex.row-reverse        isse order reverse hoga
+
+flex.column            					isse col vertical me aa jate he
+flex.column-reverse                  isse order reverse hoga 
+
+flex-fill            ye sirf col class pe chalta he or pura width le leta he 
+
+
+
+
+---------------------- display class -------------------------
+display ki sari class bottstapr me available he .d-*  aise format me 
+	display :none = .d-none 
+	display:flex
+	display:block 
+	display:table  == .d-table
+
+
+	display:block            block ka matlab content pura width le leta he container me
+	display:inline-block       inline block ka matlab ek hi row me 2 div atte he 
+
+
+
+----------------------------------- float class in flex --------------------
+
+float-left 
+
+float-right                   float se content apan right left me leke ja sakthe he 
+
+ .clearfix                 # ye class parent div me lagane ka isse error remove hota he content container me hi rahtha he  
+
+
+ ------------------------------- position and overflow  in bootstrap -------------- 
+
+
+.fixed.top 
+fixed.bootom 
+.sticky-top           
+
+
+.overflow-auto               ye class scoll bar activate karne ke liye use ki jati he tab jab content overflow ho jata he
+ 
+
+------------------ margin padding --------------- 
+
+py-*        ye class se top or bottom ko padding ati he content ko
+
+px-*       ye class se right and left se padding ati hr content ko 
+
+
+col class me 15px deafault padding ati he 
+row class me -15px deafault padding ati he inko hatane ke  liey 
+ek special class hota he  .-no-gutters
+
+
+
+-------------------------------- background color classes ---------------------------
+
+backgrond                   text-color 
+.bg-primary   				.text-primary 
+.bg-secondary 				.text-danger 
+.bg-siucess 				.text-info
+.bg-dark					.text-success 
+
+
+------------------------ text formatting ------------------------- 
+
+.lead ye  class  paragraph me use karte he 
+
+.display-* ye class  like h1 h5 ki tarah he 
+
+
+.list-unstyled      list ka style none hoga
+
+
+list ko horizonal me karne ke liye  .list-inline 
+
+user-select-all   text copy karne ke liye 
+user-select-none   restricstion on copying the text 
+
+
+------------------ btn classes in bootstrap -----------------
+
+btn for button btn-primary  aise clasess color ke liye 
+
+
+
+
+
+
+-----------------------------------navbar  components
+
+.navbar-brand  for your  company , product , project name 
+
+
+
