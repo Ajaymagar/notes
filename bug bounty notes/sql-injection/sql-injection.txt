@@ -1,5 +1,5 @@
 
-
+https://www.exploit-db.com/papers/13045          --- imp writeup
 sql injection 
 
 tools 
