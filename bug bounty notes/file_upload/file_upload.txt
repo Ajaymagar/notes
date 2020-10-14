@@ -55,6 +55,10 @@ BlackListing file-extension
 if .php in blacklisted use .php3
 developers sometime forget case insenstive  use PHP Php PHp pHP like this
 
+_______ tip from twitter ---------------- 
+want to bypass file upload add ' ' . '  file.php'    file.php.
+
+
 phtml
 php3
 php4
