@@ -1,13 +1,4 @@
-/**
-* Template Name: MyResume - v2.1.0
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -247,10 +238,30 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top right no-repeat;
-  background-size: cover;
+  /* background: url("../img/hero-bg.jpg") top right no-repeat; */
+  /* background-size: cover; */
   position: relative;
 }
+
+#part {
+  background-color: black;
+  /* position: fixed; */
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#overlay {
+  position: relative;
+  padding: 50px;
+}
+
+
 
 @media (min-width: 992px) {
   #hero {
@@ -273,18 +284,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
-  color: #45505b;
+  color: #aab4be;
 }
 
 #hero p {
-  color: #45505b;
+  color: #aab4be;
   margin: 15px 0 0 0;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
-  color: #0563bb;
+  color: #28a745;
   letter-spacing: 1px;
 }
 
@@ -295,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: #45505b;
+  color: #aab4be;
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
@@ -395,7 +406,13 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
+  
 }
+
+#ab{
+  font-size: larger;
+}
+
 
 /*--------------------------------------------------------------
 # Facts

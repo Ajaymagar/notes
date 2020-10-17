@@ -4,6 +4,23 @@ Flask is a pytho web FrameWork
 is based on Wsgi web server gateway Interface which is use for concurrency 
 
 
+
+-------------------------- vitual env -----------------
+
+
+
+
+
+
+
+
+--------------------------- end ----------------------
+
+
+
+
+
+
 BluePrints is for  file system 
 import BluePrint 
 

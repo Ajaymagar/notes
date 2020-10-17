@@ -246,7 +246,12 @@ ye classes se apan ek table type banna sakthe he
 ----------------------- form classes ------------------- 
 
 
+har input pe .form-control class ayegi
 
+
+
+
+--------------------- input classes ------------------
 
 
 
