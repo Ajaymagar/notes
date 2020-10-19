@@ -1,0 +1,116 @@
+
+
+
+
+
+
+
+jquery classes 
+
+
+
+---------------------------------------classes add karne ke liye methods ----------------------- 
+
+addClass()
+removeClass()
+toggleClass()                  #toggle class matlab class hoga to remove kar or nahi hoga to add kar 
+
+
+<script>
+
+$('#addbutton').click(function(){
+
+	${#box , h1}.addClass(" classname")	
+
+});
+
+</script>
+
+---------------------------------------------------------- end ----------------------------------------------
+
+
+------------------------------------- jquery css methods  -----------------------------------------
+
+jquery se css kaise add karne ka  
+css()  ye methods se apan inline css add kar sakthe he 
+
+.css('background' , "pink")
+.css({"bg":"black","color":""})
+
+
+----------------------------------------- css ---------------------------------
+
+------------------------------------ on off methods ----------------------
+
+$(document).ready(function(){
+	$().on({
+
+	"click":function(){
+
+		$(this).css("background","orange");
+	},
+
+	"mouseover":function(){
+
+	$(this).css("background":"red")
+
+	},
+
+
+
+});
+
+});
+
+.off function jo on function hote he unke liye hota he 
+
+
+
+-------------------------- appand prepend event in jquery ----------------------------------- 
+
+$(document).ready(funtion(){
+	$("#id).click(function(){
+
+	$('this').append("<h2>Yaho baba</h2>")
+
+
+	$('this').prepand("<h2>Yaho baba</h2>")
+
+
+	})
+})
+
+
+----------------------------------- after and before event --------------------------
+
+append or prepend se apan div ke andar kuch bhi add kar sakthe 
+
+after or before se apan div ke bhare add kar sakthe he 
+
+
+---------------------- AJAX in Jquery ----------------------------
+
+======== get methods ====================
+$.get(URL , callback)
+$.get('test.txt',function(data , status){
+	
+	$("#id").html(data)
+	alert(status)
+
+})
+
+
+==================== post methods =========================
+$.post(URL , data  , callback)
+$.post('')
+
+
+
+
+
+
+
+
+
+
+

@@ -50,7 +50,7 @@ auth.onAuthStateChanged(user=>{                #onAuthStateChanged is ek lister 
 
 
 
------------------------------ firestore notes -----------------------------
+----------------------------- firestore database   notes -----------------------------
 
 firestore is database of firebase         	 #firestore me collection hota he or collection me docs rahtha he
 						firebase nosql pe chalta he to json format me data store hota he 
@@ -59,4 +59,19 @@ const db = firebase.firestore()
 
 
 db.collection('collection_name').get() .add()              .get() se database ka data access kar sakthe he or add() se add kar sakthe he 
- 
+
+form se data extract karne ke liye submit ka eventlistner lagane ka like 
+
+form.addEventListner('submit',()=>{})
+
+db.collection.add({
+	
+	name : form['name'].value,
+	email : form['email'].value
+})
+
+db.collection('collection_name').get().then() ye he amm zindgi 
+
+db.collection('collection_name').onSnapShot()  ye he mentos ki zindgi   ye method se realtime me database acces kar sakthe he 
+
+--------------------------------------------------------- end -------------------------------------------------------------
