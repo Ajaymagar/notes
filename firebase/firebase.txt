@@ -1,0 +1,62 @@
+
+
+
+
+
+firebase notes 
+
+
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+ye files sabse upar ayegi 
+fir config ayega or config ek variable me store karke rakhne ka ye config firebase ke console me milega 
+
+
+ Initialize Firebase
+        firebase.initializeApp(firebaseConfig);                       #firebase ko initialize karneka ye syntax he 
+								fireConfig ye vo variable he jisme apan config store karke rakthe he 
+															
+
+
+
+ -------------------firebase auth notes  ----------------------------
+
+const auth = firebase.auth()      # iss line se apan sab auth ka kam kar sakthe he 
+
+
+
+
+auth.createUserWithEmailAndPassword(email , password).then((cred)=>{                # signup form ke liye ye line use hoti he email oe password se data lene ka			
+											vo asynchrous he to promise return karta he 
+												
+
+})
+
+
+auth.signInWithEmailAndPassword(email, password).then((cred)=>{
+
+})
+
+
+auth.signout()                #signout ke liye
+
+
+auth.onAuthStateChanged(user=>{                #onAuthStateChanged is ek lister he user pe condition lagake login he ki nahi 
+						or uske realted sab operation kar sakthe he  
+})
+
+
+
+----------------------------- firestore notes -----------------------------
+
+firestore is database of firebase         	 #firestore me collection hota he or collection me docs rahtha he
+						firebase nosql pe chalta he to json format me data store hota he 
+						docs apan har ek bande ka info store karne ke liye use kar sakthe he 
+const db = firebase.firestore()
+
+
+db.collection('collection_name').get() .add()              .get() se database ka data access kar sakthe he or add() se add kar sakthe he 
+ 
