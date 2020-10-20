@@ -105,11 +105,31 @@ $.post(URL , data  , callback)
 $.post('')
 
 
+================== empty methods in jquery =================
+
+.empty()  ye methods se div ke andar ka content gyab ho jayega
+
+.remove() ye methds se pura div delete ho jata he 
+ 
+
+
+ =============================== appendTO and prepandTO =================================
+
+.appendTO()           same working as append and prepand 
+.prepandTO()		
 
 
 
+================================= clone methods =============================
+
+{
+	
+	$('#box1').clone.appendTo('#box2')
 
 
+}
+
+==================================== ReplaceWith and ReplaceAll methods ===================================== 
 
 
 

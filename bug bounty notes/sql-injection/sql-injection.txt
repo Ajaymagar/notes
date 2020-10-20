@@ -149,7 +149,18 @@ nmap -sV --script=http-sql-injection www.testphp.vulnweb.com –p 80
 
 
 
+---------------------- header based sql injection ----------------------------- 
 
+headers based dundhne ke liye burp use karo 
+login system ka requests capture karo mosty tabhi data database me store hota he 
+host , user-agents , refer . location   in sabke samne / do or error aa raha he ky check karo 
+
+
+
+-------------------- cookie ------------------------
+login karo fir page refresh karo or requests ko accpet karo 
+
+jis requests me cookie parameter hoga usko test karo 
 
 
 
