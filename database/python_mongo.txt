@@ -1,0 +1,16 @@
+
+
+
+
+in c drive make data name folder and db folder in it           # 
+
+form pymongo import Mongoclient 
+
+url = ""   #url me id password dalna rahthe he databse acces ka  button me username and password rahtha he   
+
+cluster = Mongoclient(url)         #isme url ayega jo cluster ke connnet button mi milta he python  3.4 chose karna 3.6 me 										bug he  
+
+db = cluster['database_name']                  #chatapp matlab databse ka nam 
+collection = db['collection_name']        			#collection name 
+
+collection.insert_one(post)        .insert_one ye methods se apan data push kar sakthe he datbase me 

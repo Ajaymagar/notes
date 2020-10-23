@@ -1,0 +1,25 @@
+
+
+==================================   tinymce   blog site me content likhne ka atta he ===========
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.5.1/tinymce.min.js" integrity="sha512-rCSG4Ab3y6N79xYzoaCqt9gMHR0T9US5O5iBuB25LtIQ1Hsv3jKjREwEMeud8q7KRgPtxhmJesa1c9pl6upZvg==" crossorigin="anonymous"></script>
+
+ye cdn ka link he 
+
+<script>
+tinymce.init({
+    selector: "#myarea"
+}) 
+</script>               ye code se initialize hoga    jo selector he  id #myarea usko form me dalkneka textarea ke tag me or form ka method post ayega
+
+
+html code 
+
+<form method="POST">
+
+        <textarea  id="myarea">  </textarea>
+    </form>
+    
+
+============================================================= end ======================================================
+

@@ -2,7 +2,7 @@
 
 
 
-
+$('#box p').wrap()
 
 
 jquery classes 
@@ -105,12 +105,67 @@ $.post(URL , data  , callback)
 $.post('')
 
 
+================== empty methods in jquery =================
+
+.empty()  ye methods se div ke andar ka content gyab ho jayega
+
+.remove() ye methds se pura div delete ho jata he 
+ 
+
+
+ =============================== appendTO and prepandTO =================================
+
+.appendTO()           same working as append and prepand 
+.prepandTO()		
 
 
 
+================================= clone methods =============================
+
+{
+	
+	$('#box1').clone.appendTo('#box2')
 
 
+}
+
+================================= wrap amn unwrap ===================== 
 
 
+$("#box p").wrap("<h2></h2>")     jo p tag he vo h2 ke andar jayega 
+
+================================== width and height metods in jquery ================================
+
+.width('400px')                aise apan width set kar sakthe he 
+.innerwidth()
+
+.height()                 aise apan height set kar sakthe he 
+innerheight()
 
 
+======================================== position and offset ==========================
+
+position -Relative to its Parent elements  
+offset  -Relative to the document 
+
+
+============================= animate ===============================
+
+jquery animate methods 
+
+.animate({
+			
+	left:"",
+	height:"",
+
+})
+
+=================== stop ============================
+
+.stop()  ye methos se animation or jo bhi process he vo stop ho jayegoi 
+           iske parameter bhi hote he 
+
+======================== methods chaining =================
+
+In method chaning you can chain the methods  
+.css().slideUp().slideDown()
