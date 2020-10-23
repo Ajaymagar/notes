@@ -2,7 +2,7 @@
 
 
 
-
+$('#box p').wrap()
 
 
 jquery classes 
@@ -129,8 +129,43 @@ $.post('')
 
 }
 
-==================================== ReplaceWith and ReplaceAll methods ===================================== 
+================================= wrap amn unwrap ===================== 
 
 
+$("#box p").wrap("<h2></h2>")     jo p tag he vo h2 ke andar jayega 
+
+================================== width and height metods in jquery ================================
+
+.width('400px')                aise apan width set kar sakthe he 
+.innerwidth()
+
+.height()                 aise apan height set kar sakthe he 
+innerheight()
 
 
+======================================== position and offset ==========================
+
+position -Relative to its Parent elements  
+offset  -Relative to the document 
+
+
+============================= animate ===============================
+
+jquery animate methods 
+
+.animate({
+			
+	left:"",
+	height:"",
+
+})
+
+=================== stop ============================
+
+.stop()  ye methos se animation or jo bhi process he vo stop ho jayegoi 
+           iske parameter bhi hote he 
+
+======================== methods chaining =================
+
+In method chaning you can chain the methods  
+.css().slideUp().slideDown()
