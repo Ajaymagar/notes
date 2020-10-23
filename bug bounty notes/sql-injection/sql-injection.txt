@@ -1,4 +1,5 @@
 -------------------------------- imp writeup -------------------------
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
 https://www.exploit-db.com/papers/13045          
 https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#SyntaxBasicAttacks 
 

