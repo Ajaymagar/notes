@@ -169,3 +169,25 @@ jquery animate methods
 
 In method chaning you can chain the methods  
 .css().slideUp().slideDown()
+
+
+=============================== preventdeafault() ============
+
+e.preventdefault() se form submit nahi hota submit se hi form submit hoat he 
+
+
+=========================== stopPropagation() ======================== 
+event bubbling ka issue ke remove karne ke liye apan ye use karte he 
+for example child div or parent div pe dono pe click event he or apan ne child div pe click kiye to parent div ka event bhi trigger ho jata he 
+
+isko remove karne ke liye 
+
+
+=====================================   Carousel plugin ============== 
+
+
+
+
+
+
+

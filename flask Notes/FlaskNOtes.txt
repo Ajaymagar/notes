@@ -8,18 +8,26 @@ is based on Wsgi web server gateway Interface which is use for concurrency
 -------------------------- vitual env -----------------
 
 
-
-
-
-
-
+python -m venv virtual             #  iss virtual environment create hoga folder me  
+					ek folder create hoga virtual nam se uske andar script/activate nak ke file honge 
+					active karneka 
+				
 
 --------------------------- end ----------------------
 
 
+------------------------------- flask config -----------------------------------------------
+pip install python-dotenv 
+
+.env file     banane ke  or usme sab config rakhne ka 
+mongo_url_api_token = "api-token-password-other configration"
 
 
+import os 
+url_token_config = os.environ.get("config_name")
 
+--------------------------------------- end ----------------------------------------------------
+-----------------------------------  blue prints ---------------------------------------------
 
 BluePrints is for  file system 
 import BluePrint 

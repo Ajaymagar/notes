@@ -13,4 +13,29 @@ cluster = Mongoclient(url)         #isme url ayega jo cluster ke connnet button 
 db = cluster['database_name']                  #chatapp matlab databse ka nam 
 collection = db['collection_name']        			#collection name 
 
+post = {
+
+"_id":0,
+"name":"ajay"
+
+}
+
 collection.insert_one(post)        .insert_one ye methods se apan data push kar sakthe he datbase me 
+
+user = collection.find_one({"name":"ajay"})       isse pura document ka info aa jayega like
+print(f"{user['name']} , {user['age']} , {user['salary']}")         isse data milega
+
+for updating data 
+
+user = collection.find_one({"name":"ajay"})
+user["name"] = "pari"
+user['age'] = 45
+collection.save(user)              # isse update hoag
+
+--------------- for deleting data ------------------- 
+
+user = collection.find_one({"name":"ajay"})
+collection.remove(user)
+
+
+

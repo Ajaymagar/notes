@@ -1,6 +1,7 @@
 
 javascript notes
 
+
 day 1
 console.log('hello world')
  it is a print function in javascript 
@@ -79,6 +80,19 @@ let result = add(5,4)
 console.log(result)
 
 
+--------------------------------------- format specifier in javascript ------------------ 
+%s Formats the value as a string
+%i or %d Formats the value as an integer
+%f Formats the value as a floating point value
+%o Formats the value as an expandable DOM element
+%O Formats the value as an expandable JavaScript object
+%c Applies CSS style rules to the output string as specified by the second parameter
+
+
+
+
+
+
 --------------------------------    end      -------------------------------------------------
 
 
@@ -110,7 +124,7 @@ array.forEach(function(value , index , array){
 
 array = ['ajay','pari','trisha','tannu']
 
-array.forEach(function(value,i){
+array.forEach(function(value,i){                # i is the index no 
 
     console.log(value + ' ' + i);
 
@@ -217,7 +231,7 @@ var x = 1
 
 # example 
 
-var x = 
+var x = 10
 
 while(x<=10) {
     console.log('put the statement here')
@@ -244,14 +258,19 @@ do{
 
 
 
+
+-------------------------DOCUMENT OBJECT MODEL --------------------------------------------------- 
 day  11 
 
-DOCUMENT OBJECT MODEL 
+
 DOM   manipulation   # in DOM manipulation we can acces html elements by id class and we can manipulate them
 
-document.getelementById('id_value of html tag').textContent='value to be changed'
+document.getElementById('id_value of html tag').textContent='value to be changed'
 
 <p id='ajay'> hello world </p>
+
+document.creatElement("p")       #isse element create hoga
+document.appendChild(variable , element ) 				# 	sabse end me append hoag
 
 --------------------------------    end      -------------------------------------------------
 
@@ -272,7 +291,7 @@ in python we use .self here we use .this method
 
 
 class user{
-    construter(firstname.lastname,score){
+    construter(firstname,lastname,score){
         this.firstname = firstname;
         this.lastname = lastname;
         this.score = score;
@@ -371,25 +390,7 @@ hey hello
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------------- end -------------------------------------------
 day 17
 
 promise in javascript 
@@ -412,28 +413,126 @@ ajay.catch((message) =>{
 })
 
 
+chaining in promises  
+
+const  fun = (resolve , reject){
+
+let ajay = 4
+if (ajay == 4){
+
+	resolve('value is true')
+
+}else{
+
+reject('value is false')
+
+}
+}
+
+fun().then(()=>{
+
+	console.log("true")
+	return fun();	
+}).then(()=>{
+	console.log('hello')                       # promise chaning me apan .then me fir se ek promise create kar sakthe he for example return fun() fir vo current
+}).catch(err=>{						.then() khtam hone ke badd fir ek .then() add kar sakthe he .catch(err)end me sabko applicable he 
+ end me a 	console.log(err)	
+})
+
+
+
+---------------------------------------------- end -----------------------------------------------
+
+
+------------------------------------- XMLHttpRequests() ---------------------------------
+
+ye purrana method he api se data lene ka or deneka  cross platform  vala seen he ye 
+
+const requests = new XMLHttpRequests()
+
+requests.open("GET" , "url")
+requests.send() 
+
+fetch()  ye naya or easy method he 
 
 
 
 
+------------------------------------------- fetch ------------------------------------------------------------
+
+
+fetch().then()
+.catch()                             fetch(url="")       fetch api se data collect karne ke liye use hota he fetch promise rerturn karta he 
+								fetch me url parameter hte he  localhost ka file bhi include kar sakthe he          
+
+
+
+------------------------------------  end -----------------------------------------------------
+
+
+================= async and await ============================= 
+
+
+const asyncronus_function = async ()=>{
+	
+	
+	const response  = await fetch('')                 # async se ye function asynchronous ho gaya 						
+	const data = await response.json()						await promise create karta he jabtak promise resolve 
+														nahi hota tab tal response pe data nahi jayega 
+															same jab response,json bhi promise he resolve nahi 	
+															hoga tabtak data me data nahi jayega
+}
 
 
 
 
+======================================== end ================================================
 
 
 
 
+============== Array like object and arrays ====================== 
 
 
+array_like_object = {
+	
+	a:1,
+	b:2,
+	c:3
+}
 
+normal_array = [ "a" , "b" , "c" ]
 
+normal_array.push('data')       add at the end 
+normal_array.unshift('data')     add the first 
+normal_array.pop('data')    remove from end
+normal_array.shift()     remove from first 
 
+multiple_array = [ [1 , 1.6 ]  , [-5.4 ,2.1] ]
 
+.splice(index , item_for_delete , data_to_insert)
 
+for (datas in multiple_array){
+	for (data in datas){
+		console.log(data)
+	}
+}
 
+const array = Array.from(nodelist)         # jab apan dom se elements select karte he to vo arary me atte he nodelist 
+											nodelist pe apan jadya operation nahi kar sakthe us case me ye Arry.from() use karneka
 
+array like object cant acces the normal_array function like push() , pop() , shift() , unshift() , filter() , slice()
 
+javascript object ko acces kaise kare  
+
+name = {
+	
+	username : "ajay",
+	age:45,
+	email:"magarajay538@gmail.com"
+} 
+
+window.alert(name.username)
 
 
 
