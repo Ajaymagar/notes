@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatRoom</title>
+</head>
+<body>
+    
+    <h1>Welcome to the Chat room {{ room }} </h1>
+    <div id="message"></div>
+    <div id="messageContent"></div>
+
+    <form id="mesage_input_form">
+        <input type="text" id="mesage_input"  placeholder="enter your Message">
+        <button type="submit">Send</button> 
+            
+    </form>
+    
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<script>
+
+ const socket = io.connect('http://127.0.0.1:5000')
+
+ socket.on('connect',function() {
+     socket.emit('join_user',{
+         username:"{{ username }}",
+         room:"{{ room }}"
+     })
+ })
+
+let message_input = document.getElementById('mesage_input')
+document.getElementById('message_input_form').onsubmit = function(e){
+    e.preventDefault();
+    let message = message_input.value.trim();
+    if (message.length){
+        socket.emit('send_message',{
+            username:"{{ username }}",
+            room:"{{ room }}",
+             message: message
+        })
+    }
+    message_input.value = '';
+    message_input.focus();
+
+}
+
+
+socket.on('join_room_announcement',function(data){
+    console.log(data)
+    const newNode = document.createElement('div')
+    newNode.innerHTML = `${data.username} joined the room `
+    document.getElementById('message').appendChild(newNode)
+
+})
+
+socket.on('receive_message' , function(data){
+
+const message = document.getElementById('messageContent')
+message.innerHTML = ` <b>${data.username}</b>   ${data.message} `
+
+})
+
+
+</script>
+</html>

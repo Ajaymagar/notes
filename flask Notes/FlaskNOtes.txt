@@ -1,6 +1,6 @@
 
 
-Flask is a pytho web FrameWork 
+Flask is a python web FrameWork 
 is based on Wsgi web server gateway Interface which is use for concurrency 
 
 

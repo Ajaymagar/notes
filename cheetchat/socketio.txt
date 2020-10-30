@@ -1,0 +1,51 @@
+
+
+
+socket io is a event based    isme event ke uper kam hota he 
+
+pip install flask-socket.io
+
+
+socketio = SocketIo(app)
+
+socketio.run(app)  #end me if statement ke niche dalneka
+
+
+
+
+client side code 
+
+socket.io ka min file include karneka 
+
+<script>
+
+const socket = io.connect('http://127.0.0.1:5000')             # ye io.connect() socket.io ke min file se aya 
+
+socket.on('',function(){
+	socket.emit('join_room',{
+
+	username:"{{ username }}",         # ye data apan server side me acces kar sakthe he 
+	room:"{{ room }}"
+
+	})
+}) 
+
+
+</script>
+
+
+
+
+
+
+------------------------------------------------server side code ----------------------------
+from flask_socketio import join_room
+@socketio.on('join_room')              # join_room ye event clinet side me emit kiya the or udhar username or roomid 
+def handle_join_room_event(data):			tha vahi info as data apan code me use karte he 
+	print(f'{data['username']} has joined the room {data['room']}')
+
+	socketio.emit('join_room_announcment',data)
+
+
+
+
