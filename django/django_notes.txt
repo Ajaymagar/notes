@@ -1,0 +1,33 @@
+django notes 
+
+to start a project first make a folder then open cmd 
+1. django-admin startproject projectname
+2 to run the project python manage.py runserver this command is there 
+
+
+
+3. for adding app command is python manage.py startapp appname after adding app also add in installedapp which is in setting.py
+
+4. for migration python manage.py migrate 
+
+
+
+basic working of django 
+
+in urls.py  django.urls se path ko import karneka 
+
+urlpatterns = [
+
+	path('/',viesws.home , name="home")      views ye file ka nam he views.py '/' 
+
+]
+
+
+==============================================views.py======================
+
+yaha pe home function banega  
+
+def home(requets):
+	return HttpResponse("content")
+	
+

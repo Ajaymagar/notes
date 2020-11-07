@@ -1,0 +1,48 @@
+
+
+
+node js is a runtime of javascript we can run code in command line 
+
+if we using nodejs in command line then document.write window.something this lines not work 
+
+
+npm init -y          ye pahela command he project chalu karne ke liye 
+
+npm install -g nodemon  ye ek hi bar karna padta he start me bad me har project use kar ssakthe he 
+
+npm install libname --save-dev  
+ 
+nodejs me ejs view enjine he matlab backend ke variable frontend me show kar sakthe he  
+like jinja template  
+
+boler plate code 
+
+exxpress.js ye server side vali lanuaguage he node.js me 
+
+
+const express = require('express')
+
+const app = express()            # npm install express  
+
+app.set('view enjine','ejs')        #take care of syntax   # npm install ejs ek folder banana anything usme index.ejs
+
+# yaha pe .ejs exten hote he .html nahi or data fetch ke liye 
+
+index.ejs ke andar = <script>console.log('<%=  variable_name   %>')</script>
+
+
+app.use(express.static('public'))       # ye static folder he isme sab satic file ayega just like flask
+
+
+app.get('/',(req , res)=>{
+ 	res.render('index.ejs',{key:value})              template render karne ke liey render uske age value variable
+
+})       
+
+PORT = preocess.env.PORT || 3000                  # yaha pe process.env matlab python vala os same work
+ 
+app.listen(PORT , ()=>{
+
+console.log(PORT)
+})
+
