@@ -16,9 +16,14 @@ basic working of django
 
 in urls.py  django.urls se path ko import karneka 
 
+from django.urls import path , include            # include ue function dusre app se url.py ki file ko include karne ke liye use hoti he
+from login.views import login                  # dusre app ke views file se function import karo 
+
 urlpatterns = [
 
-	path('/',viesws.home , name="home")      views ye file ka nam he views.py '/' 
+	path('/', viesws.home , name="home"),      views ye file ka nam he views.py '/' 
+	path('/login', login),
+	path('/signup',include(login.urls)),
 
 ]
 
@@ -30,4 +35,32 @@ yaha pe home function banega
 def home(requets):
 	return HttpResponse("content")
 	
+======================== Auth System in Django ============================== 
+
+from django.contrib.auth.models import User      # USer is a model which is already made in Django 
+
+
+def Signup(requests):                  # requests compulsory dena padta he paramater me if niche html render karna hoga to	
+	username = requets.POST.get('username')
+	user = User.objects.get(username=username)           User model  me already ek username ka col rahta he  
+	if user is None:
+		# then add the user to USer MOdel
+	User.objects.create_user(username ,password)
+	return redirect('login')
+
+
+def login(requests):
+	if requests.method == "POST":
+		username = requets.POST.get('username')
+ 		password = requests.POST.get('password')
+		user = auth.authenticate(user , password)             # auth jo inbuilt model he .authenticate for checking cred in database
+		if user is not None:
+			auth.login(request , user)               # it create session 
+			returun redirect('home')
+
+def logout(request):
+	auth.logout(requests)
+	return render('home')
+
+
 

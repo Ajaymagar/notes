@@ -1,0 +1,16 @@
+
+tools 
+ttps://github.com/epinna/tplmap
+
+TPlMAP
+
+
+
+we can find rce by ssti 
+just put command in input {{  }}
+
+refer blogs for payloads  
+
+payloadallthing  
+
+musab khan video

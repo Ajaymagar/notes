@@ -1,0 +1,18 @@
+
+
+
+
+ec2 instance chalu karo  
+
+ubuntu select karo 
+
+ssh key create karo har time alag alag name ayega same rakho to error ayega same with security group 
+
+
+after  making remote connection 
+install pip3 
+
+fir server ke liye 
+sudo apt-get install nginx 
+
+sudo apt-get install guicorn     ye web server banne ke kam atte he inka definition padle na net pe
