@@ -63,4 +63,28 @@ def logout(request):
 	return render('home')
 
 
+def dashbaord(requests):
+	current user = requests.user
+	return render(requests,'dashbaord.html')
 
+
+
+=======================================  forms input  ============================== 
+
+in viewes.py of any app 
+
+from django-admin.shortcuts import render ,redirect
+from django.core.files.storage import FileSystemStorage 
+
+def function(request):
+	if request.method == "POST":
+		username = request.POST.get('name')
+		passWOrd = request.POST.get('passowrd')
+
+def function_for_file(request):
+	if request.method == "POST" and request.FILES['filename_html']:
+		myfile  = request.FILES('myfile')
+		fs = FileSystemStorage()
+		filename = fs.save(myfile.name , myfile)
+	else:
+	

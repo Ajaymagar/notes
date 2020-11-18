@@ -16,3 +16,48 @@ fir server ke liye
 sudo apt-get install nginx 
 
 sudo apt-get install guicorn     ye web server banne ke kam atte he inka definition padle na net pe
+
+github ka code clone karke jo default folder milta he vaha par paste  karneka 
+
+nginx conf file 
+
+cd /etc/nginx/sites-enabled
+
+sudo touch yourapp 
+sudo chmod -wx yourapp
+sudo  nano  your-app    # here you have to config the setting like port no and all 
+
+server {
+
+    listen 80;
+    server_name ipv4 address;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+    }
+} 
+
+sudo service nginx restart
+
+cd ../../..
+cd home/ubuntu
+
+fir your app milega 
+cd yourapp 
+gunicorn3 app:app              # app.py me app ka nam app chiye app = Flask('__name__') 
+
+abhi security group me jake ports open karo 
+
+go to the security group >> inbound rules edit
+
+add rule http 80 
+
+here our app is ready for internet 
+
+additional setting 
+
+creating gunicorn as service 
+
+cd etc/systemd/system/
+
+
