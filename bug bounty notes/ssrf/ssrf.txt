@@ -1,0 +1,25 @@
+
+
+
+ssrf 
+
+ssrf me apan vul server se dusre domain ko request karte he 
+
+bupp collarabarator use karo 
+webhooks.com
+request cather web site he 
+
+
+domain ko crawl karke kuch specific parameter wale url 
+nikalo like file= or usme collabrator ka link dalo 
+
+
+Target was using aws , so i requested http://169.254.169.254/latest/meta-data/ ,
+ and booom again, 
+ i got their aws instances metadata
+
+
+
+
+
+

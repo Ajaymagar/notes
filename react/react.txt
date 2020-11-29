@@ -1,0 +1,29 @@
+
+
+
+to install a reactapp 
+
+npm i -g create-react-app 
+
+
+to start a new project 
+
+create-react-app my_project_app
+
+npm start 
+
+
+delete unneccesary files 
+
+there are 2 imp folders src and Public 
+
+in src folder index.js is imp file and in public folder index.html file is important
+
+index.js 
+import React from 'react';
+import ReactDom from 'react-dom';
+
+
+
+
+

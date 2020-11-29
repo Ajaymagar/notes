@@ -23,7 +23,7 @@ def save_user(username , email , password):
 def get_user(username):
     user_data = collection.find_one({"_id":username})
     return User(user_data['_id'] , user_data['email'] , user_data['password']) if user_data else None
-
+ 
 def save_room(room_name , created_by):
     room_id =  room_collection.insert_one({"name":room_name,'created_by':created_by , "created_at":datetime.now()}).inserted_id
 
