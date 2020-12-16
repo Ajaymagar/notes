@@ -87,4 +87,62 @@ def function_for_file(request):
 		fs = FileSystemStorage()
 		filename = fs.save(myfile.name , myfile)
 	else:
+
+
+there is another method formmodel which is directly  connected to database 
+ 
+
+
+
 	
+===================================== static files =================================
+
+
+setting.py file me end me 
+static_url = '/static/'
+
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR  , 'static')          # root folder me static folder banno 
+]
+
+{% load static %}        ye tag har html file me ayega jaha staic content use ho raha he 
+
+<link rel='stylesheet' type='test/css' href="{% static 'css/main.css' %}">
+
+this is for css and js files  
+
+for img files 
+in settings.py 
+
+MEDIA_URL = '/images/'
+
+
+==================================================== end ================================================ 
+
+====================================================== django models ======================================================== 
+
+naya app banane pe uss app me model.py nam ka file rahtha he  
+uss models.py me class decleare karne padte he 
+
+jo classs ka nam hoga uss nam se table banenga 
+
+from django.something import models
+
+class Customer(models.Model):
+	name = models.Charfield(max_length=200)
+	email = same
+	phone = same 
+
+	def __str__(self):
+		return self.name                         admin pannel me useful he  
+
+
+admin.py me jake table register karna padta he fir hi vo admin ke dashboard me diktha he 
+
+
+from .models import * 
+
+admin.site.register(Customer)
+
+
+================================================== end   ==================================

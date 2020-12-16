@@ -81,9 +81,7 @@ user = user.query.filter_by(email=email).first()
 
 then user ko add karne ke liye 
 newUser = User(email=email,name=name,password=generate_password_hash(password,method('sha256')))   #User ye class he
-																									jo .model me define kiya he or andar uske paramater 
-
-
+																									jo .model me
 -------------------------- Flask Forms ------------------
 from flask_wtf import FlaskForm
 from wtforms import StringField , PasswordField , SubmitField

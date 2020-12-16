@@ -1,0 +1,23 @@
+
+
+
+webrtc 
+
+const constraints = {
+	
+	video:true,
+	audio:true
+}
+
+const localstream           global variable
+const peerConnection  = new RTCPeerConnection()       define this way 
+
+
+navigator.mediaDevices.getUserMedia(constraints)       return promise 
+.then(stream =>{
+	localstream = stream;
+	peerConnection.addStream(stream);
+	peerConnection.createOffer()           # create offer create an sdp session												 description protocol its a big 												string about n/w config 
+
+
+})

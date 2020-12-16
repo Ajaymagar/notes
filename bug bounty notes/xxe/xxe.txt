@@ -1,0 +1,19 @@
+
+
+xxe XML External Entity 
+
+requests me check karneka ki xml parse ho raha he ya nahi 
+
+hoga to kisi parameter ki value change karke dekhneka if reflected 
+
+then xml me apan variable set kar sakthe he ek variable set karke usme file:///etc/passwd iska op ayega 
+
+vo op response me dikhega 
+
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE test[
+<!ENTITY xxe SYSTEM "file:///etc/passwd"
+]>
+
+
+this is the payload  SYSTEM is a keyword you can read internal files
