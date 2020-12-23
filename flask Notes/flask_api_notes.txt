@@ -11,10 +11,16 @@ app = Flask(__name__)
 api = Api(app)
 
 
-class classname(Resource):
+class classname(Resource):                      # resource bhi ek class he class inheritance hua
 	def get(self):
 		return {'key':'value'}
 
+	def post(self,any_parameter):                #  idhar sab http verb or methods mention karneka 
+		return {'any_paramter':any_paramter}
+
+	def put(self):
+		return {'':''}
+						
 
 api.add_resource(classname , 'routename')
 
