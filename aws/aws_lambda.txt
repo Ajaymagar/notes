@@ -1,0 +1,9 @@
+
+
+
+lamda function me code likhna padta he 
+
+for example 2 s3 bucket he ek s3 bucket me file upload hua to to dusre me copy ho jayega automatically 
+
+lamda function nodejs python go java ko support karta he 
+
