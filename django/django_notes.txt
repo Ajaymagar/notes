@@ -146,3 +146,39 @@ admin.site.register(Customer)
 
 
 ================================================== end   ==================================
+
+=================================   django deploy  on heroku ===================  
+
+Procfile me web: gunicorn project_name.wsgi    
+
+host me sab host ke nam dalneka like [ 'something.heroku.com' , 127.0.0.0.1, ajay.tech ] 
+
+
+static file production server me chalane ke liye 
+
+whitenoise use hota he heroku ka blog refer karo  without whitenoise production server me static file nahi 
+jata gunicorn problem 
+
+============================================================== end ===============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
