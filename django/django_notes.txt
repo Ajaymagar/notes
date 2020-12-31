@@ -145,4 +145,45 @@ from .models import *
 admin.site.register(Customer)
 
 
+data fetching techniques  
+
+views.py me model ko import karneka 
+
+from .models import model_name 
+
+
+def any_funtion(request,pk):
+	coustomer_list = model_name.objects.all()          # pura databse aa jayega 
+	specific_coustomer = model_name.objects.all(pk=pk)      # fetch using primary key 
+	filter = model_name.objects.filter(phone_no='')        # filter method list return karta he like ek bande ke 2 3 no ho
+	get_method = model_name.objects.get(name='')			# specific info milega single					 sakthe he
+	exclude_method = model_name.objects.exclude(id=1)        # id 1 ka info chodhke ke sabka info dega
+	chaining_filter = model_name.objects.filter(number=10.filter(random=''))   # 2 filter use karna
+	
+
+	----------------  fields look ups  ------------ 
+	id_person = model_name.objects.filter(id__exact=1)      # there are many field look ups check docs 
+	number = model_name.objects.filter(number__in=[1,10])    #  you can parse list 
+
+
+	----------------- Limit and Offerset ------------------------- 
+
+	variable = model_name.objects.all()[2:4]         # it return list you can perform any slicing  
+
+	example = model_name.objects.order_by('id')      # gives normal result   order by matlab increment jaise hota he 
+															vaise result deta he
+	example = model_name.objects.order_by('-id')      # reverse the  result 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ================================================== end   ==================================
