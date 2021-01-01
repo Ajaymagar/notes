@@ -1,0 +1,26 @@
+
+
+basic information gathering 
+
+------------------- whois lookup ------------------------------
+
+first tool whois lookup   whois.domaintools.com  
+
+this tools return the info about the owner of website like name address 
+
+it also provide the server type like apache/nginx 
+
+------------------------------------------------- tool end ------------- 
+
+------------------------------ netcraft -------------------------------- 
+
+netcarft is also work same like whois lookup almost 
+it return hosting service name , language used , and other technology it return vresion no find exploit on exploitdb  for example wordpress 
+
+
+----------------------------- tools end ------------------------------- 
+
+ 
+
+
+

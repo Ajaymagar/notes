@@ -137,6 +137,42 @@ class Customer(models.Model):
 		return self.name                         admin pannel me useful he  
 
 
+--------------------- model relationship ----------------------------
+
+class Language(model.Model):
+	name = models.CharField(max_length=200 , blank=True , null=True)
+
+
+class Framework(model.Model):
+	name = models.CharField(max_length=10)
+	language = models.ForeignKey(Language, on_delete=models.CASCADE)    # parent class delete hone pe child bhi delete hoga
+
+#  framework table me end me ek language_id karke col create hoga or usme Language row ke id store honge
+
+views.py me jo data fetch ke liye line ayegi 
+
+Framework.objects.filter(language__name='python')   # return list jo framework python se connect he 
+
+Language.objects.filter(framework__name='flask')  # return list of flask jo language se connect he 
+ 
+
+
+---------------------------------------------------
+
+Many to Many relationship table 
+
+class Movie(models.Models):
+	name = models.CharField(max_length=10)
+
+
+class Character(models.Model):
+	name = models.CharField(max_length=10)
+	movies = models.ManyToManyField(Movie)
+
+ 
+ # database me 3 table hote he  2 table ka milkar ek table banta he vo define karta he relationship 
+
+--------------------------------------------- -------------------------------------------------------
 admin.py me jake table register karna padta he fir hi vo admin ke dashboard me diktha he 
 
 
