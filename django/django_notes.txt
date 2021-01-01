@@ -181,6 +181,32 @@ from .models import *
 admin.site.register(Customer)
 
 
+<<<<<<< HEAD
+================================================== end   ==================================
+
+=================================   django deploy  on heroku ===================  
+
+Procfile me web: gunicorn project_name.wsgi    
+
+host me sab host ke nam dalneka like [ 'something.heroku.com' , 127.0.0.0.1, ajay.tech ] 
+
+
+static file production server me chalane ke liye 
+
+whitenoise use hota he heroku ka blog refer karo  without whitenoise production server me static file nahi 
+jata gunicorn problem 
+
+============================================================== end ===============================
+
+
+
+
+
+
+
+
+
+=======
 data fetching techniques  
 
 views.py me model ko import karneka 
@@ -209,6 +235,7 @@ def any_funtion(request,pk):
 	example = model_name.objects.order_by('id')      # gives normal result   order by matlab increment jaise hota he 
 															vaise result deta he
 	example = model_name.objects.order_by('-id')      # reverse the  result 
+>>>>>>> 25ad7b925e3b268c636ab0aadf7ff8521a74dcca
 
 
 
@@ -222,4 +249,7 @@ def any_funtion(request,pk):
 
 
 
+<<<<<<< HEAD
+=======
 ================================================== end   ==================================
+>>>>>>> 25ad7b925e3b268c636ab0aadf7ff8521a74dcca
