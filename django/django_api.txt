@@ -1,0 +1,63 @@
+
+
+django api 
+
+
+pip install django_restframwork
+
+install_apps = [
+
+	''''
+	'''',
+	'rest_framework',
+
+]
+
+app me serializers.py karke ek file bannvo 
+
+from rest_framework import serializers 
+from .models import model_name
+
+class based view                              # jaise model bante he vaise
+
+class model_nameSerializers(serializers.Serializers)
+	title = serializers.CharField()
+	data  = serializers.DateField()
+ 
+----------------------- this is a 1 method ------------------------- 
+
+class model_name(serializers.ModelSerializers):
+	class Meta:
+		model = model_name
+		fields = ['first_name','second_name']
+
+--------------------------- second methods -----------------------------
+
+Function based View 
+
+
+
+
+
+------------------------ class based view in views.py -------------------------- 
+
+from rest_framework.response import Response 
+from rest_framework.views import APIView    # class based view 
+
+
+class Test(APIView):
+	def get(self , request):
+		data = { 'key':'value' }
+		return Response(data)
+
+in urls.py 
+path('pathname/',Test.as_view(),name='test')  
+
+
+
+
+-------------------------- end ----------------------------------- 
+
+
+
+
