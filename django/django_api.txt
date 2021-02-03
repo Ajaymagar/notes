@@ -26,14 +26,34 @@ class model_nameSerializers(serializers.Serializers)
  
 ----------------------- this is a 1 method ------------------------- 
 
-class model_name(serializers.ModelSerializers):
-	class Meta:
+class model_name(serializers.ModelSerializers):                        # ye model serializer class he easy and efficient 
+	name = serializers.CharField(read_only=True)                  # we can coustimize fields 
+ 	class Meta:																								
 		model = model_name
 		fields = ['first_name','second_name']
+		exclude = ['field_name']
+
+class model_name(serializers.HyperlinkedModelSerializers):         							# hyperlinked se 																									key:value me value url me convert hota he 						
+		class Meta:
+		model = model_name 
+
+
 
 --------------------------- second methods -----------------------------
 
-Function based View 
+------------------------------------------Function based View 
+
+isme views.py me normal function  likhe jate he or decorator add karna padta he 
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+@api_view(['GET'])
+def post_collection(request):
+	return response
+
+
 
 
 
@@ -41,6 +61,8 @@ Function based View
 
 ------------------------ class based view in views.py -------------------------- 
 
+
+----------------- method 1 ---------------------------------
 from rest_framework.response import Response 
 from rest_framework.views import APIView    # class based view 
 
@@ -53,11 +75,90 @@ class Test(APIView):
 in urls.py 
 path('pathname/',Test.as_view(),name='test')  
 
+-------------------------- method 1 end -------------------------------- 
 
+--------------------- method2 -------------------------------- 
+
+view methods using viewSet 
+views.py 
+
+from rest_framework import viewsets
+
+class modelsviewset(viewset.ModelViewSet):
+	queryset = model_name.objects.all()			 # ye viewset ke liye use hota he 
+	serializer = serializer_name 
+
+
+urls.py 
+from app.views import classname 
+from rest_framework import routers 
+router = routers.resgister(r'apiview',classname,name='something')
+
+urlpatterns = [
+	path('',include(router.urls)),
+
+]
 
 
 -------------------------- end ----------------------------------- 
 
+------------------------------- authentication and authrization --------------------------------- 
 
 
 
+
+views.py 
+
+from rest_framework.permissions import ['Allowany' , 'IsadminUser','IsAuthenticated','IsAuthenticatedreadOnly'] # this 4 are there 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+ 
+class view(APIView):
+	persmission_classes = [IsAuthenticated,]
+	def get(self , request):
+		return Response()
+	def post(self , request):
+		return Response
+	
+
+--------------- token creation ---------------------- 
+install_apps = [
+	'rest_framework',
+	'rest_framework.authtoken',
+
+]
+
+REST_FRAMEWORK = {
+
+'DEFAULT_AUTHENTICATION_CLASSES':[
+
+    'rest_framework.authentication.TokenAuthentication'
+    
+
+]
+
+}
+urls.py 
+rest_framework.authtoken.views import obtain_auth_token  # this obtain_auth_token work as view.methods in urls 
+
+urlpatterns = [
+	path('api/token',obtain_auth_token , name='obtain-token')
+]
+
+---------------------------- token creation end -----------------------------  
+
+------------------------ rest-auth third party lib  ------------------------------
+
+pip install django-rest-auth
+
+install_apps = [
+	'rest_auth'
+]
+	
+urls.py 
+path('rest-auth/',include('rest_auth.urls'))
+
+
+
+-----------------------------------------------------end -----------------------------

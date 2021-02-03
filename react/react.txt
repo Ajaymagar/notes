@@ -19,10 +19,115 @@ there are 2 imp folders src and Public
 
 in src folder index.js is imp file and in public folder index.html file is important
 
-index.js 
+
+---------------------index.js ---------------------------------------- 
 import React from 'react';
 import ReactDom from 'react-dom';
+import App from './App'                 #App.js se import kiya he 
 
+ReactDom.render(
+	
+    <React.StrictMode>
+	<App />
+    <React.StrictMode>,
+      document.getElementById('root')
+ )
+
+---------------------- class based component ---------------------- 
+import React  , { Component , Fragment } from 'react';      # Fragment - har barr div ka use karna padta he element ke liye 
+								uss problem ko fragment solve kkarta he 
+class App extends Component {
+render() {
+return(
+
+	<Fragment>
+	<h1> Hello Geekyboy </h1>
+	<h2> Hello World </h2>
+	</Fragment>
+	
+	<>
+	elements 
+	</>			
+
+);
+
+}
+
+}
+
+export default App;
+
+------------------------- useState -------------------------- 
+
+import {useState} from 'react'
+
+const [ name , setName] = useState('ajay')
+
+
+
+return(
+
+<p>{name}</p>
+
+<button onclick={ ()=>{
+	setName('pari')
+} }>
+
+)
+
+
+-------------------------------- props ----------------------------- 
+
+props are basically property jaise apan django me variable me data dalke html me fetch karte the
+ the vaise hi props kam karta he
+
+index.js me componet define karte he 
+
+import React from 'react';
+import ReactDom from 'react-dom'
+from App import './App'
+
+ReactDom.render(
+
+<App name='ajay' />,document.getElementById('root')
+);
+
+App.js 
+
+const App = ()=>{
+
+
+}
+
+
+
+-------------------------- state ------------------------
+state are similiar to props but they are use in only class Based Function 
+
+import React { Component } from 'react';
+
+class Student extends Component {
+	constructor(props){
+	super(props);
+	this.state = {
+	name : "rahul",
+	roll : this.props.roll
+
+	};
+}
+	render(){
+	return(
+	jsx code 
+	<div>
+	<h1> {this.state.name} your roll no  </h1>
+	</div>
+	
+)
+}
+}
+
+this.setState() ye property ham state ka value change kar sakthe he  
+this.setState({name:'Ajay'})  we cant change state value this.state.name = "ajay"
 
 
 
