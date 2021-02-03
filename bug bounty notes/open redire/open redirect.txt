@@ -4,8 +4,10 @@ resource
 
 https://s0cket7.com/open-redirect-vulnerability/ 
 
-
+https://blog.detectify.com/2019/05/16/the-real-impact-of-an-open-redirect/   good writeup
 
 open redirect 
 
 
+
+open redirect se ssrf ,  oAuth expoloit ho saktha he 

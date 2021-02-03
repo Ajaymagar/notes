@@ -1,0 +1,11 @@
+scan an ip address or whole net-block  
+
+shodan scan -h 
+
+shodan scan submit ip-address/24 
+
+shodan scan submit --filename data.json.gz ip-address 
+
+it return all the info about host 
+
+------------------ end ---------------------

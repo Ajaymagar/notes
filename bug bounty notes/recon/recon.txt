@@ -20,7 +20,16 @@ it return hosting service name , language used , and other technology it return 
 
 ----------------------------- tools end ------------------------------- 
 
- 
+-------------------  content discovery tools -- 
+
+web path scanner disbuster , dirserach , ffuf  aise tools use karke apan endpoints dundh sakthe he iske liye 
+wordlist lagta he seclist accha he 
+
+how to use dirsearch 
+python3 dirsearch.py -u <URL> -e <EXTENSIONS>   
+
+
+-------------- end ------------------------------------- 
 
 
 

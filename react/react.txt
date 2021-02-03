@@ -10,7 +10,7 @@ to start a new project
 
 create-react-app my_project_app
 
-npm start 
+npm start  
 
 
 delete unneccesary files 
