@@ -69,8 +69,23 @@ from rest_framework.views import APIView    # class based view
 
 class Test(APIView):
 	def get(self , request):
-		data = { 'key':'value' }
-		return Response(data)
+		data = { 'key':'value' }    # mannual data 
+		model_data = model_name.objects.all()
+		serializer_data = Sericlaizer_class(model_data , many=True).data or .error  
+		return Response(serializer_data)    
+ 
+		return Response(data)             # return Manual Data 
+
+	def post(self , requests):
+		data = requests.get()
+		serializer = Serializer_class(data)
+		if serializer.is_valid():
+			serializer.save()
+			return Response(serializer.data)
+		else:
+			return Response(serializer.error)
+
+
 
 in urls.py 
 path('pathname/',Test.as_view(),name='test')  
@@ -100,6 +115,23 @@ urlpatterns = [
 ]
 
 
+----------------------------- method 3 generics views --------------------------- 
+views.py 
+from rest_framework import generics         # class based view me use hota he 
+
+class class_name_serializer(generics.ListCreateAPIView):              # ye post method ke liye he 
+	queryset  = model_name.object.all()
+	serializer_class = serializer 
+
+class class_name_serializer(generics.RetrieveDestroyAPIView):              # ye method delete ke liye he 
+ 	queryset = model_name.object.all()
+	serializer_class = serializer
+
+in urls.py 
+urlpatterns = [
+	path('apiview/<int:pk>',class_name_seriaizer.as_view(),name='random_name')           # delete ke time dalna padta he   
+]																							post ke time nahi <int:pk>
+ 
 -------------------------- end ----------------------------------- 
 
 ------------------------------- authentication and authrization --------------------------------- 

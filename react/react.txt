@@ -57,23 +57,6 @@ return(
 
 export default App;
 
-------------------------- useState -------------------------- 
-
-import {useState} from 'react'
-
-const [ name , setName] = useState('ajay')
-
-
-
-return(
-
-<p>{name}</p>
-
-<button onclick={ ()=>{
-	setName('pari')
-} }>
-
-)
 
 
 -------------------------------- props ----------------------------- 
@@ -132,3 +115,31 @@ this.setState({name:'Ajay'})  we cant change state value this.state.name = "ajay
 
 
 
+------------------------- useState -------------------------- 
+
+import {useState} from 'react'        state apan class based componets use kar sakthe he 
+										function based componetns me nahi iseley useState he 
+const [ name , setName] = useState('ajay')
+
+name defined the current value in useState and setName defined the fun 
+which is useful in to update the value
+
+
+return(
+
+<p>{name}</p>
+
+<button onclick={ ()=>{
+	setName('pari')
+} }>
+
+)
+---------------------------------------- end ----------------------
+
+----------------------- UseEffect()------------------------- 
+
+useEffect is a hook like useState() data fecting calling apis  
+
+import React , {useState useEffect } from 'react';
+
+useEffect(Function)
