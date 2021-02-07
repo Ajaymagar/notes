@@ -1,0 +1,18 @@
+
+
+react-native is for android and ios app 
+
+there are two ways to start 
+expo cli and react-native cli 
+
+npm install -g expo-cli 
+
+expo init firstapp          # isse project create hoga 
+
+iske badd ek web page khulega usspe qr  code hoag usko expo-client nam ke app se read karo apne device me app chalu ho jayega
+tunnel method 
+
+andriod studio 
+
+android studio me virtual device start karke expo ka jo page open hota he vaha par run andriod karneka 
+
