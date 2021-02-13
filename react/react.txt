@@ -143,3 +143,49 @@ useEffect is a hook like useState() data fecting calling apis
 import React , {useState useEffect } from 'react';
 
 useEffect(Function)
+
+useEffect( () =>{
+    console.log('useEffect Called ')
+    
+},[array])          # yaha pe apko varialble ka nam dena he usko useEffect monitor karega or run hoga 
+                        nahi to bar bar run hoga  array me jo variable he vo update hua to hi useEffect chalega 
+
+
+
+----------------- custom hooks -------------------- 
+custom.js 
+    import { UseState } from 'react';
+
+    function useSomthing(){
+        const [ count , SetCount ] = UseState(5)
+        const handleincrement = () =>{
+            setCount(count + 1);
+        };
+        return {
+            count,
+            handleincrement,      
+              
+            };
+    }
+export default useSomething;
+
+
+App.js 
+import React from 'react';
+import useSomething from './custom.js'
+
+function App(){
+    
+    const data = useSomething();                   #  this data obtain a object data.count and data.handleincrement
+
+}
+
+
+
+
+
+
+
+----------------- end ----------------------------
+
+
