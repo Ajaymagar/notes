@@ -26,3 +26,6 @@ https://github.com/dxa4481/truffleHog   repo link
 
 python3 trufflehog.py --regex --entropy=False https://github.com/<yourTargetRepo> 
 
+
+github-dorks.py   author techgaun 
+

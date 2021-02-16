@@ -1,0 +1,25 @@
+
+
+nc -h   basic command 	
+-l     listen mode 
+-v verbose mode [ use twice for more verbose  ]
+-n  numeric-only IP address , no DNS 
+-p port local port number 
+-e prog inbound programm to exec 
+-z zero -I/o mode [use for scanning ]
+
+
+port Scan 
+nc -zvv <ip-address> <port| port-range>
+
+Example:
+nc -zvv 192.168.0.109 1-100
+
+
+how to open port 
+
+nc -lvnp 8080 
+
+how to connect 
+
+nc -nv < ip-address > <port>
