@@ -1,0 +1,11 @@
+
+
+nmap 
+
+nmap -T4 -sV <ip-adress>     # service enumerations 
+
+
+
+
+Email Enumeration
+nmap -p80,443 --script http-grep -script-args http-grep.builtins=e-mail target.com 
