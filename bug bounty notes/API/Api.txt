@@ -1,0 +1,13 @@
+
+
+security Issue  and vulnerabilties In api 
+
+Acces control 
+	Authorization 
+	Authentication 
+rate_limiting 
+input_validation 
+restricitng Http methods
+3rd Party API abuse
+other application logic errors
+

@@ -18,7 +18,7 @@ app me serializers.py karke ek file bannvo
 from rest_framework import serializers 
 from .models import model_name
 
-class based view                              # jaise model bante he vaise
+class based serialization                              # jaise model bante he vaise
 
 class model_nameSerializers(serializers.Serializers)
 	title = serializers.CharField()
@@ -41,20 +41,33 @@ class model_name(serializers.HyperlinkedModelSerializers):         							# hype
 
 --------------------------- second methods -----------------------------
 
-------------------------------------------Function based View 
+
+------------------------------------------Function based View ------------------
 
 isme views.py me normal function  likhe jate he or decorator add karna padta he 
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+#here you can add authtinication decorators 
+decorators are useful in function based view 
 
 @api_view(['GET'])
 def post_collection(request):
 	return response
 
-
-
+@api_view(['GET','POST'])
+def POST_data(request):
+	if request.method == "GET":
+		model_data = model_name.object.all()
+		serializer = serializer_name(model_data,many=True)
+		return Response(serilaizer.data)
+	elif request.method == "POST":
+		serializer = serializer_name(data=request.data)
+		if serilaizer.is_valid():
+			serializer.save()
+			reutrn Response(serializer.data)
+		else:
+			return Response(serializer.errors)
 
 
 
@@ -62,7 +75,7 @@ def post_collection(request):
 ------------------------ class based view in views.py -------------------------- 
 
 
------------------ method 1 ---------------------------------
+----------------- method 1 simple APIView ---------------------------------
 from rest_framework.response import Response 
 from rest_framework.views import APIView    # class based view 
 
@@ -92,7 +105,7 @@ path('pathname/',Test.as_view(),name='test')
 
 -------------------------- method 1 end -------------------------------- 
 
---------------------- method2 -------------------------------- 
+--------------------- method2  ViewSets  -------------------------------- 
 
 view methods using viewSet 
 views.py 
@@ -107,7 +120,7 @@ class modelsviewset(viewset.ModelViewSet):
 urls.py 
 from app.views import classname 
 from rest_framework import routers 
-router = routers.resgister(r'apiview',classname,name='something')
+router = routers.register(r'apiview',classname,name='something')
 
 urlpatterns = [
 	path('',include(router.urls)),
@@ -133,6 +146,50 @@ urlpatterns = [
 ]																							post ke time nahi <int:pk>
  
 -------------------------- end ----------------------------------- 
+
+
+------------------------- Django-filters ------------------------------ 
+
+pip install django-filter
+
+install_apps = [
+	
+	''',
+	django_filters,
+	
+]
+
+filters.py 
+
+import django_filters 
+
+class Model_name_Filter(django_filters.FilterSet)
+	class Meta:
+		model = model_name
+		fields = ('fileds_name')
+		
+		fields  = {
+		'filed_name':['icontains'],
+		'field_name':['icontains']
+	
+	}
+
+--------------------- method 2 in api ---------------------- 
+views.py 
+from rest_framework.filters import SearchFilter
+from django_filters.rest_framework import DjangofilterBackend 
+
+class PersonView(ListAPIView):
+	queryset = model_name.objects.all()
+	serailizer_class = 
+	filter_backends = (DjangoFilterBackend , serachFilter)
+	filter_fields = ('id','name') # filelds name serach in model.py      #in bowsable api in create filter button
+
+
+--------------------- django-filter-end ------------------------------
+
+------------------------- end ------------------------------------------------ 
+
 
 ------------------------------- authentication and authrization --------------------------------- 
 
@@ -178,7 +235,144 @@ urlpatterns = [
 	path('api/token',obtain_auth_token , name='obtain-token')
 ]
 
----------------------------- token creation end -----------------------------  
+---------------------------- token creation end ----------------------------- 
+
+
+------------------- jwt auth token ------------------------------------- 
+pip install django-simple-jwt   not sure check once 
+
+urls.py 
+
+from rest_framework_simplejwt.views import TokenObtainPairView , TokenRefreshView , TokenVerifyView 
+
+ye classes jwt ke views me already hoti he apan ko sirf urls banni he 
+
+urlpatterns  = [
+
+	path('gettoken/',TokenObtainPairView.as_view(),name='gettoken'),         #token milta he 
+    path('refreshtoken/',TokenRefreshView.as_view(),name='refersh_token'),    # refesh karne ke liye 
+    path('verifytoken/',TokenVerifyView.as_view(),name='verifytoken'),       
+
+]
+
+views.py 
+from  rest_framework_simplejwt.authentication import JWTAuthentication
+
+class apiView(method):
+	model = model.name.object.all()
+	serializer_class = Serilaizer
+	authentication_classes = [JWTAuthentication,]               isse authentication lag jayegi 
+    permission_classes = [IsAuthenticated,]
+
+
+curl request = httpie  same he 
+
+
+http http://127.0.0.1:8000/gettoken/ username=ajay password="root"         #token milega 
+http http://127.0.0.1:8000/refreshtoken/  refresh=refresh_token        # ye refersh token apnekp gettoken ke time milta he 
+																	firse username or password ka jaruruat nahi he 5min val
+
+http http://127.0.0.1:8000/verifytoken/           just for verification 
+
+http GET  http://127.0.0.1:8000/apiview/ "Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEyNzgxOTIyLCJqdGkiOiIwMDMxNzc3MWNjYzY0ZGQ5Yjk2OWE0YWYxMmQzYWJjNCIsInVzZXJfaWQiOjF9.c-IHFoFwYX_f3McwAwc4TriB5ZPDMDKT94sAHwzUKlo"
+
+real req for accesing api  
+
+use POST method for creat elements add field in command like name="ajay"
+
+use Delete  Put same for this you need user_id
+
+
+
+setting.py 
+SIMPLE_JWT = {
+	"ACCESS_TOKEN_LIFETIME":timedelta(minutes=10)       # you can increase time of token
+}
+
+
+
+
+---------------- jwt End --------------------------------------------
+
+
+----------------------- throttling or rate limmit in Api -------------------------
+
+setting.py 
+--------- global scope -----------
+REST_FRAMEWORK = {
+	'DEFAULT_THROTTLE_CLASSES':[
+	'rest_framework.throttling.AnonRateThrottle',
+	'rest_framework.throttling.UserRateThrottle'
+
+	],
+
+	'DEFAUL_THROTTLE_RATES':{
+	'anon':'100/day/second/mintute/hour',
+	'user':'1000/day/second/mintute/hour'
+	}
+}
+------------------------------------------ 
+---------------------local scope -------------------------- 
+
+views.py 
+from rest_framework.throttling import AnonRateThrottle, UserRateThrottle 
+Class APIView():
+	queryset = model_name.objects.all()
+	serializer_class = Serializer_name
+	authentication_classes = [sessionAuthentication]
+	permission_classes = [IsAuthenticated]
+	throttle_classes = [AnonRateThrottle , UserRateThrottle]
+
+
+
+
+REST_FRAMEWORK = {                                  # ye local me ayega  
+	'DEFAUL_THROTTLE_RATES':{
+	'anon':'100/day/second/mintute/hour',
+	'user':'1000/day/second/mintute/hour'
+	}
+}
+
+--------------- apne hisab se throllting set karne ke liye ----------------- 
+thrttling.py me ye file rakho 
+from rest_framework.throttling import UserRateThrottle 
+class JackRateThrottle(UserRateThrottle):
+	scope = 'jack'
+
+REST_FRAMEWORK = {                                  # ye local me ayega   # nahi samja to geeky source ka viedo 
+	'DEFAUL_THROTTLE_RATES':{
+	'anon':'100/day/second/mintute/hour',
+	'user':'1000/day/second/mintute/hour'
+	'jack':'3/minute',
+	}
+}
+
+
+views.py 
+from app.throttling import JackRateThrottle        #abhi isko throttle classes me add karo 
+
+class --():
+	-- 
+	throttle_classes= [JackRateThrottle,]
+---------------------------------------------------------------------------- 
+
+ScopedRateThrottle 
+from rest_framework.throttling import ScopedRateThrottle 
+
+class --():
+	-- 
+	throttle_classes = [ScopedRateThrottle]
+	throttle_scope = 'viewapi'
+
+
+REST_FRAMEWORK = {
+	'DEFAULT_THROTTLE_RATES':{
+		'viewapi':'5/hour',
+		
+	}
+}
+
+------------------------------ rate limit end -------------------------------
 
 ------------------------ rest-auth third party lib  ------------------------------
 

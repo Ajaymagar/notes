@@ -143,3 +143,65 @@ useEffect is a hook like useState() data fecting calling apis
 import React , {useState useEffect } from 'react';
 
 useEffect(Function)
+
+-------------------------------------------- end -------------------------------- 
+
+------------------------------------ ref in react ----------------------------- 
+
+this.textInput = React.createRef();
+
+this.state = {
+	value:''
+}
+
+handleSubmit = (e)=>{
+	this.textInput.current.value
+	this.setState({value:this.textInput.current.value});
+}
+
+render(){
+	
+	return(
+
+	<React.Fragment>
+	
+	<form  onSubmit={this.handleSubmit}>
+	<input type=text ref={this.textInput}>
+	</form>
+
+	</React.Fragment>
+
+	)
+}
+
+---------------------- context API --------------------------- 
+
+const myContext = React.createContext(defaultValue);
+
+App.js 1st component   
+
+export  const MyContext = React.createContext();           # ye line class or fun define karne se pahle ayeaga
+
+ return(
+ 	<MyContext.Provider value={}>             # value me data jayega 
+ 		<SecondComponent />						# apneko 3rd component me data chiye 
+ 	</MyContext.Provider>
+
+
+ ) 
+
+                                                   # you can pass function in data 
+                                                   	very useful 
+ThirdComponent.js 
+
+import { Mycontext } from "./App"f
+
+return(
+	<h3> Third Component </h3>
+	<MyContext.Consumer>
+	{data => <h4> {data} </h4> }
+	<MyContext.Consumer>
+
+)
+
+----------------------------------- end ----------------------------------------------

@@ -155,6 +155,19 @@ Framework.objects.filter(language__name='python')   # return list jo framework p
 
 Language.objects.filter(framework__name='flask')  # return list of flask jo language se connect he 
  
+django-filter in model            ### django filter ####
+
+def home(requests):
+	queryset = model.objects.all()
+	# filter method 
+	ip_from_form = requests.GET.get('name_in_html')
+	
+	if ip_from_form !='' and ip_from_form is not None:
+		queryset = queryset.filter(model_field__icontains=ip_from_form)
+		
+		icontains , iexact aise bhaut sare he 
+
+
 
 
 ---------------------------------------------------
@@ -235,21 +248,3 @@ def any_funtion(request,pk):
 	example = model_name.objects.order_by('id')      # gives normal result   order by matlab increment jaise hota he 
 															vaise result deta he
 	example = model_name.objects.order_by('-id')      # reverse the  result 
->>>>>>> 25ad7b925e3b268c636ab0aadf7ff8521a74dcca
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-================================================== end   ==================================
->>>>>>> 25ad7b925e3b268c636ab0aadf7ff8521a74dcca
