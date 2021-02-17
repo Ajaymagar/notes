@@ -9,11 +9,46 @@ lnkfinder se jo endpoint milte usse FFuF me as wordlist use karo
 js file me internal domain milte he vo open karne pe host not found ka error atta he 
 usse port sacn karke uska port dundho admin panel mil jayega 
 
+js file me api , internal  , url , var = , // , https:// , company.com , loacation.serach , paramaeter ye keywords search karo  
+
+
+ --------  Extract API endpoints from javascript files ------------ 
+ 
+ cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u
+ 
+ ---------------------- end ------------------------
+
+SecretFinder - Tool to discover sensitive data like apikeys, accesstoken, authorizations, jwt,..etc in js file
+
+cat paypalJS.txt|xargs -n2 -I @ bash -c 'echo -e "\n[URL] @\n";python3 linkfinder.py -i @ -o cli' >> paypalJsSecrets.txt
+
+
+
+
+
+
 
 ------------ oneliners for js file and check live -------------------
 waybackurls ajio.com | grep -Ei '\.js' | httpx -status-code -mc 200 -content-type | grep 'application/javascript'
 
+find javascript files using gau and httpx
+
+echo target.com | gau | grep '\.js$' | httpx -status-code -mc 200 -content-type | grep 'application/javascript'
+
+
+
 ---------------------------------- end ------------------------------------------------
+
+ffuf - tool for fuzzing, I also use it for fuzzing js files 
+
+ffuf -u https://www.paypalobjects.com/js/ -w jsWordlist.txt -t 200 
+
+Note: top wordlists - https://wordlists.assetnote.io/
+
+
+-----------------------JSFScan tools  ---------------------------- 
+
+bash JSFScan.sh -l target.txt -all -r -o comapny name 
 
 
 

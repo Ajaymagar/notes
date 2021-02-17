@@ -1,0 +1,35 @@
+
+port scan 
+
+
+nmap -T4 -p- ipaddress 
+
+--------------------------------------------------------
+
+
+massacn -p1-65535 --rate 1000  ipaddress 
+
+-------------------port scan using msfconsole or metaspolit ----
+
+msfconsole 
+
+
+
+--------------------------
+
+RustScan massscan and nmap dono lo cover karta he 
+
+
+open ports Attacks 
+
+port 22 ssh 
+port 139 samba        common Open ports to Attcks 
+port 21 FTP  
+port 3306 mysql    
+
+by using Nmap scan the open ports and find out the service which are running on this open ports.
+jo bhi service me nam atta he usko copy karke google me uska exploit he ky dekho
+
+uska expoloit metasploit me hoga check karo net pe exploit/unix/ftpd/vsftd_234_backdoor   aise exploit milenge  
+
+

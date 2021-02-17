@@ -1,0 +1,31 @@
+check github with company name for API keys or passswords.
+
+Enumerate the employees of the company from linkedin and twitter and check their repositories on github for sensitive information.
+
+
+Check source code of main website and subdomains for github links in the html comments or anywhere. Search using ctl-F and search for keyword github
+
+
+tools and reference 
+
+https://kathan19.gitbook.io/howtohunt/sensitive-info-leaks/github-dorks     #useful gist 
+
+https://github.com/BishopFox/GitGot
+https://github.com/hisxo/gitGraber
+https://github.com/tillson/git-hound
+https://securitytrails.com/blog/github-dorks
+
+
+tools 
+
+Girdorker
+
+
+TruggleHog :
+https://github.com/dxa4481/truffleHog   repo link
+
+python3 trufflehog.py --regex --entropy=False https://github.com/<yourTargetRepo> 
+
+
+github-dorks.py   author techgaun 
+
