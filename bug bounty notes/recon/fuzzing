@@ -1,0 +1,15 @@
+-------------------  content discovery tools -- 
+
+web path scanner disbuster , dirserach , ffuf  aise tools use karke apan endpoints dundh sakthe he iske liye 
+wordlist lagta he seclist accha he 
+
+how to use dirsearch 
+python3 dirsearch.py -u <URL> -e <EXTENSIONS>   
+
+
+-------------- end ------------------------------------- 
+fuff 
+
+ffuf -w wordlist.txt -u http://www.jio.com/api/FUZZ/6 -o output.txt -x http://127.0.0.1:808  isse sab request burp history me jayega 
+
+api enuermation 
