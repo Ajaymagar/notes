@@ -267,6 +267,47 @@ class modelList(ListApiView):
 ------------------------------- authentication and authrization --------------------------------- 
 
 
+DjangomodelPermission Class -- powerful Class  we can change permission in admin panel
+
+---------------- Custom Authentication -----------------
+custom.py 
+from rest_framework.authentication import BaseAuthentication 
+from  rest_framework.exception import AuthenticationFailed
+
+class CutomAuthentication(BaseAuthentication):
+	def authentication(self.request):
+		pass                                                    # kudhka authentication ka code 
+		# yaha pe normal django login wala code ayega
+
+
+ye class views.py authentication_classes=[CustomAuthentication]
+				  permission_classes = [IsAuthenticated]
+
+
+# Custom permission Classes 
+custompermissiom.py 
+from rest_framework.permission import BasePermission
+
+
+class Mypermission(BasePermission):
+	def has_permission(self,request,view):
+		if request.method == "GET":
+			return True
+		else:
+			return False
+
+views.py 
+
+class StudentView(Apiview):    # view as per your choice 
+	queryset = model_name.objects.all()
+	serliazer_class = serializer 
+	authentication_classes = [sessionAuthentication,]
+	permission_classes = [MyPermission,]
+
+----------------- custom authentication end ---------------------------- 
+
+
+
 
 
 views.py 
@@ -284,10 +325,46 @@ class view(APIView):
 		return Response
 	
 
---------------- token creation ---------------------- 
+-------------------- django session ---------------------------------------
+
+REST_FRAMEWORK = {
+	
+	'DEFAULT_PERMISSION_CLASSES':[
+	'rest_framework.permission.IsAuthenticated',
+			],
+
+	'DEFAULT_AUTHENTICATION_CLASSES':[
+		'rest_framework.authentication.SessionAuthentication',
+
+
+	]
+
+	
+}
+
+urls.py 
+from django.contrib.auth.views import login           #session authentication use in default django login  
+														use in authorization process 
+urlpatterns = [
+	path('login/',login,name='login')
+
+
+]
+
+views.py 
+class StudentModelView(APiviews):
+	queryset = model_name.objects.all()
+	serializer_class = [SessionAuthentication]
+	permission_classes = [IsAuthenticated]
+
+
+
+------------------------------------ django session end --------------------------- 
+
+--------------- token creation ----------------------  Token Authentication ----------------- 
 install_apps = [
 	'rest_framework',
-	'rest_framework.authtoken',
+	'rest_framework.authtoken',           # model create hota he db me 
 
 ]
 
@@ -298,15 +375,32 @@ REST_FRAMEWORK = {
     'rest_framework.authentication.TokenAuthentication'
     
 
-]
+]													# ye global setting he har api endpoint pe authentication lagega
+															
+	'DEFAULT_PERMISSION_CLASSES':[
+		'rest_framework.permission.IsAuthenticated',
+
+	]
 
 }
+
+local setting 
+from rest_framework.authentication import TokenAuthentication 
+from rest_framework.permissions import IsAuthenticated   
+
+
 urls.py 
 rest_framework.authtoken.views import obtain_auth_token  # this obtain_auth_token work as view.methods in urls 
 
 urlpatterns = [
 	path('api/token',obtain_auth_token , name='obtain-token')
 ]
+
+post request bejhne pe token create hoga username and password ka jaruruat he 
+
+http POST http://localhost:8000/api/token username='Ajay' password='password' # token is obtained 
+
+http http://localhost:8000/api/authorize_resource/ "Authorization: Token 4654646df4rfregr6g4r5g4r56e" # you get acces to resource 
 
 ---------------------------- token creation end ----------------------------- 
 
