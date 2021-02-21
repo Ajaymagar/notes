@@ -159,6 +159,20 @@ install_apps = [
 	
 ]
 
+setting.py
+
+REST_FRAMEWORK = {
+	'DEFAULT_FILTER_BACKENDS':[
+	'django_filters.rest_framework.DjangoFilterBackends'
+
+]
+
+
+}
+
+
+
+
 filters.py 
 
 import django_filters 
@@ -174,16 +188,75 @@ class Model_name_Filter(django_filters.FilterSet)
 	
 	}
 
---------------------- method 2 in api ---------------------- 
+
 views.py 
-from rest_framework.filters import SearchFilter
-from django_filters.rest_framework import DjangofilterBackend 
+from rest_framework.filters import SearchFilter    
+from django_filters.rest_framework import DjangofilterBackend           # use for singal view  
 
 class PersonView(ListAPIView):
 	queryset = model_name.objects.all()
 	serailizer_class = 
 	filter_backends = (DjangoFilterBackend , serachFilter)
 	filter_fields = ('id','name') # filelds name serach in model.py      #in bowsable api in create filter button
+
+
+class StudentList(ListApiView):                # djangoFilterbackend exapmle
+	queryset = student.objects.all()
+	serializer_class = StudentSerializer
+	filter_backends = [DjangoFilterBackend]
+	filterset_fields = ['name' , 'city']
+	
+	http://127.0.0.1:8000/studentapi/?name=ajay&city=mumbai     ye format me op milega 
+
+---------------- searchFilter Example -------------------------
+class StudentListView(ListApiView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+	filter_backends = [SearchFilter]
+	search_fields = ['city']
+	search_fields = ['city','name']	
+
+http://127.0.0.1:8000/studentapi/?search=Mumbai
+
+'^' start-with search
+'=' Exact matches
+'@' Full-text search (Currently only supported Django`s Postgresql backend)
+'$' regex search 
+
+how to use this 
+
+search_fields = ['^city']         #http://127.0.0.1/api/?city=half_name_city(navi mum)
+search_fields = ['=city']
+
+url me search parameter default he usko change karne ke liye global setting  me define karna padta he 
+
+REST_FRAMEWORK = {
+	'SEARCH_PARAM':'q'
+}
+
+https://127.0.0.1:8000/api/?q=mumbai
+-------------------------- search filter end  ------------------
+
+--------------------- Ordering Filter -------------------------------- 
+
+class StudentListView(generics.ListApiView):
+	queryset = Student.objects.all()
+	serializer_class =StudentSerializer
+	filter_backends = [OrderingFilter]
+	ordering_fields = ['name']                  # iske base pe ordering hoga matlab a se sure hone wale nam pahle ayenge
+
+---------------------- Ordering filter End ------------------------------- 
+
+
+
+
+class modelList(ListApiView):
+	queryset = model_name.objects.all()             # get queryset override method 
+	serializer_class = Model_name_serializer	annoymous user ko data nahi dikhtha
+	def get_queryset(self):                                                # request.user   me current user hota he
+		user =self.requests.user
+		return Student.objects.filter(passby=user)
+
 
 
 --------------------- django-filter-end ------------------------------

@@ -206,7 +206,6 @@ return(
 )
 
 ----------------------------------- end ----------------------------------------------
-=======
 useEffect( () =>{
     console.log('useEffect Called ')
     
@@ -244,12 +243,11 @@ function App(){
 }
 
 
+-------------------------- higher order Component ------------------------ 
+
+high order component me naya file bana ke function define karte he 
+usme class based component banaya or usme logic likha fir vo logic sab jaagh pe use 
+kiya
 
 
 
-
-
------------------ end ----------------------------
-
-
->>>>>>> 37260af7d791e363f3fcbf134938ebe67a624381
