@@ -159,6 +159,20 @@ install_apps = [
 	
 ]
 
+setting.py
+
+REST_FRAMEWORK = {
+	'DEFAULT_FILTER_BACKENDS':[
+	'django_filters.rest_framework.DjangoFilterBackends'
+
+]
+
+
+}
+
+
+
+
 filters.py 
 
 import django_filters 
@@ -174,10 +188,10 @@ class Model_name_Filter(django_filters.FilterSet)
 	
 	}
 
---------------------- method 2 in api ---------------------- 
+
 views.py 
-from rest_framework.filters import SearchFilter
-from django_filters.rest_framework import DjangofilterBackend 
+from rest_framework.filters import SearchFilter    
+from django_filters.rest_framework import DjangofilterBackend           # use for singal view  
 
 class PersonView(ListAPIView):
 	queryset = model_name.objects.all()
@@ -186,12 +200,112 @@ class PersonView(ListAPIView):
 	filter_fields = ('id','name') # filelds name serach in model.py      #in bowsable api in create filter button
 
 
+class StudentList(ListApiView):                # djangoFilterbackend exapmle
+	queryset = student.objects.all()
+	serializer_class = StudentSerializer
+	filter_backends = [DjangoFilterBackend]
+	filterset_fields = ['name' , 'city']
+	
+	http://127.0.0.1:8000/studentapi/?name=ajay&city=mumbai     ye format me op milega 
+
+---------------- searchFilter Example -------------------------
+class StudentListView(ListApiView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+	filter_backends = [SearchFilter]
+	search_fields = ['city']
+	search_fields = ['city','name']	
+
+http://127.0.0.1:8000/studentapi/?search=Mumbai
+
+'^' start-with search
+'=' Exact matches
+'@' Full-text search (Currently only supported Django`s Postgresql backend)
+'$' regex search 
+
+how to use this 
+
+search_fields = ['^city']         #http://127.0.0.1/api/?city=half_name_city(navi mum)
+search_fields = ['=city']
+
+url me search parameter default he usko change karne ke liye global setting  me define karna padta he 
+
+REST_FRAMEWORK = {
+	'SEARCH_PARAM':'q'
+}
+
+https://127.0.0.1:8000/api/?q=mumbai
+-------------------------- search filter end  ------------------
+
+--------------------- Ordering Filter -------------------------------- 
+
+class StudentListView(generics.ListApiView):
+	queryset = Student.objects.all()
+	serializer_class =StudentSerializer
+	filter_backends = [OrderingFilter]
+	ordering_fields = ['name']                  # iske base pe ordering hoga matlab a se sure hone wale nam pahle ayenge
+
+---------------------- Ordering filter End ------------------------------- 
+
+
+
+
+class modelList(ListApiView):
+	queryset = model_name.objects.all()             # get queryset override method 
+	serializer_class = Model_name_serializer	annoymous user ko data nahi dikhtha
+	def get_queryset(self):                                                # request.user   me current user hota he
+		user =self.requests.user
+		return Student.objects.filter(passby=user)
+
+
+
 --------------------- django-filter-end ------------------------------
 
 ------------------------- end ------------------------------------------------ 
 
 
 ------------------------------- authentication and authrization --------------------------------- 
+
+
+DjangomodelPermission Class -- powerful Class  we can change permission in admin panel
+
+---------------- Custom Authentication -----------------
+custom.py 
+from rest_framework.authentication import BaseAuthentication 
+from  rest_framework.exception import AuthenticationFailed
+
+class CutomAuthentication(BaseAuthentication):
+	def authentication(self.request):
+		pass                                                    # kudhka authentication ka code 
+		# yaha pe normal django login wala code ayega
+
+
+ye class views.py authentication_classes=[CustomAuthentication]
+				  permission_classes = [IsAuthenticated]
+
+
+# Custom permission Classes 
+custompermissiom.py 
+from rest_framework.permission import BasePermission
+
+
+class Mypermission(BasePermission):
+	def has_permission(self,request,view):
+		if request.method == "GET":
+			return True
+		else:
+			return False
+
+views.py 
+
+class StudentView(Apiview):    # view as per your choice 
+	queryset = model_name.objects.all()
+	serliazer_class = serializer 
+	authentication_classes = [sessionAuthentication,]
+	permission_classes = [MyPermission,]
+
+----------------- custom authentication end ---------------------------- 
+
 
 
 
@@ -211,10 +325,46 @@ class view(APIView):
 		return Response
 	
 
---------------- token creation ---------------------- 
+-------------------- django session ---------------------------------------
+
+REST_FRAMEWORK = {
+	
+	'DEFAULT_PERMISSION_CLASSES':[
+	'rest_framework.permission.IsAuthenticated',
+			],
+
+	'DEFAULT_AUTHENTICATION_CLASSES':[
+		'rest_framework.authentication.SessionAuthentication',
+
+
+	]
+
+	
+}
+
+urls.py 
+from django.contrib.auth.views import login           #session authentication use in default django login  
+														use in authorization process 
+urlpatterns = [
+	path('login/',login,name='login')
+
+
+]
+
+views.py 
+class StudentModelView(APiviews):
+	queryset = model_name.objects.all()
+	serializer_class = [SessionAuthentication]
+	permission_classes = [IsAuthenticated]
+
+
+
+------------------------------------ django session end --------------------------- 
+
+--------------- token creation ----------------------  Token Authentication ----------------- 
 install_apps = [
 	'rest_framework',
-	'rest_framework.authtoken',
+	'rest_framework.authtoken',           # model create hota he db me 
 
 ]
 
@@ -225,15 +375,32 @@ REST_FRAMEWORK = {
     'rest_framework.authentication.TokenAuthentication'
     
 
-]
+]													# ye global setting he har api endpoint pe authentication lagega
+															
+	'DEFAULT_PERMISSION_CLASSES':[
+		'rest_framework.permission.IsAuthenticated',
+
+	]
 
 }
+
+local setting 
+from rest_framework.authentication import TokenAuthentication 
+from rest_framework.permissions import IsAuthenticated   
+
+
 urls.py 
 rest_framework.authtoken.views import obtain_auth_token  # this obtain_auth_token work as view.methods in urls 
 
 urlpatterns = [
 	path('api/token',obtain_auth_token , name='obtain-token')
 ]
+
+post request bejhne pe token create hoga username and password ka jaruruat he 
+
+http POST http://localhost:8000/api/token username='Ajay' password='password' # token is obtained 
+
+http http://localhost:8000/api/authorize_resource/ "Authorization: Token 4654646df4rfregr6g4r5g4r56e" # you get acces to resource 
 
 ---------------------------- token creation end ----------------------------- 
 

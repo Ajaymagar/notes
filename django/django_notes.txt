@@ -18,13 +18,15 @@ in urls.py  django.urls se path ko import karneka
 
 from django.urls import path , include            # include ue function dusre app se url.py ki file ko include karne ke liye use hoti he
 from login.views import login                  # dusre app ke views file se function import karo 
+from django.views.generic import TemplateView  # direct template dikha sakthe he koi fun ka jarurat 															nahi 
+
 
 urlpatterns = [
 
 	path('/', viesws.home , name="home"),      views ye file ka nam he views.py '/' 
 	path('/login', login),
 	path('/signup',include(login.urls)),
-
+	path('',TemplateView.as_view(template_name="templates/index.html"))
 ]
 
 
@@ -91,9 +93,71 @@ def function_for_file(request):
 
 there is another method formmodel which is directly  connected to database 
  
+------------- Django forms ------------- 
+forms.py 
 
 
+from django import forms 
 
+class ContactForm(forms.Form):
+	name = forms.Chatfield()
+	email = forms.EmailField(label='E-mail')
+	subject = forms.CharField(required=False)
+
+
+views.py 
+from .forms import ContactForm 
+
+def Contact(request):
+	form = ContactForm()
+
+	return render(request,'form.html',{'form':form})
+
+ye form jo context me diya he uske template me dalne se {{ form }} submit button mannual  form create hoga
+
+
+				 --------------------    -abhi model ka use karke form bannte he ------------------------
+
+models.py
+
+class Snippet(models.Model):
+	name = models.CharField()
+	email = models.EmailField()
+
+	def __str__(self):		
+		return self.name 
+	
+froms.py 
+from django import forms
+
+class SnippetForm(forms.ModelFrom):
+	class Meta():	
+		model = Model_name
+		fields = ('__all__')
+
+views.py 
+def sinpetForm(request):
+	if request.method == "POST":
+		form =  sinnpetForm(request.POST)
+		if form.is_valid():
+			form.save() 
+
+		form = sinnpetForm()
+	return render(request,'index.html',{'form':form}) 
+
+---------------------- cripsy form -------------------------- 
+
+pip install django-crispy-forms 
+
+install_apps = [
+
+	'cripsy_forms',
+
+]
+
+{% load cripsy_forms_tags %}
+
+{{ form | crispy }}
 	
 ===================================== static files =================================
 

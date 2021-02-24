@@ -6,10 +6,20 @@ nmap -T4 -sV <ip-adress>     # service enumerations
 
 nmap -T4 -O <ip -adress>     #os detection    
 
+nmap -F <ip-adress>       # -F means fast for 1000 ports
+ 
+nmap -sS <ip-adress>       # scan type 
+
+banner grabbing 
+
+namp p-22 , 80 --script banner <ip-address>
+
+
 
 Email Enumeration
 nmap -p80,443 --script http-grep -script-args http-grep.builtins=e-mail target.com 
 
+<<<<<<< HEAD
 
 
 
@@ -52,4 +62,20 @@ nmap -Pn -p 443 --script http-waf-detect,http-waf-fingerprint <ip-adress>
 
 
 
+=======
+how to find script 
+ls -al /usr/share/nmap/scripts/ | grep -e "ftp"        #linux
+
+FTP Enumeration               # jo bhi open ports mile uska script me dekho script he ky exploit 
+                                          	karne ke liye 
+
+nmap -p 21 --script ftp-annon,another_script <ip-address>
+
+nmap -p 21 --script "ftp-*" <ip-address>      # wild card seletion sab script run hota he
+
+
+  ----------------------  SMTP Enumeration --------------------- 
+  ls -al /usr/share/nmap/scripts/ | grep -e "smtp"
+   
+>>>>>>> 08716f5cdc34e6c294a4f0b57fa5cb8b1f74de75
 

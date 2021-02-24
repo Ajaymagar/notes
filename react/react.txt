@@ -206,7 +206,6 @@ return(
 )
 
 ----------------------------------- end ----------------------------------------------
-=======
 useEffect( () =>{
     console.log('useEffect Called ')
     
@@ -244,14 +243,54 @@ function App(){
 }
 
 
+-------------------------- higher order Component ------------------------ 
+
+high order component me naya file bana ke function define karte he 
+usme class based component banaya or usme logic likha fir vo logic sab jaagh pe use 
+kiya
+
+
+
+--------------------- error Boundaries -------------------- 
+to catch the javascript erros
+
+error.js 
+
+class based component banaya 
+
+usme ek state dala 
+state = {
+	hasError = false
+}
+
+static getDerivedStateFromError(error){
+	return { hasError:true }
+}
+render(){
+return(
+if (this.state.hasError){
+
+	<div>
+	<h3>Error : Image Not Found </h3>;
+	</div>
+}
+)	
+}
+ye component App.js me ayega 
+
+ 
+
+ --------------------------- Strict Mode ---------------------------------------- 
+StrictMode is a tool for highlighting potential Problems in an application 
+
+<React.StrictMode>
+	<User/>              ye component me koi outdated method hoga to warning ayega 
+</React.StrictMode>
 
 
 
 
-
------------------ end ----------------------------
-
-
+<<<<<<< HEAD
 ------------------- Mounting --------------------------------- 
 
 mounting is the process of creating an elements and inserting it in a dom tree 
@@ -270,3 +309,5 @@ componentsDidMount() is sabse end me excute hote he pura dom update hone pe bhal
 
 
 
+=======
+>>>>>>> 08716f5cdc34e6c294a4f0b57fa5cb8b1f74de75
