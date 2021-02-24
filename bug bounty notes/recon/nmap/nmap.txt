@@ -9,3 +9,47 @@ nmap -T4 -O <ip -adress>     #os detection
 
 Email Enumeration
 nmap -p80,443 --script http-grep -script-args http-grep.builtins=e-mail target.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------- http enumerations ---------- 
+
+la -la /usr/share/nmap/scripts/ | grep -e "http-"
+
+#http methods enumerations 
+nmap -Pn -sV -p 80 -T4 --script http-methods --script-args http-methods.test=all <ip-address>  
+
+# hidden files 
+nmap -sV -p 80  --script http-enum  <ip-adress>
+
+#WAF detection and fingerprinting 
+
+ls -la /usr/share/nmap/scripts/ | grep -e "http-waf"
+
+nmap -Pn -p 80 --script http-waf-detect <ip-adress>
+
+nmap -Pn -p 443 --script http-waf-detect,http-waf-fingerprint <ip-adress>
+
+
+# smb Enumeration smb means server message block for file system communication use in windows check on net for more info
+
+
+
+

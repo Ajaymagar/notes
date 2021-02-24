@@ -252,4 +252,21 @@ function App(){
 ----------------- end ----------------------------
 
 
->>>>>>> 37260af7d791e363f3fcbf134938ebe67a624381
+------------------- Mounting --------------------------------- 
+
+mounting is the process of creating an elements and inserting it in a dom tree 
+
+constructor()
+static getDerivedStateFromProps()
+render()
+componentsDidMount()
+
+componentsDidMount() is sabse end me excute hote he pura dom update hone pe bhale hi ye App.js me likha na ho 
+
+
+------------------- end ------------------------- 
+
+
+
+
+
