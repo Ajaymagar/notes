@@ -251,3 +251,42 @@ kiya
 
 
 
+--------------------- error Boundaries -------------------- 
+to catch the javascript erros
+
+error.js 
+
+class based component banaya 
+
+usme ek state dala 
+state = {
+	hasError = false
+}
+
+static getDerivedStateFromError(error){
+	return { hasError:true }
+}
+render(){
+return(
+if (this.state.hasError){
+
+	<div>
+	<h3>Error : Image Not Found </h3>;
+	</div>
+}
+)	
+}
+ye component App.js me ayega 
+
+ 
+
+ --------------------------- Strict Mode ---------------------------------------- 
+StrictMode is a tool for highlighting potential Problems in an application 
+
+<React.StrictMode>
+	<User/>              ye component me koi outdated method hoga to warning ayega 
+</React.StrictMode>
+
+
+
+
