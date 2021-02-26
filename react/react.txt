@@ -290,3 +290,24 @@ StrictMode is a tool for highlighting potential Problems in an application
 
 
 
+<<<<<<< HEAD
+------------------- Mounting --------------------------------- 
+
+mounting is the process of creating an elements and inserting it in a dom tree 
+
+constructor()
+static getDerivedStateFromProps()
+render()
+componentsDidMount()
+
+componentsDidMount() is sabse end me excute hote he pura dom update hone pe bhale hi ye App.js me likha na ho 
+
+
+------------------- end ------------------------- 
+
+
+
+
+
+=======
+>>>>>>> 08716f5cdc34e6c294a4f0b57fa5cb8b1f74de75
