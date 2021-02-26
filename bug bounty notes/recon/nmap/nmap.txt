@@ -34,3 +34,16 @@ nmap -p 21 --script "ftp-*" <ip-address>      # wild card seletion sab script ru
   ls -al /usr/share/nmap/scripts/ | grep -e "smtp"
    
 
+
+------------------------------- mySQL Enumeration ---------------------------
+
+
+ls -la /usr/share/nmap/scripts/ | grep -e "mysql"
+
+port 3306 is use for mysql 
+
+nmap -p 3306 --script mysql-info <ip-adress>
+
+
+
+

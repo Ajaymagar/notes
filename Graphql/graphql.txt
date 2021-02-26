@@ -1,0 +1,19 @@
+
+
+import graphene 
+
+
+class User(graphene.ObjectType):
+	id = graphene.ID()
+	username = graphene.String()
+	last_login  = graphene.DateTime()
+	is_satff = graphene.Boolean()               # same as model 
+
+
+
+class Query(graphene.ObjectType):
+	users = graphene.List(User)
+
+
+	def resolve_users(self , info):
+		return []
