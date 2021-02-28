@@ -8,6 +8,7 @@ nmap -T4 -p- ipaddress
 
 
 massacn -p1-65535 --rate 1000  ipaddress 
+https://cheatsheet.haax.fr/network/port-scanning/masscan_cheatsheet/         # cheetsheet 
 
 -------------------port scan using msfconsole or metaspolit ----
 

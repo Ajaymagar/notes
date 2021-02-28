@@ -1,0 +1,18 @@
+
+
+nuclei me yaml me templates hote he vo urls pe run hote he 
+
+target.txt aisa input dean padta he nuclei me 
+
+$ cat targets.txt 
+https:www.doamin.com 
+
+$  cat targets.txt nuclei -t template/ -o output.txt -v=show_op_in_command 
+
+
+
+
+
+
+
+
