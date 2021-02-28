@@ -1,5 +1,21 @@
 
 
+graphql 
+a Query language for APi 
+fetching Data with Queries     
+
+query{
+	posts{
+
+	title
+	author{
+	name
+	age
+}
+}
+}
+
+
 import graphene 
 
 
@@ -17,3 +33,79 @@ class Query(graphene.ObjectType):
 
 	def resolve_users(self , info):
 		return []
+
+
+---------------------------------graphql with Django--------------------------------
+
+pip install graphene-django 
+
+installed_apps = [
+	'graphene_django',
+
+]
+
+app me jake schema.py file banno jaise serializer.py bannte the the rest ke liye
+
+
+schema.py 
+import graphene
+from graphene_django import DjangoObjectType
+from .models import model_name
+
+class BookType(DjangoObjectType):
+	class Meta:
+		model = model_name
+		fields = ('__all__')
+
+class Query(graphene.ObjectType):   			 # query banni padhthi he 
+	
+	all_books = graphene.List(BookType)      # har model ka alag alag ayega
+	all_books = DjangoListField(Booktype)  #same work karta he
+
+	all_books = graphene.Field(BookType , id=graphene.Int())
+
+
+
+	def resolve_all_books(root , info ,id=id ):          function ka nam same chiye # root info ye args compulsory he 
+		return model_name.object.all()
+
+
+class randomMutation(graphene.Mutation):
+	class Argument:
+		name = graphene.String(required=True)   # ye field chiye model me 
+
+	model_name = graphene.Field(Model_name_type)    #type me uper jo define kiya he vo ayega
+
+	@classmethod
+	def mutate(cls , root , info , name):
+		variable = model_name_type(name=name)
+		variable.save()
+		return randomMutation(variable=variable)
+
+
+class Mutation(graphene.ObjectType):
+		= randomMutation.Field()
+
+
+	
+
+schema = graphene.Schema(query=Query,mutation=Mutation)      # ye urls.py me ayega     
+
+
+
+urls.py 
+
+from graphene_django.views import GraphQLView
+from app.schema import schema 
+
+urlpatterns = [
+
+	path("graphql",GraphQLView.as_view(graphical=True,schema=schema)),     graphql=true  browsable Api milta he rest jaisa 
+
+]
+
+--------------------- graphql Queries --------------------------------- 
+
+
+
+

