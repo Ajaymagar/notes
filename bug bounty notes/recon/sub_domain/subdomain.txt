@@ -1,18 +1,45 @@
 1 sub domain takeover 
-CNAME RECOEDS - A CNAME, or Canonical Name record, is a record that points to another domain address rather than an IP address. For example, say you have several subdomains, like www.mydomain.com, ftp.mydomain.com, mail.mydomain.com etc and you want these sub domains to point to your main domain name mydomain.com
+CNAME RECOEDS - A CNAME, or Canonical Name record, is a record that points to another domain address rather than an IP address. 
+For example, say you have several subdomains, like www.mydomain.com, ftp.mydomain.com, mail.mydomain.com etc and
+ you want these sub domains to point to your main domain name mydomain.com
+
 
 Dangling CNAME records ( Lazy Admins point to the sub domain but they never clamied that ) so we can claim by using free hosting service like Heroku or Aws 
 
-Tools use for SubDomain Takeover
-1 sublist3t 
+Tools use for SubDomain Enumeration
+1 sublist3ter  -d=domain -b=internal Fuzzer brute force  -t=thread
 2 finddomain recommend by rahul sir this tools is really faster.  ./finddomain -t nike.com -r -u nike.txt./
-3 NMMAPPER.com is website to find the subdomain 
+3 amass  great tool 
+4 assetfinder
+5 Finddoamin 
+6 crt.sh    tools =  crtsh.sh saved in /usr/bin
+7 shodan   shodan domian example.com
+8 shodomain  python3 shodomain.py API-KEY example.com
+
+ 9 .NMMAPPER.com is website to find the subdomain 
+ 10.  censys.com  make acc and check certificate  api key and secrect key  [   
+	
+export CENSYS_API_SECRET='key'            paste this is terminal env variable created  
+export CENSYS_API_ID="key" 
+	
+tools  https://github.com/gelim/censys.git -- python3 censys_io.py --limit 20 uber
+					      python3 censys_io.py --html-title "no such bucket" --20 limit -html				
+]
+
+11 .facebook developers certificate check that 
+
+12. https://transparencyreport.google.com/https/certificate    google ka service 
+
+13 project discovery.io  chaos=commanline tool
 
 
-Sub Domain Enumeration we need to use tools to find live target and vul 
-1]aquatone  2] subzy 3] subjack  this tools are  using go and  your go is not properly configured  solution cd go/bin  ./subzy
+
+after Sub Domain Enumeration we need to use tools to find live target and vul 
+1]aquatone  2] subzy 3] subjack  this tools are  using go and  your go is not properly configured  solution cd go/bin  ./subzy  solution sudo cp tool /usr/bin/
 
 learn how to host web app on hosting site for sub domain takeover
+
+
 
 
 

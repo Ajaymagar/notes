@@ -1,0 +1,60 @@
+
+
+spf records = sender policy Framework 
+
+dnsdumpster tools  
+
+servers kidhar kidhar host he samjta he 
+
+sab record dikththe he 
+like Mx recored konsa service use kar rahe he mail ke liye 
+
+subdomain bhi milte he 
+
+
+2nd tools dnsgoodies.com  check this out  
+
+Dns Enumeration using Nmap Scripts 
+
+ls -al /usr/share/nmap/scripts/ | grep -e "dns-"
+
+
+dig , host imbuilt tools 
+
+-------------- MassDns ---------------    https://github.com/blechschmidt/massdns 
+
+it convert domain into ip 
+
+massdns -r resolvers.txt /lists/resolvers.txt/ -t AAAA -o -w resolved.txt 
+
+
+
+
+---------- shuffledns --------------- https://github.com/projectdiscovery/shuffledns 
+
+shuffledns massdns ke uper likha he  go language me 
+
+subdoamin bruteforce and domain ko resolve kanne ke kamm attah he 
+ 
+
+resolve subdomains 
+shuffledns -d jio.com list subdomains.txt -r resolvers.txt -o resolved_output.txt 
+
+
+bruteForece Subdomain 
+shuffledns -d jio.com -w seclist/discovery/dns/subdoman -r resolvers.txt -o bruteforce.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

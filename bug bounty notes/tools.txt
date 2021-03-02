@@ -1,9 +1,19 @@
 
 wordlist seclist
 
-massdns
-aquatone 
-Gitdorker
+massdns shuffledns dnsvalidator      for dns recon 
+    
+aquatone      for screenshots 
+Gitdorker      github recon 
+
+paramsipder     to find paramter 
+
+
+Bheem    all_in_one tools 
+reconftw    all_in_one tools
+nuclei      all_in_one tools
+
+
 
 js_enum_tools
 JSFScan.sh   imp 
