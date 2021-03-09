@@ -12,9 +12,12 @@ Tools use for SubDomain Enumeration
 3 amass  great tool 
 4 assetfinder
 5 Finddoamin 
+* subfinder   
 6 crt.sh    tools =  crtsh.sh saved in /usr/bin
 7 shodan   shodan domian example.com
 8 shodomain  python3 shodomain.py API-KEY example.com
+
+csp header , viewdns.info
 
  9 .NMMAPPER.com is website to find the subdomain 
  10.  censys.com  make acc and check certificate  api key and secrect key  [   
@@ -32,12 +35,24 @@ tools  https://github.com/gelim/censys.git -- python3 censys_io.py --limit 20 ub
 
 13 project discovery.io  chaos=commanline tool
 
-
+14 ofjaaaah.sh    theGreatrecon  https://github.com/dalbonip/theGreatRecon
 
 after Sub Domain Enumeration we need to use tools to find live target and vul 
 1]aquatone  2] subzy 3] subjack  this tools are  using go and  your go is not properly configured  solution cd go/bin  ./subzy  solution sudo cp tool /usr/bin/
 
 learn how to host web app on hosting site for sub domain takeover
+
+
+subdomain takeovers 
+
+aws s3 takeover no such bucket karke konsa site mila to vo vulneable he 
+domain name se s3 bucket banne ka or static website host karneka index.html  
+
+
+
+
+
+
 
 
 

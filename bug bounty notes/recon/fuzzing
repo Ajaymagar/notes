@@ -1,3 +1,7 @@
+
+wordlist for fuzzing seclist fuzzdb and payloadAllthing
+
+
 -------------------  content discovery tools -- 
 
 web path scanner disbuster , dirserach , ffuf  aise tools use karke apan endpoints dundh sakthe he iske liye 
@@ -7,9 +11,37 @@ how to use dirsearch
 python3 dirsearch.py -u <URL> -e <EXTENSIONS>   
 
 
+burp intruder se bhi fuzzing hota he    # burp 
+
+
 -------------- end ------------------------------------- 
-fuff 
+ ------------------  fuff ------------ https://www.youtube.com/watch?v=uOfXud0iVf8
 
 ffuf -w wordlist.txt -u http://www.jio.com/api/FUZZ/6 -o output.txt -x http://127.0.0.1:808  isse sab request burp history me jayega 
+
+
+ffuf -c -u "url/FUZZ"	 -w /usr/share/Seclist/Discovery/web-content/raft-large-directories
+
+
+ffuf -u https://www.jio.com/FUZZ -recursive -w wordlist.txt   # isse ek dictrary pe 200 mila to uske age fuzz karna start karega
+
+ffuf -w wordlist.txt -u https://www.jio.com/FUZZ  -e .aspx,.html,.php,.txt,.conf,.bak  
+
+-mc 200 = matcher only show 200 response  | -fc 404 filter exclude 404 
+
+------ login brute force -------- 
+
+ffuf -request req.txt(#burpreq) -request-proto https -mode clusterbomb -w users.txt:HFUzz -w users.txt:WFUZZ -c -mc all -fl 7  
+#HFUZZ req me username ke samne ayega and WFUZZ password ke samne    
+
+
+------------- Wfuzz python tools ----------------------------- 
+
+wfuzz -c -hc 404 -w wordlist.txt http://example.com/FUZZ > output.txt    -c=color --hc=exclude -w=wordlist  
+
+
+----------------------- end --------------------------------
+
+  
 
 api enuermation 

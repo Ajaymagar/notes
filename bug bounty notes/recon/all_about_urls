@@ -1,0 +1,15 @@
+
+urls dundhne ke liye tools 
+
+waybacks   tomnomnom 
+gau    3resources          try both tools
+
+waybacksurls jio.com
+gau jio.com
+
+
+next tool 
+cat subdomain.txt | xargs -I %python3 paramsider.py -l high -o /output/% -d %/;         #paramsider
+
+
+

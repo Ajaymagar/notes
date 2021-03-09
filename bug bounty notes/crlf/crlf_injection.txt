@@ -10,7 +10,9 @@ https://www.netsparker.com/blog/web-security/crlf-http-header/
 
 
 
-If the attacker inserts a double CRLF, they can prematurely terminate HTTP headers and inject content before the actual website content. The injected content can contain JavaScript code. It can also be formulated so that the actual website content coming from the web server is ignored by the web browser. This is how HTTP response splitting is used in combination with Cross-site Scripting (XSS).
+If the attacker inserts a double CRLF, they can prematurely terminate HTTP headers and inject content before the actual website content. 
+The injected content can contain JavaScript code. It can also be formulated so that the actual website content coming from the web server is ignored by the web browser.
+ This is how HTTP response splitting is used in combination with Cross-site Scripting (XSS).
 
 
 When you are looking for vulnerabilities, always remember to think outside the box and submit encoded values to see how the site handles the input.
