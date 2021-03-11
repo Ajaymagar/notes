@@ -11,5 +11,13 @@ now logout and use this cookie in cookie editor extension is web app is vulneaba
 
 -------------------  2nd methods -----------------------------
 
+Authenticatio bypass by using js file 
+
+Js file me se hidden endpoint nikalo or acces karkne ka try karo force browsing method bolte he isse 
 
 
+------------ Username and Email Address Enumeration -----------------  
+
+1 reset and login page pe jake galat password dalo or response check karo 
+
+register page pe jake existing user dalke dekho respone me ky milta he  	

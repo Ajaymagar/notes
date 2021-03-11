@@ -49,6 +49,14 @@ aws s3 takeover no such bucket karke konsa site mila to vo vulneable he
 domain name se s3 bucket banne ka or static website host karneka index.html  
 
 
+subdomain enumeration using fuzzing methods 
+
+ffuf -u "https://FUZZ.jio.com" -w wordlist.txt -v | grep "| URL |" | awk '{print $4}' | sed 's/http[s]:\/\///g' > output.txt
+
+wordlist fuzzdb and seclist se uthle  jason hadix all.txt  https://github.com/random-robbie/bruteforce-lists.git 
+
+
+	
 
 
 
