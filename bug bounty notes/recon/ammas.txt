@@ -1,0 +1,73 @@
+
+  
+https://medium.com/@hakluke/haklukes-guide-to-amass-how-to-use-amass-more-effectively-for-bug-bounties-7c37570b83f7
+
+
+Reverse Whois
+This method is invoked using the -whois flag. 
+Essentially it takes the details from the specified domain’s whois records,
+and then tries to find other domains with similar whois records
+
+
+amass intel -d jio.com -whois
+
+
+This is a great method for discovering root domains that may be owned by an organisation.
+
+--------------------------------------------------------------------------------------------
+
+ssl Certificate Grabbing 
+
+If you feed IP addresses to Amass and give it the -active flag, it pulls the SSL certificate from every IP address within the IP range and 
+then spits back the domain that the SSL cert is associated with.
+
+amass intel -active -cidr  173.0.84.0/24    
+
+
+
+
+---------------- Using ASN ----------------- 
+if you want to find ASN of company 
+
+amass intel -org "Tesla"
+op == asn nos    verify again 
+
+subdomain using asn 
+
+amass intel -active -asn 394161
+
+
+
+------ chaining the commands  -------------- 
+
+amass intel -asn 394161 -whois -d tesla.com
+
+
+------------------------ Amass enum ------------------------ 
+
+amass enum -d example.com 
+
+
+amass enum -d example.com -active -cidr 1.2.3.4/24,4.3.2.1/24 -asn 12345
+
+
+Note that you will 
+first need to get the CIDRs and ASNs associated with the organisation using the intel methods outlined earlier in this post.
+
+
+
+
+Tracking
+Every scan that you do with amass is automatically stored on the computer that you ran it on. Then, if you run the same scan again, amass will track any changes that have taken place since your last scan. The most obvious way to use this feature is to discover which subdomains have appeared since your last scan. For example, I ran amass enum -d vimeo.com back in June. It’s now August, so I ran the same command again.
+Now I can run amass track -d vimeo.com and it will tell me anything that has changed within the last two months.
+
+
+
+
+
+
+
+
+
+
+

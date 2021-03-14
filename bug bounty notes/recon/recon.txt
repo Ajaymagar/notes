@@ -15,7 +15,8 @@ it also provide the server type like apache/nginx
 ------------------------------ netcraft -------------------------------- 
 
 netcarft is also work same like whois lookup almost 
-it return hosting service name , language used , and other technology it return vresion no find exploit on exploitdb  for example wordpress 
+it return hosting service name , language used , and other technology it return vresion no find exploit on exploitdb  
+for example wordpress 
 
 
 ----------------------------- tools end ------------------------------- 

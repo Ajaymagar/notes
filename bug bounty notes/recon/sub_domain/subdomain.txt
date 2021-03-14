@@ -43,6 +43,10 @@ after Sub Domain Enumeration we need to use tools to find live target and vul
 learn how to host web app on hosting site for sub domain takeover
 
 
+
+
+
+
 subdomain takeovers 
 
 aws s3 takeover no such bucket karke konsa site mila to vo vulneable he 
