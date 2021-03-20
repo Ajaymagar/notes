@@ -1,0 +1,4 @@
+sudo apt-get install arjun 
+
+
+arjun -u https://target.com/api_endpoint   fir ispe paramater dundhtha he apienpoint chiye 

@@ -22,3 +22,14 @@ Mine parameters from wayback/gau
 gf patterns for vulnearabilities (may hurt result) and miss some parameter 
 
 filter grep & egrep for better results	 more time = More Win 
+
+
+echo "domain.com" | wayback or gau | tee op.txt 
+
+gf pattern_name op.txt | op.txt 
+
+
+
+
+
+

@@ -54,6 +54,10 @@ amass enum -d example.com -active -cidr 1.2.3.4/24,4.3.2.1/24 -asn 12345
 Note that you will 
 first need to get the CIDRs and ASNs associated with the organisation using the intel methods outlined earlier in this post.
 
+passive enurmation 
+amass enum -d hackerone.come -src -dir hackerone -o op.txt -rf resolvers.txt    
+
+
 
 
 
@@ -66,7 +70,7 @@ Now I can run amass track -d vimeo.com and it will tell me anything that has cha
 
 
 
-
+erolvers
 
 
 

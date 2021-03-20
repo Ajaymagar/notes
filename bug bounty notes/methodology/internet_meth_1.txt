@@ -1,0 +1,129 @@
+
+Finding all subdomains -> amass + assetfinder + findomain + subfinder + github-subdomain
+
+Sort and Unique mean merge them to all-subdomains.txt
+
+Resolve those subdomains - is ip/domain live?
+
+check for alive subdomains -> httpx or httprobe -> prefer httpx
+
+got https subdomains -> arrange with status code like 200,302,403,404,500
+
+visual recon on these subdomains -> gowitness, eyewitness, aquatone
+
+Port scans on these subdomains
+
+content discovery on them -> ffuf, wfuzz, dirsearch, gobuster
+
+google dorks + shodan dorks on interesting subdomains + GHDB + Github Dorks
+
+get to know what technologies the target using -> whatweb or builtwith or wappalyzer
+
+what server?
+
+what libraries
+
+what lang -> php, asp
+
+also check cookies and session to know tech and infrastructure
+
+what cms using?
+
+Grab all JS Files and enumerate it for juicy information ->
+
+interesting url
+intersting js library
+interesting subdomain
+interesting api
+internal ports or portals and their creds -> port scan on internal domains
+default test user creds
+db creds
+hardcoded secrets
+hidden paths
+and lots of
+
+Tool -> jsscanner , linkfinder, jsfinder, relative-url-extractor and lots of one liner commands , getjs
+
+Understand JS Code -> can get -> dom xss , Postmessage vulns, Logical Bugs, check for outdated frameworks and components
+
+extract js stuff ->
+
+echo "https://target.com | gau | grep -iE '\.js$' | httpx -status-code -mc 200 -content-type | grep 'application/javascript'
+
+extract API Stuff ->
+
+cat file.js | grep -aoP "(?<=(\"|\'|\'))\\/[a-zA-Z0-9_?&=\\/\\-\\#\\.]*(?=(\\"|\\'|\\'))" | sort -u
+
+Deobfuscate Javascript
+
+If see -> var test="  or var page=" in JS File or page source , try to append these as GET Parameters and check for bugs there
+
+Monitor JS Changes regularly
+
+Fetching URLs ->
+
+Time to get all URLs and parameters from those web file that is alive-hosts and do enumeration on them for vulns or other things
+
+waybackurls
+
+gau
+
+gf
+
+gospider
+
+hakcawler - here idea to grep things like, subdomain,url,form,javascript,robots etc
+
+Fetching URLs -> Might Lead to -> SSTI, XSS, SQLi, SSRF, Open Redirect, IDOR etc
+
+Now use github to more recon for juciy info - gwen github tools , gitrob, git-hound
+
+ALL SET NOW MASS HUNT FOR XSS (step by step) =>
+
+=========
+
+echo "yourtarget.com" | waybackurls | tee target.txt 
+
+cat target.txt | gf xss | sed 's/=.*/=/' | sed 's/URL: //' | tee targetxss.txt
+
+dalfox file targetxss.txt pipe
+
+# nuclei ->
+
+# find all the urls of your target & save them in a .txt file
+
+echo "yourtarget.com" | waybackurls | tee target.txt
+
+# run the .txt file with nuclei for find bugs
+
+nuclei -l target.txt -t /root/nuclei-templates/ -v {for use all the templats at once}
+
+nuclei -l target.txt -t /root/nuclei-templates/vulnerabilities -v {for finding vulnerabilities}
+
+nuclei -l target.txt -t /root/nuclei-templates/cves -v {for all the new cve bugs}
+
+# Update nuclei-templates/
+
+nuclei -update-templates
+
+Burp Collaborator Alternative - https://pingb.in
+
+Quickly find ssrf/open redirect ->
+
+gau target website -s | head -n 5000> target.txt; cat target.txt | sort -u | grep -a -i =http> redirects.txt
+
+One Liner Commands and other commands =>
+=============>
+
+# Create Custom Wordlist
+gau $1| unfurl -u keys | tee -a wordlist.txt ; gau $1 | unfurl -u paths|tee -a ends.txt; sed 's#/#\n#g' ends.txt  | sort -u | tee -a wordlist.txt | sort -u ;rm ends.txt  | sed -i -e 's/\.css\|\.png\|\.jpeg\|\.jpg\|\.svg\|\.gif\|\.wolf\|\.bmp//g' wordlist.txt
+#cat domains.txt | httprobe | xargs curl | tok | tr '[:upper:]' '[:lower:]' | sort -u | tee -a words.txt  
+
+# CORS Misconfiguration
+site="https://example.com"; gau "$site" | while read url;do target=$(curl -s -I -H "Origin: https://evil.com" -X GET $url) | if grep 'https://evil.com'; then [Potentional CORS Found]echo $url;else echo Nothing on "$url";fi;done
+
+# Extract Endpoint Form Js Files
+cat main.js | grep -oh "\"\/[a-zA-Z0-9_/?=&]*\"" | sed -e 's/^"//' -e 's/"$//' | sort -u
+
+# Get Ip's From Text File
+grep -E -o '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(2
