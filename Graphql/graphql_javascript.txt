@@ -1,0 +1,149 @@
+
+
+npm install graphql 
+npm install express-graphql 
+
+client-side 
+npm install apollo-boost react-apollo graphql --save
+
+
+const express = require('express')
+const graphqlHTTP = require('express-graphql')
+const app = require('express').()
+const schema = require('./schema/schema.js')
+
+app.use('/graphql',graphqlHTTP({                         # app.use middleware he
+
+ schema:schema	
+
+}))
+
+
+schema.js 
+
+const graphql = require('graphql')
+
+const {GraphQLObjectType , GraphQlString , GraphqlID , GraphqlInt} = graphql 
+
+
+const BookType = new GraphQLObjectType({           
+	name:"Book",
+	fields = ()=>({                         same django jaisa type banna padta he 
+		id:{type:GraphQLString},           	or declare karna padta he 
+		name:{type:GraphQLString},               
+		genre:{type:GraphQLString}
+		author:{
+			type:AuthorType,
+			resolve(parent,args)                   # typr reliations
+			return _find(authors,{id:parent.authorID})
+		}
+
+	})
+})
+
+const AuthorType = new GraphQLObjectType({
+	name:'author',
+	fields:()=>({
+
+	id:{type:GraphQLID},
+	name:{type:GraphQLString},
+	genre:{type:GraphString},
+	
+
+	})
+
+
+})
+
+
+
+const RootQuery = new GraphqlObjectType({
+	name:"RootQueryType",
+	fields : {
+		book:{                           # query kaise hogi 
+		type:BookType,
+		args:{
+			id:{type:GraphQLString}
+			resolve(parent, args){
+
+			// code to get data from db 
+
+			}        							 # ye function me code likho database 
+														se data fetch karnekea 
+
+			}
+
+			books:{
+				type:new GraphQLList(BookType),
+				resolve(parent , args)
+				return books
+				
+			}
+		}
+	}
+
+
+}) 
+
+
+
+const Mutation = new GraphqlObjectType({
+	name:'Mutation',
+	fields:{
+	AddAuthor:{
+	type:AuthorType,
+	args:{
+		name:{type:GraphqlString},               ye args pass kar sakthe he apan 
+		age:{type:GraphqlInt}			mutation{
+							AddAuthor(name:"ajay",age:45						
+	}						name,age
+	}						}
+	resolve(parent,args){
+	let author = new Author({                     #Author mongo ka schema he
+	name:args.name,
+	age:args.name
+})
+	return author.save()
+
+	}
+
+	}
+
+	}
+
+
+})
+
+
+
+module.exports = new GraphqlSchema({
+	query:RootQuery,
+	mutation:Mutation
+})
+
+
+
+-------------------------- reatc code for fetching api data ---------------------- 
+
+import ApolloClient from 'apllo-boost';
+import { AplloPovider } from 'react-apllo';
+
+
+const client = new ApolloClient({
+	uri:'http://localhost:4000/graphql';
+})
+
+
+const App extends Components{
+	render()
+	return(
+	<ApolloProvider client={client}>
+	<div id='main'>
+
+	<h1>Text </h1>
+	<BookList />
+	</div>
+	<AplloProvider>
+	)
+}
+

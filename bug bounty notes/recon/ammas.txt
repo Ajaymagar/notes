@@ -1,0 +1,3 @@
+
+
+amass enum -brute -active -d domain.com -o amass.txt 
