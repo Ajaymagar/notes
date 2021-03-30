@@ -67,6 +67,9 @@ assetfinder dyson.in -subs-only
 
 sublist3r -d dysom.in -b 
 
+knockpy domain.in 
+
+
 yaha pe sab subdomain ka list ready chiye 
 
 
@@ -75,6 +78,9 @@ yaha pe sab subdomain ka list ready chiye
 dnsvalidator se resolver.txt file download kiya karo fresh servers milenege 
 
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 20 -o resolvers.txt   - global scope command he 
+
+wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt   ye alternative he dnsvalidator ka use this
+
 
 
 subdomain bruteforce in massdns   
@@ -163,3 +169,30 @@ Arjun -u https://www.apidomain.com/apiendpoint       # apienpoint is needed
 
 
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------- auth pentest ------------ 
+
+One thing that I do most often when I start with my testing is when I enter the credentials and
+click login I turn on my burp proxy and 
+when the login functionality is completed and the landing page is completely loaded in the browser. 
+I turn off my proxy for a while and take a look at my Burp History. 
+This methodology of mine gives me a good understanding of what requests 
+the application sends and response is received on login(just login).
+
+
+
+------------------ end -------------------- 
+

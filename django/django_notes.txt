@@ -312,3 +312,62 @@ def any_funtion(request,pk):
 	example = model_name.objects.order_by('id')      # gives normal result   order by matlab increment jaise hota he 
 															vaise result deta he
 	example = model_name.objects.order_by('-id')      # reverse the  result 
+
+
+
+------------------------ slug --------------------  
+
+what is slug 
+slug matlab 
+htttps://www.example.com/product_name      jo e-commerece application me rehta he 
+
+models.py 
+from django.utils.text import slugify
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=200 ,blank=True)
+
+
+    def save(self ,*args , *kwargs):
+        self.slug  = slugify(self.category_name)
+        super(Category,self).save(*args , **kwargs)
+
+
+------------- end ------------------------- 
+
+
+
+--------------- emails in django ------------------
+
+
+setting.py 
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'email_address'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_TLS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+views.py 
+
+from django.core.mail import send_mail       # imp function 
+
+
+def index(request):
+
+    send_mail(                                          
+
+        'hello from ajay' ,
+        'Hello there. this is an automated message.',              # this are the arguments 
+        'magarajay538@gmail.com',
+        ['magarajay538@gmail.com'],
+        fail_silently=False
+
+
+    )
+
+    return render(request , 'index.html')
+
+-------------- end ------------------------------------- 

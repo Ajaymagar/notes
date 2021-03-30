@@ -13,6 +13,7 @@ Tools use for SubDomain Enumeration
 4 assetfinder
 5 Finddoamin 
 * subfinder -nw -d domain -rL resolvers.txt -o op.txt 
+knockpy dosmin.py 
 6 crt.sh    tools =  crtsh.sh saved in /usr/bin
 7 shodan   shodan domian example.com
 8 shodomain  python3 shodomain.py API-KEY example.com

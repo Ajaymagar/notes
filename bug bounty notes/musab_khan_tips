@@ -22,3 +22,24 @@ the extensions i use
 *JS link Finder
 *Param Miner
 *Upload Scanner
+
+
+---------------- tip 3 --------------- 
+
+qsreplace   ye tools paramter ka value change karta he   
+
+burp Collaborator ka use karo 
+
+gau domain.com | grep '=' | qsreplace "burp Collaborator"  | tee redirect.txt | sort -u 
+
+burp Collaborator ko trig karne ke liye ffuf ko use karo 
+
+fuff -c -u "FUZZ" -r -w redirect.txt -mr "burp"
+
+ssti and xss you can find 
+
+
+------------------ end -------------------- 
+
+
+

@@ -12,3 +12,11 @@ then check the req and forward it to the repeater comparer
 
 
 video -- https://www.youtube.com/watch?v=-y-OcymRcZs&t=1269s
+
+
+
+When looking for IDORs and have 401/403 errors, some bypasses :
+- Wrap ID with an array {“id”:111} --> {“id”:[111]}
+- JSON wrap {“id”:111} --> {“id”:{“id”:111}}
+- Send ID twice URL?id=<LEGIT>&id=<VICTIM>
+- Send wildcard {""user_id"":""*""}
