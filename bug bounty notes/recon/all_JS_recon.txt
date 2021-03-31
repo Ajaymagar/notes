@@ -23,6 +23,7 @@ SecretFinder - Tool to discover sensitive data like apikeys, accesstoken, author
 cat paypalJS.txt|xargs -n2 -I @ bash -c 'echo -e "\n[URL] @\n";python3 linkfinder.py -i @ -o cli' >> paypalJsSecrets.txt
 
 
+“jsa.py” tool helped me a lot find out hidden directory paths inside JavaScript files.
 
 
 

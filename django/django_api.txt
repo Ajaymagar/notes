@@ -133,7 +133,7 @@ views.py
 from rest_framework import generics         # class based view me use hota he 
 
 class class_name_serializer(generics.ListCreateAPIView):              # ye post method ke liye he 
-	queryset  = model_name.object.all()
+	queryset  = model_name.object.all()	
 	serializer_class = serializer 
 
 class class_name_serializer(generics.RetrieveDestroyAPIView):              # ye method delete ke liye he 

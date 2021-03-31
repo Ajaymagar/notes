@@ -64,6 +64,15 @@ class Profile(models.Model):
 
 
 
+--------------------------------------  django-jwt ------------------------------- 
+
+pip install simple-jwt
+
+username or password leke token create karta he fir usse headers me use karke authorization kar sakthe he  
+
+
+
+
 
 
 

@@ -1,0 +1,16 @@
+
+web application firewall tool
+
+firewall attacks ko rokta he attacj karne se pahale firewall he ke nahi dekho 
+ 
+
+wafwoof https://www.jio.com   # command 
+
+WAF detection USING NMAP scripts 
+
+ls -al /usr/share/nmap/scripts/ | grep -e "https-waf"
+
+nmap jio.com --script=http-waf-detect -p80,443 -v
+
+
+

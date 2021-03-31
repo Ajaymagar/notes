@@ -1,0 +1,11 @@
+
+
+
+sanitization methods  
+
+------------------ 1 --------------------- 
+After many trials and errors, when I replaced less than sign ‘<’ with its HTML entity form which is &lt;
+  my payload got fired successfully.
+
+
+----------------- end -----------------------

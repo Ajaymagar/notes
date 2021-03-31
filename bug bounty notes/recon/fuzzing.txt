@@ -20,6 +20,36 @@ burp intruder se bhi fuzzing hota he    # burp
 ffuf -w wordlist.txt -u http://www.jio.com/api/FUZZ/6 -o output.txt -x http://127.0.0.1:808  isse sab request burp history me jayega 
 
 
+ffuf -w worlist.txt -u http://www.jio.com/api/FUZZ/6 -o output.txt -replay-proxy http://127.0.0.1:8080 -b "cookies" 
+
+-b flag for cookies  -replay-proxy "-X" for burp-history 
+
+
+----------------- Fuzzing headers ------------------------------------------ 
+
+ffuf -w wordlist.txt -u https://jio.com/api/users/6 -o output.txt -replay-proxy http://127.0.0.1:8080 -H 'user-agent:FUZZ'
+
+
+------------- limitting request ------------- 
+
+-rate 100 100 request per second 
+
+--------------- FUZZING 2 values ------------ 
+
+for this you need 2 wordlist 
+
+ffuf -w worlist.txt:FUZZ -w wordlist2.txt:ME -u http://127.0.0.1:8000/api/FUZZ/ME -o output.txt -replay-proxy http://127.0.0.1:8080
+
+
+---------------------- FUZZING PARAMETER ------------------------------ 
+ffuf -w wordlist.txt -X post -d "email=magarjay538@&issue=dsafd&FUZZ=test" -u http://api.com:8000/endpoint -replay-proxy burp
+
+
+------------------- FUZZING JSON POst data ----------------------- 
+
+ffuf -w wordlist.txt -X 'PUT' -u http://api.com/api/users/6 -H "Content-Type:application/json" -d "{'FUZZ':'test'}" -o out.txt -X burp 
+
+
 ffuf -c -u "url/FUZZ"	 -w /usr/share/Seclist/Discovery/web-content/raft-large-directories
 
 
@@ -33,6 +63,20 @@ ffuf -w wordlist.txt -u https://www.jio.com/FUZZ  -e .aspx,.html,.php,.txt,.conf
 
 ffuf -request req.txt(#burpreq) -request-proto https -mode clusterbomb -w users.txt:HFUzz -w users.txt:WFUZZ -c -mc all -fl 7  
 #HFUZZ req me username ke samne ayega and WFUZZ password ke samne    
+
+
+
+----------------------- ffuf on requests ----------------------- 
+copy the request from burp you can include header and cookies authentication 
+
+GET /FUZZ/HTTP/1.1
+Host:jio.com
+
+ffuf -request /tmp/request -w ./wordlist.txt 
+
+
+
+
 
 
 ------------- Wfuzz python tools ----------------------------- 

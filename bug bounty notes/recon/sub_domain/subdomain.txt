@@ -12,7 +12,7 @@ Tools use for SubDomain Enumeration
 3 amass  great tool 
 4 assetfinder
 5 Finddoamin 
-* subfinder   
+* subfinder -nw -d domain -rL resolvers.txt -o op.txt 
 6 crt.sh    tools =  crtsh.sh saved in /usr/bin
 7 shodan   shodan domian example.com
 8 shodomain  python3 shodomain.py API-KEY example.com
@@ -41,6 +41,10 @@ after Sub Domain Enumeration we need to use tools to find live target and vul
 1]aquatone  2] subzy 3] subjack  this tools are  using go and  your go is not properly configured  solution cd go/bin  ./subzy  solution sudo cp tool /usr/bin/
 
 learn how to host web app on hosting site for sub domain takeover
+
+
+
+
 
 
 subdomain takeovers 
