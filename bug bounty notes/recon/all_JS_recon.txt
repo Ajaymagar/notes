@@ -55,3 +55,8 @@ bash JSFScan.sh -l target.txt -all -r -o comapny name
 
 ---------------- jsmon tools ------------------ 
 jsmon tools se apan source code update hua ky vo check kar sakthe he -
+
+
+
+--------------- api key in js file ------------------
+gau embibe.com | subjs | ./scant3r.py -m secrets -R -w 100

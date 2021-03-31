@@ -67,6 +67,11 @@ bash sh_file url
 
 
 
+dirdar       go get -u github.com/m4dm0e/dirdar
+
+dirdar -single https://www.jio.com -wl word.txt=sellist/fuzzing/fuzz_bomb
+
+
 
 
 https://shubs.io/enumerating-ips-in-x-forwarded-headers-to-bypass-403-restrictions/
