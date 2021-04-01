@@ -4,6 +4,9 @@ graphql
 a Query language for APi 
 fetching Data with Queries     
 
+
+
+
 query{
 	posts{
 
@@ -45,6 +48,13 @@ installed_apps = [
 ]
 
 app me jake schema.py file banno jaise serializer.py bannte the the rest ke liye
+
+A Schema is simply a file that translates your models to GraphQL, it tells it the nature of your models
+ and how it should interact with them.
+
+In GraphQL, a Type is an object that represents your model,                           # classes me likhe jate he vo vale
+ you can tailor it to let you filter your results based on a criteria
+
 
 
 schema.py 

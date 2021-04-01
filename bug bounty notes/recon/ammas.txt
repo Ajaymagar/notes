@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+
+amass enum -brute -active -d domain.com -o amass.txt 
+=======
   
 https://medium.com/@hakluke/haklukes-guide-to-amass-how-to-use-amass-more-effectively-for-bug-bounties-7c37570b83f7
 
@@ -75,3 +79,4 @@ erolvers
 
 
 
+>>>>>>> 402f0fa5a29631545e7fc40b247ca060627f53c4

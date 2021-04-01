@@ -1,0 +1,52 @@
+
+create-react-app  
+
+npm install @material-ui/core 
+npm install @material-ui/icons
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />        # index.html
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />    # index.html 
+
+
+components 
+
+css in js 
+
+har ek component ke liye seperate css 
+
+components file me css likhne ke liye 
+import { makeStyles , withStyles } from '@material-ui/core'    #Makestyle components is use for css define in component
+															# you can make serperate css for single component file
+const styles = makeStyles({
+	menu:{
+		color:'red'
+
+	}
+})
+
+const menuComponent = ()=>{
+	const classes = styles();
+	
+	return(
+	
+	<div>
+
+	</div>
+
+	)
+}
+
+export default menuComponents
+
+
+-------- App bar components ------ 
+import {AppBar} from '@material-ui/core/AppBar'
+
+this components is use for headers check props in material doc 
+
+
+--------------- end -----------------------------------------
+
+<CssBaseline />   ye component baisc css properties ko add karta he page me isko <App > me include karo last me 
