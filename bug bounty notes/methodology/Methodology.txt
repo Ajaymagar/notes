@@ -69,6 +69,20 @@ sublist3r -d dysom.in -b
 
 knockpy domain.in 
 
+https://github.com/gwen001/github-search/blob/master/github-          # ye tool git-recon me install he 
+subdomains.py                                              
+ 
+python3 github-search -d starbucks.com 
+
+gobuster dns -d starbucks -w wordlist.txt 
+
+Using altdns we can pass in a list of found subdomains and a list of words and
+the tool will output a huge list of permutations. The tool can also resolve each
+newly found subdomain to see if they are live:
+altdns -i found_subdomains.txt -o permutation_output -w words.txt -r -s
+resolved_output.txt
+
+
 
 yaha pe sab subdomain ka list ready chiye 
 
@@ -127,7 +141,18 @@ cat massdnsop.txt | cut -d" " -f3 | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
 
 --------------------- end -------------------------
 
+------------ pure dns tools ------------ 
 
+written in python and bash 
+
+puredns bruteforce all.txt domain.com      all.txt contain subdomain for bruteforce 
+
+puredns resolve domains.txt         # direct resolve  
+
+if any problem check github repo md file 
+
+
+------------- end ---------------------- 
 
 
 

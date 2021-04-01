@@ -29,3 +29,8 @@ python3 trufflehog.py --regex --entropy=False https://github.com/<yourTargetRepo
 
 github-dorks.py   author techgaun 
 
+
+http://10degres.net/github-tools-collection/     # good blog about tools 
+
+https://github.com/gwen001/github-search
+

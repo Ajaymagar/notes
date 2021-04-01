@@ -18,6 +18,15 @@ knockpy dosmin.py
 7 shodan   shodan domian example.com
 8 shodomain  python3 shodomain.py API-KEY example.com
 
+https://github.com/gwen001/github-search/blob/master/github-          # ye tool git-recon me install he 
+subdomains.py                                              
+ 
+python3 github-search -d starbucks.com 
+
+gobuster dns -d starbucks -w wordlist.txt 
+
+
+
 csp header , viewdns.info
 
  9 .NMMAPPER.com is website to find the subdomain 
@@ -37,6 +46,16 @@ tools  https://github.com/gelim/censys.git -- python3 censys_io.py --limit 20 ub
 13 project discovery.io  chaos=commanline tool
 
 14 ofjaaaah.sh    theGreatrecon  https://github.com/dalbonip/theGreatRecon
+
+Using altdns we can pass in a list of found subdomains and a list of words and
+the tool will output a huge list of permutations. The tool can also resolve each
+newly found subdomain to see if they are live:
+altdns -i found_subdomains.txt -o permutation_output -w words.txt -r -s
+resolved_output.txt
+
+
+
+
 
 after Sub Domain Enumeration we need to use tools to find live target and vul 
 1]aquatone  2] subzy 3] subjack  this tools are  using go and  your go is not properly configured  solution cd go/bin  ./subzy  solution sudo cp tool /usr/bin/

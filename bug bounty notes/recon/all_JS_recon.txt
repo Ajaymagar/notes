@@ -60,3 +60,9 @@ jsmon tools se apan source code update hua ky vo check kar sakthe he -
 
 --------------- api key in js file ------------------
 gau embibe.com | subjs | ./scant3r.py -m secrets -R -w 100
+
+
+
+https://github.com/pownx/jsearch  
+
+python3.7 jsearch.py -u https://starbucks.com -n Starbucks
