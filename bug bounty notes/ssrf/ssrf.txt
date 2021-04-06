@@ -9,6 +9,12 @@ bupp collarabarator use karo
 webhooks.com
 request cather web site he 
 
+When I was checking the target application, I will normally look for any URL redirection parameter. This can be identified in multiple ways.
+URL query parameters
+Search for URL/redirect/http/.com string values in burpsuite sitemap
+Use waybackurl tool to identify any historic links have any redirection parameter or not.
+
+
 
 domain ko crawl karke kuch specific parameter wale url 
 nikalo like file= or usme collabrator ka link dalo 
