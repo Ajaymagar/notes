@@ -44,3 +44,20 @@ somdev -- BOlt
 in burpsuit there are extrension --csrfscanner 
 check rohit gautham mindmap for extra tools
 
+
+-------------- tips------------------- 
+
+burpsuite se jo form create hota he usme button rehta he usko victim ko click karna padta he iske liye bypass
+
+<script>
+
+	document.forms[0].submit();
+
+</script>
+
+
+
+
+
+
+
