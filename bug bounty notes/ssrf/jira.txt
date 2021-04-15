@@ -1,0 +1,76 @@
+
+
+site:hackerone.com "Misconfigured JIRA Instances"
+
+https://infosecwriteups.com/piercing-the-veil-server-side-request-forgery-to-niprnet-access-c358fd5e249a
+
+https://www.youtube.com/watch?v=OMD7y_JSQuk
+
+
+harsh bothra talk slides you tube
+
+custom implementation 
+
+1 https://jira.ajay.tech
+this is a custom JIRA implementation
+
+
+2. https://ajaymagar.atlassian.net 
+
+This is not a custom JIRA implementation.  
+
+identifying known Vulnerabilities 
+
+identify Custom Jira implementation 
+
+check For the JIRA Version 
+
+Search For Known Vulnerabilities using MITRE/open Search     check jira mindmap by harsha bothra  
+https://www.xmind.net/m/Jrn7f8/
+
+
+custom jira tips [ hacktriks ]
+
+Inside a Jira instance any user (even non-authenticated) can check its privileges in /rest/api/2/mypermissions or /rest/api/3/mypermissions . These endpoints will return your current privileges.
+If a non-authenticated user have any privilege, this is a vulnerability (bounty?).
+If an authenticated user have any unexpected privilege, this a a vuln.
+
+#Check non-authenticated privileges
+curl https://jira.some.example.com/rest/api/2/mypermissions | jq | grep -iB6 '"havePermission": true'
+
+Check and exploit JIRA vulnerabilities with https://github.com/0x48piraj/Jiraffe​
+
+
+If you are particularly looking for jira subdomains of your targets you can use this kinda dorks.
+inurl:companyname intitle:JIRA login
+inurl:visma intitle:JIRA login
+
+
+
+nucelie templates me jira ke templeates he url dekar op milega check that 
+
+
+
+
+
+
+------------------------------ tip ---------------------------------- 
+
+
+
+hey I found a feature in Jira that isn't useful for red teamers but not for bug bounty guys.
+If a dashboard is locked and you don't know any credentials or have a very limited user account and want to escalate the impact to get rewarded, y
+ou still can access REST API at /rest/api/2 or /rest/api/3 (depends on Jira version), 
+and there is an endpoint that tells you your permissions in a Jira instance, /mypermissions. 
+It tells you who you are, what group you belong to, and what rights you have over objects in this Jira such as issues, 
+projects etc. Go and check if some privileges are misconfigurated and set as "true", then you should try to abuse these privileges with the API, the docs are available in the internet.
+You can't RCE something here as Jira isn't a code execution service (unlike Jenkins xD) but if you can for example create an issue, delete an issue, 
+project or something else then you can corrupt system availability and integrity so technically it's a vulnerability. 
+You can report and get paid for this. I once got 850$ for such a DoS (not Jira, but it was a very similar issue). Can you please note this in Hacktricks as an extra bounty tip? Thank you. And confluence doesn't provide such an option, tho
+Its 5.4 in CVSS 3 when integrity and availability are affected low up to 8.1 when affected high.
+Fun fact: I was reading Jira REST API documentation for a hour hoping to find a misconfiguration, bumped into this endpoint and it told me that all my trying was just a crap and a timewaste.
+
+
+
+
+----------------------------------------------------- end ----------------------------------------
