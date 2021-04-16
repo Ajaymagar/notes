@@ -1,0 +1,6 @@
+check good bug bounty book in notes and hacking articles 
+
+
+"index of" inurl:wp-content/"    google dorks 
+
+https://www.hackingarticles.in/wpscanwordpress-pentesting-framework/
