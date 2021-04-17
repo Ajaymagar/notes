@@ -1,0 +1,49 @@
+
+
+Exposed Docker Api 
+When you install docker on a system it will expose an API on your local host located on port 2375. This API can be used to interact with the docker
+engine which basically gives you the right to do anything
+
+To confirm that a desired host is running 
+Docker you can make a GET request to the /version endpoint. 
+This will print out a json blob as shown below:
+
+127.0.0.1:2375/version      dont use http this are 80 443 
+
+docker ke cli pe jake command run karo                  checks notes/book/good_book 
+
+docker -H 127.0.0.1:2375 ps        
+
+ispe shell lene ka try karo 
+
+
+kubernets 
+
+same process check 10250 this port is open or not   this product are based on REST API Check Api Endpoints 
+if services is detected send request on server 
+
+<IP:address>:10250/pods    check this endpoint in burp easy response checking 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
