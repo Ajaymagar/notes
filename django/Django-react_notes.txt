@@ -1,0 +1,102 @@
+
+
+first way to integrate the django and react 
+
+django-admin startproject djreact 
+cd djreact 
+npx create-react-app frontend
+
+react app django ke root folder me rahega 
+
+setting.py 
+
+Templates = [                   yaha pe template folder mention karna rehta he yaha pe {npm run build} karke jo build folder banega 
+					usme jo index.html file rahega vo ayega 
+	'DIRS':[
+	
+	os.path.join(BASE_DIR,'frontend/build'),	
+
+	],	
+
+]
+
+STATICFILES_DIRS = [
+	
+	os.path.join(BASE_DIR,'frontend/build/static')
+
+
+]
+
+
+-------------------------------------------- end code keeen methods ----------------------------------
+
+
+	2 method is Via restapi and fetch for react or axios 
+
+	make Two folder backend and frontend 
+	in backend django rest code and in frontend react code               # isko 2 alag alag server pe run karte he production me  
+										heroku or netlify aisa 
+	
+	pip install django-cors-headers 
+
+	setting.py 
+
+	installed_app = [
+	
+	'corsheaders'		
+	                                                    # check for docs django cors whitelisting and all 
+	
+	
+		]
+	MIDDLEWARE =  [
+	'corsheaders.middleware.CorsMiddleware',	
+
+
+	] 	
+
+
+	CORS_ORIGIN_ALLOW_ALL = True 
+
+-------------------------------- form submission via react to django backend ---------------------------- 
+
+rest api me api banno put post ke sath 
+for-example  https://127.0.0.1:8000/createBlog   ye api endpoint rahega 
+
+
+fir react me form ayega fir  usme 2 input elements ayenge 
+
+<form OnSumit=function>
+<input1>
+<input2>                            ye frontend wala part kahi se bhi uthavo like materialui 
+<button submit>
+<form>
+
+javascript 
+
+handleForm = (event) =>{
+	event.preventDefault();
+	const input1 = event.target.elements.name.value
+	const input2 = event.target.elements.name2.value
+
+	axios.post('https://127.0.0.1:8000/createBlog',{
+
+
+		backendparameter:input1,
+		backendparameter2:input2,
+
+	}).then(res => console.log(res))
+	.catch(err => console.log(err))
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

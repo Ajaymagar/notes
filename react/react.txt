@@ -308,6 +308,22 @@ componentsDidMount() is sabse end me excute hote he pura dom update hone pe bhal
 
 
 
+------------------------- react-redux ---------------------- 
 
-=======
->>>>>>> 08716f5cdc34e6c294a4f0b57fa5cb8b1f74de75
+
+//STORE -> GLOBALIZED STATE 
+
+//ACTION INCREMENT 
+
+//REDUCER 
+
+//DISPATCH
+
+
+index.js 
+
+import { createStore } from 'redux';
+
+src Folder me 2 reducres and actions nam ke 2 folder banna 
+
+
