@@ -37,9 +37,12 @@ amass intel -org "Tesla"   # return ASN no
 
 amass intel -asn asn_no  
 
+amass enum -passive -d dyson.in  -o  passive.op -config ../../../../.config/amass/amass.ini   
 
-amass enum -active -d example.com    working                      
+amass enum -active -d example.com     working                      
 
+amass enum -active -d example.com    -config ./myconfigfile.ini    api se jadya op ayega 
+                                            
 amass enum -passive -d example.com   
 
 amass enum -d tasla.com -ip     domain with ip 
@@ -59,9 +62,11 @@ next tools for subdomain
 
 best and fast tools ==      findomain-linux -t dyson.nl
 
+python3 SubDomainizer.py -u https://www.dyson.in -san all    very imp 
 
+sudo bash subzzZ -d dyson.in       #dhreej tool  create scan folder in same path 
 
-subfinder -d teska.com -slient
+subfinder -d teska.com -slient , subfinder -d  example.com  -recursive -silent -t 200 -o  example.com.subs
 
 assetfinder dyson.in -subs-only
 
@@ -75,6 +80,14 @@ subdomains.py
 python3 github-search -d starbucks.com 
 
 gobuster dns -d starbucks -w wordlist.txt 
+
+
+python3 SubDomainizer.py -u https://www.dyson.in         working  nsonaniya2010/SubDomainizer[git]
+
+
+sudomy -d dyson.co.uk                #sub-doamin ke folder me he     powerfull tools 
+
+
 
 Using altdns we can pass in a list of found subdomains and a list of words and
 the tool will output a huge list of permutations. The tool can also resolve each
@@ -155,6 +168,30 @@ if any problem check github repo md file
 ------------- end ---------------------- 
 
 
+------------------ port scannning ------------------------- 
+port scanning ke liye massscan and naabu ye do tools he 
+
+port Scanning 
+
+nabbu working 
+
+cat cidr.txt | naabu -p -verify -o ports.txt    # fir iss list ko httpx me do 
+
+cat ports.txt | httpx -title -status-code -web-server -vhost  
+
+cat cidr.txt | nabbu -slient -p | httpx -slient | nuclei  -t nuclei-templates/
+
+
+masscan 
+at the time of subdomin enurmation kuch cidr mile to unne bhi massscan se scan karlo 
+
+
+
+------------------ end --------------------------
+
+
+
+
 
 --------- httpx ot httprobe for finding live ip and subdomain -------------------- 
 
@@ -168,10 +205,6 @@ echo 173.0.84.0/24 | httpx -silent
 
 
 
-port Scanning 
-
-masscan 
-at the time of subdomin enurmation kuch cidr mile to unne bhi massscan se scan karlo 
 
 
 

@@ -63,12 +63,13 @@ cut -d "" -f3 | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> op.txt
 shuffledns massdns ke uper likha he  go language me
 
 check for docs github 
-
+    
 subdoamin bruteforce and domain ko resolve kanne ke kamm attah he 
  
 
 resolve subdomains 
 shuffledns -d jio.com list subdomains.txt -r resolvers.txt -o resolved_output.txt 
+
 
 pahale subdomain find karke rakho > subdomains.txt 
 
@@ -82,7 +83,36 @@ shuffledns -d jio.com -w seclist/discovery/dns/subdoman -r resolvers.txt -o brut
 
 
 
+subdomain enumeration using fuzzing methods 
 
+ffuf -u "https://FUZZ.jio.com" -w wordlist.txt -v | grep "| URL |" | awk '{print $4}' | sed 's/http[s]:\/\///g' > output.txt
+
+V-host discovery
+
+fuf -w subdomains.txt -u http://website.com/ -H “Host: FUZZ.website.com”
+
+wordlist fuzzdb and seclist se uthle  jason hadix all.txt  https://github.com/random-robbie/bruteforce-lists.git 
+
+
+# Subdomain bruteforce
+dnsrecon -d target.com -D wordlist.txt -t brt
+
+# Best subdomain bruteforce list 
+https://gist.githubusercontent.com/jhaddix/f64c97d0863a78454e44c2f7119c2a6a/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt	
+
+
+
+subdoamin bruteforce using subgen goTool 
+
+cat ~/lists/jhaddix-all.txt | subgen -d uber.com |  massdns -r dns.txt -t A -o S -w results.txt
+
+breakdown   suddomain list | subgen -d uber.com | massdns -r resolver.txt A -o S -w result.txt     
+
+
+/subbrute.py names.txt example.com | ./bin/massdns -r resolvers.txt -t A -a -o -w results.txt 
+
+
+./subbrute.py all.txt $target.com | massdns -t A -a -o -w massdns_output.txt | jq 'select(.resp_type=="A") | .query_name' | sort -u
 
 
 

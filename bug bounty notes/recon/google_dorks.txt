@@ -1,0 +1,21 @@
+1)Publicly available Docs
+site:redacted.com ext:doc | ext:docx | ext:odt | ext:rtf |   ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
+
+2) Directory Listing
+site:redacted.com intitle:index.of
+
+3) Publicly available DB files
+ site:redacted.com ext:sql | ext:dbf | ext:mdb
+
+4)Publicly available config files 
+site:redacted.com ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini | ext:env
+
+5) Backup Files
+site:redacted.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup
+
+6) Available Pastes of the target
+site:pastebin.com | site:paste2.org | site:pastehtml.com | site:slexy.org | site:snipplr.com | site:snipt.net | site:textsnip.com | site:bitpaste.app | site:justpaste.it | site:heypasteit.com | site:hastebin.com | site:dpaste.org | site:dpaste.com | site:codepad.org | site:jsitor.com | site:codepen.io | site:jsfiddle.net | site:dotnetfiddle.net | site:phpfiddle.org | site:ide.geeksforgeeks.org | site:repl.it | site:ideone.com | site:paste.debian.net | site:paste.org | site:paste.org.ru | site:codebeautify.org | site:codeshare.io | site:trello.com “redacted.com”
+
+7) Searching Gitlab/Github
+site:github.com | site:gitlab.com "redacted.com"
+

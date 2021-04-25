@@ -38,6 +38,16 @@ echo target.com | gau | grep '\.js$' | httpx -status-code -mc 200 -content-type 
 
 
 
+xargs -P 500 -a domain -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 sh -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" | anew'
+
+
+
+Extract all endpoints from  a JS File with this oneliner:)
+
+cat files.txt | grep -aoP "(?<=(\"|\'|`))\/[a-zA-Z0-9?&=\/-#.](?=(\"|\'|`))" | sort -u | tee output.txt
+
+
+
 ---------------------------------- end ------------------------------------------------
 
 ffuf - tool for fuzzing, I also use it for fuzzing js files 
@@ -66,3 +76,21 @@ gau embibe.com | subjs | ./scant3r.py -m secrets -R -w 100
 https://github.com/pownx/jsearch  
 
 python3.7 jsearch.py -u https://starbucks.com -n Starbucks
+
+
+
+-------------- gospider ---------------  go tools 
+
+gospider -s "https://www.dyson.in" -o gospider_ot -c 10 -d 1
+for url discovery also 
+
+------------------- end ------------------------------- 
+
+python3 SubDomainizer.py -u https://www.dyson.in      sudomain ke folder me he tool js files And secret 
+
+
+  
+
+
+
+
