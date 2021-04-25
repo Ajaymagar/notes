@@ -1,0 +1,30 @@
+
+urls dundhne ke liye tools 
+
+waybacks   tomnomnom 
+gau    3resources          try both tools
+
+waybacksurls jio.com
+gau jio.com
+
+cat waybackop.txt or gau.txt | parallel -j 10 curl --proxy http://127.0.0.1:8080 -sk > /dev/null
+
+
+next tool 
+cat subdomain.txt | xargs -I %python3 paramsider.py -l high -o /output/% -d %/;         #paramsider
+
+
+wayback or gau se jo data atta he usse paths paramters and  keys-value nikalne 
+
+unfurl  tomnomnom 
+
+cat waybackdata.txt | unfurl -u domain         sab doamins mil jayenge 
+
+
+cat waybackdata.txt | unfurl -u paths        endpoints mil jayenge 
+
+cat waybackdata.txt | unfurl -u keys         parameters mil jayenge 
+
+cat waybackdata.txt | unfurl -u keypairs      parameter uski value 
+
+
