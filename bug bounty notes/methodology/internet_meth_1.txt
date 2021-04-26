@@ -1,5 +1,5 @@
 
-Finding all subdomains -> amass + assetfinder + findomain + subfinder + github-subdomain
+Finding all subdomains -> amass + assetfinder + findomain + subfinder + github-subdomain[github-subdomains -d dyson.in]
 
 Sort and Unique mean merge them to all-subdomains.txt
 
