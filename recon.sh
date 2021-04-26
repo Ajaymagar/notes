@@ -39,8 +39,54 @@ http_prob
 
 scanner(){
 
+cat $domain/Recon/httpx.txt | nuclei -t nuclei-templates/  -o $domain/Recon/nuclei/cves.txt
+
 
 
 }
 
 scanner 
+
+wayback_data(){
+
+cat $domain/domains.txt | gau | tee $domain/Recon/wayback/tmp.txt 
+cat $domain/Recon/wayback/tmp.txt | egrep -v '\.css|\.svg|\.png' | sed 's/:80//g;s\:443\\g' |sort -u >> 
+
+}
+
+wayback_data
+
+valid_urls(){
+
+    ffuf -c -u "FUZZ" -w $domain/Recon/wayback/wayback.txt -o valid.txt 
+    cat $valid.txt | grep http  
+
+}
+
+valid_urls 
+
+
+gf_patterns(){
+
+    gf xss valid.txt | tee xss.txt 
+    gf sql valid.txt | tee sql.txt 
+
+}
+
+gf_patterns
+
+custom_wordlist(){
+
+    cat waybackdata,txt | unfurl -unique paths > op.txt 
+
+}
+
+custom_wordlist
+
+
+
+
+
+
+
+

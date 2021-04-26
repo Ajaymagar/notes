@@ -96,9 +96,15 @@ altdns -i found_subdomains.txt -o permutation_output -w words.txt -r -s
 resolved_output.txt
 
 
+sab subdoamins ane ke badd unne resolve karna rehta he massdns|shuffledns  and httpx 
+
+pahale massdns|shuffledns  fir httpx 
+
+shuffle is a  wrapper over massdns and made in GO try it out  
 
 yaha pe sab subdomain ka list ready chiye 
 
+shuffledns -d $domain -list subdomains.txt -r resolvers.txt -o output.txt  
 
 ------------------massdns ----------------------
 

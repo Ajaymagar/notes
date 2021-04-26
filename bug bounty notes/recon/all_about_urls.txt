@@ -7,6 +7,17 @@ gau    3resources          try both tools
 waybacksurls jio.com
 gau jio.com
 
+
+gau embibe.com | sed 's/:80//g;s/:443//g'     isse  :80 hat jayega 
+http://www.embibe.com:80/www.olark.com/documentation    ip 
+
+http://www/embibe.com/www.olark.com.documentation
+
+gau embibe.com | egrep -v '\.woff|\.svg|\.css' | sort -u > output.txt     isse junk files nikal jayegi 
+
+
+
+
 cat waybackop.txt or gau.txt | parallel -j 10 curl --proxy http://127.0.0.1:8080 -sk > /dev/null
 
 
@@ -26,5 +37,11 @@ cat waybackdata.txt | unfurl -u paths        endpoints mil jayenge
 cat waybackdata.txt | unfurl -u keys         parameters mil jayenge 
 
 cat waybackdata.txt | unfurl -u keypairs      parameter uski value 
+
+
+
+how to find valid data from gau op 
+
+using ffuf 
 
 

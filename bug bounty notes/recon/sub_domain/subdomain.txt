@@ -18,6 +18,7 @@ sudo bash subzzZ -d dyson.in       #dhreej tool  create scan folder in same path
 
 sudomy -d dyson.co.uk                #sub-doamin ke folder me he     powerfull tools useful 
 
+python3 subbrute.py example.com               # sub-doamin ke folder me he file
 
 1 sublist3ter  -d=domain -b=internal Fuzzer brute force  -t=thread
 2 finddomain recommend by rahul sir this tools is really faster.  ./finddomain -t nike.com -r -u nike.txt./  useful

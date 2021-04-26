@@ -2,6 +2,13 @@
 
 nuclei me yaml me templates hote he vo urls pe run hote he 
 
+
+
+httpx ka op nuclei ka ip banega 
+
+cat domain.txt | httpx  -o target.txt 
+
+
 target.txt aisa input dean padta he nuclei me 
 
 $ cat targets.txt 
