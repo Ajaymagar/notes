@@ -311,11 +311,11 @@ componentsDidMount() is sabse end me excute hote he pura dom update hone pe bhal
 ------------------------- react-redux ---------------------- 
 
 
-//STORE -> GLOBALIZED STATE 
+//STORE -> GLOBALIZED STATE   desing the store   frontend ka database idha sab api ka data atta he   
+												to bar bar call karne ki jarurat nahi he 
+//ACTION INCREMENT            define the action 
 
-//ACTION INCREMENT 
-
-//REDUCER 
+//REDUCER                   create a reducuer 
 
 //DISPATCH
 
@@ -325,5 +325,8 @@ index.js
 import { createStore } from 'redux';
 
 src Folder me 2 reducres and actions nam ke 2 folder banna 
+
+
+
 
 
