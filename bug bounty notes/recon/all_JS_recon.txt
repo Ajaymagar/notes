@@ -1,5 +1,10 @@
 
 
+after enumeration to Download the files use 
+
+    getJS --url https://www.stripe.com | xargs wget
+
+
 for fetching javascript files from domain or url Use getJS and  Subjs  check github repo for usgage 
 
 js file me jo variable milte he like var user='1' unko GET method ke sath use karke dekho bugs honge 
@@ -52,7 +57,7 @@ cat files.txt | grep -aoP "(?<=(\"|\'|`))\/[a-zA-Z0-9?&=\/-#.](?=(\"|\'|`))" | s
 
 ffuf - tool for fuzzing, I also use it for fuzzing js files 
 
-ffuf -u https://www.paypalobjects.com/js/ -w jsWordlist.txt -t 200 
+ffuf -u https://www.paypalobjects.com/js/ -w jsWordlist.txt -t 200           mannual method 
 
 Note: top wordlists - https://wordlists.assetnote.io/
 

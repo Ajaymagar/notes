@@ -23,3 +23,39 @@ dalfox best tools https://github.com/hahwul/dalfox
 2] all_in_one_tools Quickxss  https://github.com/theinfosecguy/QuickXSS
 
 
+
+ -----------------   Gxss tool by katan patel ------------------ 
+
+  pahale gau se urls fetch karo fir gr patterns se urls filter karo 
+
+  unn urls ko urls.txt me save karo 
+
+  Checking Single Url
+
+echo "https://target.com/some.php?first=hello&last=world | Gxss -c 100
+
+Checking List of Urls
+
+cat urls.txt | Gxss -c 100 -p XssReflected
+
+Save Urls Which have Reflecting Params in a file for further analysis
+
+cat urls.txt | Gxss -c 100 -o Result.txt
+
+For verbose mode -v
+
+cat urls.txt | Gxss -c 100 -o Result.txt -v
+
+Send Custom Header -h
+
+cat urls.txt | Gxss -c 100 -p Xss -h "Cookie: Value"
+
+Send Custom User-Agent -u
+
+cat urls.txt | Gxss -c 100 -p Xss -h "Cookie: Value" -u "Google Bot 
+
+
+ek urls pe 2 parameter hoge to vo ek ek karke reflection check karega 
+
+
+ ---------------------------------------------------------- 

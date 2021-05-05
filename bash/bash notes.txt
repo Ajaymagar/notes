@@ -1,4 +1,4 @@
-
+ 
 
 
 echo $PATH    -- this command is use to show the path
