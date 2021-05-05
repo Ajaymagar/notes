@@ -1,0 +1,14 @@
+how to fingerprint iis 
+
+cookies : ASP.NET_SessionId
+	: ASPSESSION 
+
+Headers Regex :
+	X_AspNet-version: 
+	X-Powered-By : ^ASP\\.NET
+
+HTML Regex :
+	<input[^>]+name\"__VIEWSTATE
+
+URL Regex :
+.aspx?(?:$|\\?)hgf

