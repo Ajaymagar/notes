@@ -24,6 +24,7 @@ dalfox best tools https://github.com/hahwul/dalfox
 
 
 
+<<<<<<< HEAD
  -----------------   Gxss tool by katan patel ------------------ 
 
   pahale gau se urls fetch karo fir gr patterns se urls filter karo 
@@ -59,3 +60,11 @@ ek urls pe 2 parameter hoge to vo ek ek karke reflection check karega
 
 
  ---------------------------------------------------------- 
+=======
+
+target.com 
+
+gau\wayback/burp/gospider -> paths . params  - > automation (xss ssrf  sqli )
+
+gau   target | qureplace | kxss | dalfox 
+>>>>>>> c6d2e6d71f1e9ae5a13010d724c3f5891f2f75dc

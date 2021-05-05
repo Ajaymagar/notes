@@ -1,0 +1,17 @@
+
+
+npm install firebase firebase-tools 
+
+src folder me 
+firebase.js 
+
+import firebase from 'firebase'
+
+firebaseconfig = {
+	data:data                         # from firebase platform 
+}
+
+
+const firebaseapp = firrbase.initializeapp(firebaseConfig)  
+
+const auth = firebase.auth()

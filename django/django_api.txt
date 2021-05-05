@@ -555,3 +555,24 @@ path('rest-auth/',include('rest_auth.urls'))
 
 
 -----------------------------------------------------end -----------------------------
+
+--------------------- djoser lib ------------------------ 
+
+djoser lib ye auth system banane ke liye use hoti he 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
