@@ -6,7 +6,7 @@ domain=$1
 validator=$2
 
 mkdir -p $domain  $domain/resolved  $domain/subdomyop $domain/resolvers $domain/portscan/ $domain/nuclei  $domain/aquatone   
-mkdir -p $domain/gau  $domain/Javascript
+mkdir -p $domain/gau  $domain/Javascript $domain/AllParam
 
 
 if [ $validator -eq 2 ]
@@ -84,12 +84,16 @@ resolve_all_subdomains
 
 echo "
 
-    Subdomain Enum Done   hakrawler running now  
+    Subdomain Enum Done  Crawling Started running now  
 
 "
 
 
 hakrawler -url $domain -depth 3 >>  $domain/hakrawlerOP.txt
+
+gospider -s "https://$domain/" -o gospiderOP -c 10 -d 5 --other-source --include-subs --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico)" -p http://127.0.0.1:8080 
+
+# try to add cookie value --cookie "testA=a; testB=b"  aise 
 
 
 echo "
@@ -104,11 +108,18 @@ allAboutJS(){
 
     echo $domain | gau | grep -iE '\.js$' | httpx -status-code -mc 200 -content-type -silent | grep 'application/javascript' | awk '{ print $1}' >>  $domain/Javascript/alljsfiles.txt 
 
+    gau  $domain  |grep -iE '\.js' | grep -ivE '\.json' | sort -u  >> $domain/Javascript/alljsfiles.txt
+
     getJS --url https://www.$domain --complete --resolve --output $domain/Javascript/alljsfiles.txt
 
     echo https://www.$domain | subjs >> $domain/Javascript/alljsfiles.txt
 
+    python3 getsrc.py https://$domain  >> $domain/Javascript/alljsfiles.txt
+
+        
+    cat $domain/Javascript/alljsfiles.txt | sort -u >> $domain/Javascript/sortedjsFiles.txt
     
+
 }
 
 
@@ -168,20 +179,33 @@ cd output/
 date=$(date +%m-%d-%Y)
 cd $date  
 cp -r $domain ../../../../$domain/subdomyop
-
+cd ../..
 
 }
 
 #function
 
 
-#all_about_urls(){
-
-# yaha pe gau ayega sab urls ayenge  yaha se  filter hoke sab jagah alag alag folder me jayenge like xss ssrf  
+all_about_urls(){
 
 
-#}
+cd ALL_parameter/ParamSpider
+python3 paramspider.py --domain $domain --level high -exclude woff,css,js,png,svg,php,jpg,jpeg,tiff,tif,woff,woff2   --quiet -o $domain/AllParam/paramspiderOP.txt
+cd ../..
 
-#all_about_urls
+gau $domain | grep "=" | egrep -iv ".(jpg|png|jpeg|css|js|tif|tiff|png|woff|woff2|ico|pdf|svg|txt)" >> $domain/AllParam/gauParam.txt
+
+# gau param or paramspider and gospider se jo urls ayegi usko gf me deke sabka folder me file banna he 
+
+# wordlist ke liye gau se keys and path nikalo or wordlist.txt me save karlo path ke liye vo python file bhi use karo 
+
+#wordlist ke liye js se jo endpoint ayenge vo bhi 
+
+#yaha pe gau ayega sab urls ayenge  yaha se  filter hoke sab jagah alag alag folder me jayenge like xss ssrf  
+
+
+}
+
+all_about_urls
 
 
