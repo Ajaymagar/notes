@@ -236,6 +236,28 @@ Arjun -u https://www.apidomain.com/apiendpoint       # apienpoint is needed
 
 
 
+--------------------- deep Dive into Application ---------------------- 
+
+whatweb  domain.com         # tech use 
+nikto -host domain.com      # basic info fingerprintting 
+
+
+first start Burp suite  
+
+using go spider crawl the website  for pro version 
+
+commuinity has its own  spider 
+
+
+gospider -s  https://www.domain.com  -c 10 -d 5 --other-source --include-subs --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico|js)" -p http://127.0.0.1:8080
+
+cat hakrawlerOP.txt  | parallel -j 100 curl --proxy http://127.0.0.1:8080 -sk > /dev/null
+
+spidering karke op burp me bejho 
+
+Setup Of Burp Scope  
+
+.*\.target\.com$        ye advanced scope setting me ayega 
 
 
 
@@ -243,6 +265,7 @@ Arjun -u https://www.apidomain.com/apiendpoint       # apienpoint is needed
 
 
 
+--------------------------- end --------------------------
 
 
 

@@ -32,7 +32,7 @@ resolving_domains
 
 http_prob(){
 
-cat $domain/domains.txt | httpx -o $domain/Recon/httpx.txt
+cat $domain/domains.txt | httpx  -threads 200  -o $domain/Recon/httpx.txt
 
 }
 
@@ -41,7 +41,7 @@ http_prob
 
 scanner(){
 
-cat $domain/Recon/httpx.txt | nuclei -t nuclei-templates/  -o $domain/Recon/nuclei/cves.txt
+cat $domain/Recon/httpx.txt | nuclei -t nuclei-templates/ -c 50  -o $domain/Recon/nuclei/cves.txt
 
 
 
