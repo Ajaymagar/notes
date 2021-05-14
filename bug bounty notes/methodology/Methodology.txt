@@ -259,9 +259,9 @@ Setup Of Burp Scope
 
 .*\.target\.com$        ye advanced scope setting me ayega 
 
+passive and active  scan on domain   burpCollab  chalu ho jayega 
 
-
-
+sab buttuns links click karo  http history me sab endpoint aa jayegneg usme se intestring endpoint grep karo 
 
 
 
@@ -270,7 +270,7 @@ Setup Of Burp Scope
 
 
 
----------------- auth pentest ------------ 
+---------------- authentication  pentest ------------ 
 
 One thing that I do most often when I start with my testing is when I enter the credentials and
 click login I turn on my burp proxy and 
