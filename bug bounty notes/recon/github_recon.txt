@@ -18,7 +18,14 @@ https://securitytrails.com/blog/github-dorks
 
 tools 
 
-Girdorker
+------------------------------Gitdorker ------------------------------ 
+
+
+
+
+
+
+------------------------ end --------------------------------------
 
 
 TruggleHog :
@@ -33,4 +40,43 @@ github-dorks.py   author techgaun
 http://10degres.net/github-tools-collection/     # good blog about tools 
 
 https://github.com/gwen001/github-search
+
+
+
+---------------------- Mannual Github Dorking --------------------- 
+
+
+keywords + Dorks  = 
+
+"company.com" +  "apykey" = 
+
+"target.com" subdomains
+"target.com" language:python
+"target.com" NOT help.target.com
+"target.com" NOT staging language:xml
+"target.com" password
+"target.com" secret
+"target.com" token
+"target.com" api_key
+
+org:<organization>  | specific-keyword
+
+language:<language>  | "multiple-words" 
+
+user:<username> | path:<file:path>
+
+filename:<file-name>  | <dork>:"<multiple-words>"
+
+extension:<extension>  | <dork> <keyword> 
+
+
+
+To filter out the data 
+
+target.com password NOT test NOT sandbox NOT staging NOT development NOT docker NOT help NOT language:java
+
+
+
+
+
 
