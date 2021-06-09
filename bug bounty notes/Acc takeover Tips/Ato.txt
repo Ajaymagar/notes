@@ -34,3 +34,17 @@ Reset link in inbox, Click on it . We’ll get reset token
 
 
 -----------------------------------------------------------------------
+
+
+
+------------------------------ bypass 2Fa ----------------------------- 
+
+Bypass 2FA with null or 000000
+Enter the code 000000 or null to bypass 2FA protection. 
+
+
+
+
+
+------------------------------ end -----------------------------------------
+

@@ -20,9 +20,16 @@ tools
 
 ------------------------------Gitdorker ------------------------------ 
 
+python Gitdorker.py -q target.com -d Dorks/alldorks.txt -tf tokenfiles.txt  -o traget.txt 
+
+python Gitdorker.py -q -org:<org name> -tf tkonefile.txt -o targetfile.txt 
+
+python Gitdorker.py -qf subdomains.txt -d Dorks\alldorks.txt -tf tokenfiles.txt  -lb  -pf  -ri    lb=limit bypass pf=pattern_filtter ri=recently_indexed
 
 
+userfile 
 
+python Girdorker.py -tf tokenfiles.txt -uf userfile.txt -d Dorks/alldorks.txt 
 
 
 ------------------------ end --------------------------------------
@@ -32,6 +39,7 @@ TruggleHog :
 https://github.com/dxa4481/truffleHog   repo link
 
 python3 trufflehog.py --regex --entropy=False https://github.com/<yourTargetRepo> 
+
 
 
 github-dorks.py   author techgaun 
@@ -58,6 +66,8 @@ keywords + Dorks  =
 "target.com" secret
 "target.com" token
 "target.com" api_key
+"target.com" pwd  , ftp , token , config , secrect 
+
 
 org:<organization>  | specific-keyword
 
@@ -69,6 +79,7 @@ filename:<file-name>  | <dork>:"<multiple-words>"
 
 extension:<extension>  | <dork> <keyword> 
 
+"NOT" exclusion Operator  > api_key NOT test NOT example 
 
 
 To filter out the data 
