@@ -22,7 +22,7 @@ tools
 
 python Gitdorker.py -q target.com -d Dorks/alldorks.txt -tf tokenfiles.txt  -o traget.txt 
 
-python Gitdorker.py -q -org:<org name> -tf tkonefile.txt -o targetfile.txt 
+python Gitdorker.py -q -org:<org name> -tf tkonefile.txt -o targetfile.txt  
 
 python Gitdorker.py -qf subdomains.txt -d Dorks\alldorks.txt -tf tokenfiles.txt  -lb  -pf  -ri    lb=limit bypass pf=pattern_filtter ri=recently_indexed
 
@@ -91,3 +91,13 @@ target.com password NOT test NOT sandbox NOT staging NOT development NOT docker 
 
 
 
+dorks 
+
+password
+dbpassword
+dbuser
+access_key
+secret_access_key
+bucket_password
+redis_password
+root_password

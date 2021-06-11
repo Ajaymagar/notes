@@ -1,0 +1,32 @@
+
+
+
+Map method 
+map method for loop ki tarah kam karti he data ko ek ek karke process karti he 
+js me forEach and map hota 
+
+data = [1,2,3,4,5,6,7]
+data1 = [[12,12],[78,89],[45,56],[12,45]] 
+
+function(inputdata_parameter){
+    return inputdata_parameter.map((data)=>{           .map me callback function dena hota he  
+        if(){
+            anything
+        }                                            data1 jaisa data hoga to array destrucuture kar sakthe he 
+    })
+}
+
+
+-------------------------------------------------------------------------------------------------------------------
+replace method  use in string manuplation 
+
+string = 'knfjkngngngfngsgdsfajaydfhjgn'
+
+const song = (data) =>{
+
+    return  data.replace(/string/g , '' );                  string manuplation 
+
+}
+
+
+---------------------------------------------------------------------
