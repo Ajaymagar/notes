@@ -30,3 +30,48 @@ const song = (data) =>{
 
 
 ---------------------------------------------------------------------
+
+number sorting in javascript 
+
+list = [ 1 ,2 ,3 ,8 ,9 ,6 ,4 ,8 ]
+
+console.log(list.sort(( a,b) => a - b )) 
+
+const firstNumber LastNumber = list.sort((a,b) => a - b )          # array destrucuture
+
+
+---------------------------------------------------------------------------------------------- 
+
+indexOf() method   ye method se apan list me values he unka index pata kar sakthe he 
+
+
+list  = [ 'a' , 'b'  , 'c' , 'd' ]
+
+console.log(list.indexOf(a)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
