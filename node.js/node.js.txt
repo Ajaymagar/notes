@@ -46,3 +46,28 @@ app.listen(PORT , ()=>{
 console.log(PORT)
 })
 
+
+how to make paths using express router dunction 
+
+const express = require('express')
+
+router = express.Router()
+
+router.get('/',(req , res)=>{
+	
+	res.send('it works')	
+
+
+})
+
+export default app 
+
+
+
+
+
+
+
+
+
+
