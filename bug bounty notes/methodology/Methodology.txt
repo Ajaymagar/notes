@@ -279,6 +279,19 @@ I turn off my proxy for a while and take a look at my Burp History.
 This methodology of mine gives me a good understanding of what requests 
 the application sends and response is received on login(just login).
 
+test case 1  
+
+mass account creation - memory courption | no rate limit | 
+
+steps -  do signup capture the request chose email field as a payload and using intruder create mass acc   
+
+
+test case 2 
+
+no rate limit on forgot password capture the request and run 100 times fill the vitim inbox by emails 
+
+
+
 
 
 ------------------ end -------------------- 
