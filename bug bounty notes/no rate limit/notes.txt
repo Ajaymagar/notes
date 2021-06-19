@@ -31,7 +31,7 @@ try adding a space characters after email not encoded
 
 some Common Characters that help bypassing rate limit 
 %0d , %2e , %09 , %20
- this are the commman null byte
+this are the commman null byte
  
  
  changing cookies user-agent and ip-address

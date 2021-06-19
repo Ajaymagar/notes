@@ -398,5 +398,26 @@ store.dispatch(buy_cake())         this are actions
 unsunscribe()
 
 
+------------------------------------------- styled components ---------------------------------------- 
+
+styled componets are used for design 
+
+npm instll styled-components 
+
+import styled from 'styled-components'
+
+const Button = button.styled`
+	
+	color:red;
+	background:black;
+
+
+
+`
+
+basically ye components ke element ko pakad kar styled karta he css file ka zantat hat jata he 
+
+
+
 
 

