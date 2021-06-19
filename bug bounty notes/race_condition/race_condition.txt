@@ -1,0 +1,37 @@
+
+
+
+
+race condtion 
+
+
+ek request ko same time pe run karne ka to race condition hota he 
+
+
+tools 
+turbo intruder and intruder 
+intruder me thread 30 rakhne par same attack hota he par vo slow he 
+
+turbo intruder c me bana he fast he 
+
+request me test : $s ye header karna like null payload kam karega 
+
+
+test case
+
+reddem code ke time race condition use kar sakthe he 
+
+
+test case 
+
+acc banate time capptcha hoga race condition kiya to uska use nahi 
+
+test  case 
+
+followers likes aise apps pe 
+
+
+test case 
+
+ 
+
