@@ -132,8 +132,25 @@ GET /resetpassword?%d%aHost:attacker.com       token leak hoga
 ---------------------- end ---------------------------------------
 
 
+----------------  account takeover through CSRF -------------- 
+
+email change function -- post request -- csrf token
+
+chaneg the req to the get request and forward the request 
+
+GET /change_email?paramaeter=value
+ 
+
+--------------------------- end --------------------------------
+
+-------------- target has change password function --------- 
+
+problem -  it require the current password 
+
+remove the field  and forward the request 
 
 
+----------- end ------------------------------
 
 
 
