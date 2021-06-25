@@ -89,6 +89,37 @@ handleForm = (event) =>{
 
 }
 
+----------------------------------------- templateview ka use karke jo react ka index.html wala file rehta he -------------
+
+
+in urls.py 
+
+from django.urls import path , re_path
+
+urlpatterns = [
+
+	path('admin',admin.site.urls)
+]
+
+
+urlpatterns += [re_path(r'^.*',TemplateView.as_view(template_name='index.html'))]   
+
+
+
+Templates = [ 
+	
+	'DIRS':[os.path.join(BASE_DIR,'build')],	
+
+
+	 ]
+
+STATICFILES_DIRS = [ 
+	
+	os.path.join(BASE_DIR,'build/static')
+
+ ]
+
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 
@@ -96,7 +127,5 @@ handleForm = (event) =>{
 
 
 
-
-
-
+---------------------- end ---------------------------------------
 

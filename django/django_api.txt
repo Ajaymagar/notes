@@ -558,7 +558,19 @@ path('rest-auth/',include('rest_auth.urls'))
 
 --------------------- djoser lib ------------------------ 
 
-djoser lib ye auth system banane ke liye use hoti he 
+djoser lib ye auth system banane ke liye use hoti he  read the docs 
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('auth/',include('djoser.urls')),
+    path('auth/',include('djoser.urls.jwt')),    jwt auth ke liye 
+
+]
+
+
+ 
+
+
 
 	
 
@@ -566,7 +578,7 @@ djoser lib ye auth system banane ke liye use hoti he
 
 
 
-
+---------------------------------- end -----------------------------------------
 
 
 
