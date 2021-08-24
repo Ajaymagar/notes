@@ -221,8 +221,6 @@ whatweb   cmd_tool
 
 
 
-
-
 ----------- Parameter Discovery -------------------- 
 
 Arjun  Somdev 

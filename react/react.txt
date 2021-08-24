@@ -49,11 +49,7 @@ return(
 	elements 
 	</>			
 
-);
-
-}
-
-}
+)}}
 
 export default App;
 
@@ -87,7 +83,7 @@ const App = ()=>{
 -------------------------- state ------------------------
 state are similiar to props but they are use in only class Based Function 
 
-import React { Component } from 'react';
+ import React { Component } from 'react';
 
 class Student extends Component {
 	constructor(props){
@@ -144,8 +140,58 @@ import React , {useState useEffect } from 'react';
 
 useEffect(Function)
 
-<<<<<<< HEAD
+const [ name , setName ] = useState('Ajay')          useEffect har bar page me kuch change hone par trige hota he 
+						  ,[]) khali depency array rakhne pe ek hi bar chalega 
+useEffect(()=>{
+
+	console.log('anything')
+	
+},[name])                   # depencncy array ye list me jitne bhi useState wale varibale honge usme watch rakhega kisika bhi
+ 				value change hua to function chalega
+
 -------------------------------------------- end -------------------------------- 
+
+
+-------------------------------------- events in react ------------------------------------------ 
+
+there are many event in javascript lets see click event 
+
+Home.jsx  Components 
+
+import React from 'react'
+
+export default function Home(){
+
+	const handleClick = ()=>{
+	console.log('button is clicked')	
+	
+	}
+
+	const handleClickagain = (name)=>{
+		console.log(`name is ${name}`)
+	}
+	
+	return(
+
+	<div>
+	<h1>title</h1>
+	<button onclick={handleClick} >click me</button>          # normal function | normal function me () add kiya to execute ho jata he 
+	<button onClick={()=>{
+	
+	handleClickagain('ajay')	
+
+	}} >click ME again</button>              # in case of pasing the parameter use annymous function 
+	</div>
+	
+	)
+}
+
+
+
+
+------------------------------------------- end ----------------------------------------------------
+
+
 
 ------------------------------------ ref in react ----------------------------- 
 
@@ -206,6 +252,7 @@ return(
 )
 
 ----------------------------------- end ----------------------------------------------
+
 useEffect( () =>{
     console.log('useEffect Called ')
     
@@ -290,7 +337,6 @@ StrictMode is a tool for highlighting potential Problems in an application
 
 
 
-<<<<<<< HEAD
 ------------------- Mounting --------------------------------- 
 
 mounting is the process of creating an elements and inserting it in a dom tree 
@@ -304,6 +350,87 @@ componentsDidMount() is sabse end me excute hote he pura dom update hone pe bhal
 
 
 ------------------- end ------------------------- 
+
+
+
+-------------------------- Forms in react ------------------------------------- 
+
+logic of form 
+
+const FormCreation = ()=>{
+	
+	const [title , setTitle] = useState('');                 # har ek ip ko control karne ko useState use karna hoga 	
+	
+	const handleSubmit = (e) =>{
+		e.preventDefault();
+		const = { title ,body , author };
+		
+		fetch('url',{
+		method:"POST",
+		headers:{"Content-Type":'application/json'},
+		body:JSON.stringify(blog)		
+		}).then(()=>{
+		
+		console.log('new blog added')
+		
+		})
+	}	
+
+	return(
+	<div className='create'>
+		<h2>Add a new Blog</h2>
+		<form onSubmit={handleSubmit} >
+			<label>Blog title: </label>		
+			<input 
+			type='text'
+			required
+			>
+			<label>Blog body:</label>
+			<textarea 
+			required
+
+			>
+		<button>submit</button> 
+		</form>
+	</div>
+)
+
+} 
+
+
+------------------- end -----------------------------------------------
+
+---------------------------- react-router ------------------------------------- 
+
+import { BrowserRouter as Router , Route , Switch . Link  } from  'react-router-dom';
+
+function App = ()=>{
+	
+	return(
+	<Router>
+	<div className="App"> 
+	<Navbar />	
+	<div className='content'>
+	<Switch>
+	   <Route exact path='/home'>
+		<Home />
+
+	   </Route>
+	</Switch>
+	<Link to='/' >Home</Link>
+	<Link to='/create'>New Blogs</Link>
+
+	</div>
+	</Router>
+		
+	)
+
+}
+
+ if using fetching in components one warning came if we change the link fast that time use Abort controlleer 
+, cleanup function method in javascript 
+
+------------------------------ end ----------------------------------------
 
 
 
@@ -410,7 +537,7 @@ const Button = button.styled`
 	
 	color:red;
 	background:black;
-
+ 
 
 
 `

@@ -1,0 +1,45 @@
+whenever you see : )
+Server: Microsoft-IIS/6.X
+X-Powered-By: http://ASP.NET
+Always try this ..... 
+
+/admin/help.cgi
+/admin/help.cgi.bak
+/admin/WS_FTP.LOG
+/adovbs.inc
+/confirm.asp.bak 
+/default.asp.bak
+/login.asp.bak 
+
+
+------------- tip 2 ---------------------- 
+the extensions i use 
+*.NET Beautifier
+*Active Scan++
+*CO2
+*Collaborator Everywhere
+*J2EEScan
+*JS link Finder
+*Param Miner
+*Upload Scanner
+
+
+---------------- tip 3 --------------- 
+
+qsreplace   ye tools paramter ka value change karta he   
+
+burp Collaborator ka use karo 
+
+gau domain.com | grep '=' | qsreplace "burp Collaborator"  | tee redirect.txt | sort -u 
+
+burp Collaborator ko trig karne ke liye ffuf ko use karo 
+
+fuff -c -u "FUZZ" -r -w redirect.txt -mr "burp"
+
+ssti and xss you can find 
+
+
+------------------ end -------------------- 
+
+
+

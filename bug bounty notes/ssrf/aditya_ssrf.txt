@@ -1,0 +1,15 @@
+
+What is SSRF?
+Server-side request forgery (also known as SSRF) is a web security vulnerability that allows an attacker to induce the server-side application to make HTTP requests to an arbitrary domain of the attacker's choosing.
+
+In typical SSRF examples, the attacker might cause the server to make a connection back to itself, or to other web-based services within the organization's infrastructure, or to external third-party systems.
+
+SSRF attacks often exploit trust relationships to escalate an attack from the vulnerable application and perform unauthorized actions. These trust relationships might exist in relation to the server itself, or in relation to other back-end systems within the same organization.
+
+Steps:
+
+1.Go to https://pentest-app.onetrust.com/settings/general/smtp
+2.In server section add collaborator link and in port any port
+3.Click on submit and capture request & send it to intruder
+4.Add port as position and in payload number 1 to 50
+5.Start attack
